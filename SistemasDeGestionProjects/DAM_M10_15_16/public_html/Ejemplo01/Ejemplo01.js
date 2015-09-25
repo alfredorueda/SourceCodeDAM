@@ -4,13 +4,19 @@
  * and open the template in the editor.
  */
 
-var vidasRestantes =3;
-var numero= window.prompt("introdueixi numero");
+var vidasRestantes = 3;
+var resultat;
+var esNumero = false;
 
-while (isNaN(numero)){
-    numero = parseInt(window.prompt("introdueixi numero"));
+while(esNumero == false){
+    var numero= window.prompt("introdueixi numero");
+    if (isNaN(numero)){
+        esNumero = false;
+    } else {
+        esNumero = true;
+    }
 }
 
-var resultat;
+numero = parseInt(numero)
 resultat = numero+vidasRestantes;
 alert("Vides Restants:"+resultat); console.log("El numero introduit es"+numero);
