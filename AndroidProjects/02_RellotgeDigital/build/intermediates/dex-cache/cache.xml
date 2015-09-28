@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/felix/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-5f9ff401d990f7059e9e5fdf428411135faa8cd7.jar" />
+    </item>
+    <item
+        jar="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/libs/internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-c8d4778f04e248d2a018beacf98fd2c9c13a7c04.jar" />
+    </item>
+    <item
+        jar="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/pre-dexed/debug/classes-b1433ea6552ddaac4b3eacca6c1fe00dc7d4d45f.jar" />
+    </item>
+    <item
+        jar="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/pre-dexed/debug/classes-ddea6e31ddc0336fda46b5613111ab6fec085546.jar" />
+    </item>
+
+</items>
