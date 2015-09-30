@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47026DF01BBC5F4900E8580C /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47026DEF1BBC5F4900E8580C /* ViewController2.swift */; settings = {ASSET_TAGS = (); }; };
 		4792B53F1BBADACC005091DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4792B53E1BBADACC005091DA /* AppDelegate.swift */; };
 		4792B5411BBADACC005091DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4792B5401BBADACC005091DA /* ViewController.swift */; };
 		4792B5441BBADACC005091DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4792B5421BBADACC005091DA /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47026DEF1BBC5F4900E8580C /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		4792B53B1BBADACC005091DA /* AdivinaNumero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdivinaNumero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4792B53E1BBADACC005091DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4792B5401BBADACC005091DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				4792B53E1BBADACC005091DA /* AppDelegate.swift */,
 				4792B5401BBADACC005091DA /* ViewController.swift */,
+				47026DEF1BBC5F4900E8580C /* ViewController2.swift */,
 				4792B5421BBADACC005091DA /* Main.storyboard */,
 				4792B5451BBADACC005091DA /* Assets.xcassets */,
 				4792B5471BBADACC005091DA /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			files = (
 				4792B5411BBADACC005091DA /* ViewController.swift in Sources */,
 				4792B53F1BBADACC005091DA /* AppDelegate.swift in Sources */,
+				47026DF01BBC5F4900E8580C /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +485,7 @@
 				4792B5651BBADACC005091DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4792B5661BBADACC005091DA /* Build configuration list for PBXNativeTarget "AdivinaNumeroTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +494,7 @@
 				4792B5681BBADACC005091DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4792B5691BBADACC005091DA /* Build configuration list for PBXNativeTarget "AdivinaNumeroUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +503,7 @@
 				4792B56B1BBADACC005091DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

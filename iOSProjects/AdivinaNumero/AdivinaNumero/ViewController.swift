@@ -41,8 +41,9 @@ class ViewController: UIViewController {
         }
         
         randomNumber()
-        let alert = UIAlertController(title: "Resultado", message: "La diferencia ha sido \(puntuacion)", preferredStyle: .Alert);
-        //let alert = UIAlertController(title: "Resultado", message: "La diferencia ha sido \(puntuacion)", preferredStyle:UIAlertControllerStyle.Alert);
+        let alert = UIAlertController(title: "Resultado", message: "La diferencia ha sido \(puntuacion)", preferredStyle: .ActionSheet);
+        let action = UIAlertAction(title: "Ok!", style: .Default, handler: nil)
+        alert.addAction(action)
         //alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alert, animated: true, completion: nil);
         
