@@ -210,9 +210,11 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <!-- From: file:/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="action_hideDay">Hide day of week</string>
     <string name="action_sel12h">Mode 12h</string>
     <string name="action_sel24h">Mode 24h</string>
-    <string name="app_name">DigitalClock</string>
+    <string name="action_showDay">Show day of week</string>
+    <string name="app_name">World Clock</string>
     <string name="hello_world">Hello world!</string>
     <string name="no_date" translatable="false">--/--/----</string>
     <string name="no_time" translatable="false">--:--:--</string>

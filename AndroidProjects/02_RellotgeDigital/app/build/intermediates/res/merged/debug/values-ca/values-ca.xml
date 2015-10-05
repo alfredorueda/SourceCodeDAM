@@ -19,5 +19,18 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Comparteix amb"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Comparteix amb %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Replega"</string>
+    <!-- From: file:/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/src/main/res/values-ca/strings.xml -->
+    <eat-comment/>
+    <string name="action_hideDay">Amaga el dia de la setmana</string>
+    <string name="action_sel12h">Mode 12h</string>
+    <string name="action_sel24h">Mode 24h</string>
+    <string name="action_showDay">Mostra el dia de la setmana</string>
+    <string name="app_name">Rellotge Mundial</string>
+    <string name="hello_world">Hola Mon!</string>
+    <!-- From: file:/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-ca/values-ca.xml -->
+    <eat-comment/>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"+999"</string>
+    <!-- From: file:/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/src/main/res/values-ca/strings.xml -->
+    <eat-comment/>
+    <string name="the_time_is">Son les</string>
 </resources>

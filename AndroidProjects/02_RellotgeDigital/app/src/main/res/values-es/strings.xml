@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Reloj Mundial</string>
+    <string name="action_sel12h">Modo 12h</string>
+    <string name="action_sel24h">Modo 24h</string>
+    <string name="hello_world">Hola Mundo!</string>
+    <string name="the_time_is">Son las</string>
+    <string name="action_showDay">Muestra el dia de la semana</string>
+    <string name="action_hideDay">Oculta el dia de la semana</string>
+</resources>

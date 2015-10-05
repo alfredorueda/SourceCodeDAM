@@ -22,7 +22,7 @@ MERGED from [com.android.support:support-v4:23.0.1] /Users/Xavi/SourceCodeDAM/An
 	android:allowBackup
 		ADDED from /Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/src/main/AndroidManifest.xml:8:9-35
 	android:icon
-		ADDED from /Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/src/main/AndroidManifest.xml:9:9-37
 	android:theme
 		ADDED from /Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/src/main/AndroidManifest.xml:11:9-40
 activity#cat.flx.rellotgedigital.MainActivity

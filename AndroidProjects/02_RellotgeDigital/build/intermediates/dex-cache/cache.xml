@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/felix/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
+        jar="/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-5f9ff401d990f7059e9e5fdf428411135faa8cd7.jar" />
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-6ca8c2b782463aa9ca5c284e89572e6d1db8e6cb.jar" />
     </item>
     <item
-        jar="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/libs/internal_impl-22.1.1.jar"
+        jar="/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-c8d4778f04e248d2a018beacf98fd2c9c13a7c04.jar" />
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/build/intermediates/pre-dexed/debug/classes-dcffceb27666d00cb1828186ef05360f40a9224a.jar" />
     </item>
     <item
-        jar="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/classes.jar"
+        jar="/Users/Xavi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/pre-dexed/debug/classes-b1433ea6552ddaac4b3eacca6c1fe00dc7d4d45f.jar" />
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-196533b2f9974d7d829283b32b11739edd67629e.jar" />
     </item>
     <item
-        jar="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/jars/classes.jar"
+        jar="/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
-        <dex dex="/dades/28_Stucom_2015_2016/DAM_M08/Projects/02_RellotgeDigital/app/build/intermediates/pre-dexed/debug/classes-ddea6e31ddc0336fda46b5613111ab6fec085546.jar" />
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/build/intermediates/pre-dexed/debug/classes-9ba1b36905620ad1e82ade07bda2bcae8a03ac6c.jar" />
     </item>
 
 </items>

@@ -19,5 +19,18 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Compartir con"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Compartir con %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Contraer"</string>
+    <!-- From: file:/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/src/main/res/values-es/strings.xml -->
+    <eat-comment/>
+    <string name="action_hideDay">Oculta el dia de la semana</string>
+    <string name="action_sel12h">Modo 12h</string>
+    <string name="action_sel24h">Modo 24h</string>
+    <string name="action_showDay">Muestra el dia de la semana</string>
+    <string name="app_name">Reloj Mundial</string>
+    <string name="hello_world">Hola Mundo!</string>
+    <!-- From: file:/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-es/values-es.xml -->
+    <eat-comment/>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"+999"</string>
+    <!-- From: file:/Users/Xavi/SourceCodeDAM/AndroidProjects/02_RellotgeDigital/app/src/main/res/values-es/strings.xml -->
+    <eat-comment/>
+    <string name="the_time_is">Son las</string>
 </resources>
