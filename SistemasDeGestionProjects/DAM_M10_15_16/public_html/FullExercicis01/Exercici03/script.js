@@ -9,8 +9,6 @@ function ejecutaFunction(cantidadDeNumeros){
     var minNumber = Number.MAX_VALUE;
     
     for (var i = 1; i <= cantidadDeNumeros; i++){
-//        numbers[i] = parseInt(window.prompt("Introduce un numero " + i + " de " + cantidadDeNumeros + ":"));
-        
         var esNumero = false;
         while(esNumero == false){
             var numero= window.prompt("Introduce un numero " + i + " de " + cantidadDeNumeros + ":");

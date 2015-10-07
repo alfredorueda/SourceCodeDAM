@@ -5,7 +5,6 @@
  */
 
 function suma(){
-    
     var numbersArray = new Array();
     var esNumero = false;
     var cont = 0;

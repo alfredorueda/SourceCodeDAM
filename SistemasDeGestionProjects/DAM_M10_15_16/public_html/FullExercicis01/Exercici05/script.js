@@ -7,6 +7,7 @@
 
 var randomNumber = Math.floor((Math.random() * 100) + 1);
 var numero = 0;
+var nIntents = 0;
 console.log(randomNumber)
 
 while (randomNumber != numero){
@@ -19,11 +20,11 @@ while (randomNumber != numero){
             esNumero = true;
         }
     }
-
-numero = parseInt(numero);
+    numero = parseInt(numero);
+    nIntents += 1;
 }
 
-document.write("Has endevinat el nombre. El nombre era: " + randomNumber)
+document.write("Has endevinat el nombre. El nombre era: " + randomNumber + " i has fet " + nIntents + " intents")
 
 
 
