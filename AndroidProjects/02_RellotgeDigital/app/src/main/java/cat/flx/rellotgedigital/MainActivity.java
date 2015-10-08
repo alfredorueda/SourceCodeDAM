@@ -38,8 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 if (selDay){
                     format = "EEEE, " + format;
                 }
-				String time =
-						new SimpleDateFormat(format, Locale.US).format(new Date());
+				String time = new SimpleDateFormat(format, Locale.US).format(new Date());
 				time = getResources().getString(R.string.the_time_is) + " " + time;
 				Toast.makeText(MainActivity.this, time, Toast.LENGTH_SHORT).show();
 				Log.d("flx", time);
