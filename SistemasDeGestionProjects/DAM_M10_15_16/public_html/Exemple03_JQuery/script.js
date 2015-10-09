@@ -6,10 +6,32 @@
 
 $(document).ready(iniciar);
 function iniciar(){
-    $('div').css('background-color','blue');
+//    $('div').css('background-color','blue');
     
     $('div').css({
         'backgroud-color' : 'blue',
         'color'           : 'red'
     })
+    
+    $('#boton').click(changeColour);
+}
+
+function changeColour(){
+    $(this).css({
+        'background-color' : 'blue',
+        'position'         : 'relative'
+    })
+    
+    $(this).animate({
+        'width'   : '150px',
+        'left'    : '300px',
+        'padding' : '10px',
+    },{
+        'duration' : 2000,
+        'complete' : colorNuevo
+    });
+}
+
+function colorNuevo(){
+    $(this).css({'background-color' : 'red'})
 }
