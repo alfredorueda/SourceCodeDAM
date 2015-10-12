@@ -38,6 +38,10 @@ public class Jugador {
     @NotNull
     protected String posicionCampo;
 
+    //Afegit practica 2
+    @ManyToOne
+    private Equipo equipo;
+
     public Jugador(){
     }
 
