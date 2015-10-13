@@ -37,9 +37,9 @@ function startGame(){
     $('#player1Win').hide();
     $('#player2Win').hide();
     $('#draw').hide();
+    $('#empate').remove();
     
     
-    //Falta que se reduzcan los otros a 100px
     $('#jugador1 > img').each(function(){
         $(this).mouseenter(function(){         
             $(this).animate({
@@ -48,15 +48,22 @@ function startGame(){
             },{
                 'duration' : 200
             });
-        });
-        
-        $(this).mouseleave(function(){
-            $(this).animate({
+            
+            $(this).siblings('img').animate({
                 'width'  : '100px',
                 'height' : '100px'
             },{
                 'duration' : 200
-            })
+            });
+        });
+        
+        $(this).mouseleave(function(){
+            $('#jugador1 > img').animate({
+                'width'  : '120px',
+                'height' : '120px'
+            },{
+                'duration' : 200
+            });
         });
     });
     
@@ -94,12 +101,19 @@ function turnoSegundoJugador(){
             },{
                 'duration' : 200
             });
+            
+            $(this).siblings('img').animate({
+                    'width'  : '100px',
+                    'height' : '100px'
+                },{
+                    'duration' : 200
+                });
         });
         
         $(this).mouseleave(function(){
-            $(this).animate({
-                'width'  : '100px',
-                'height' : '100px'
+            $('#jugador2 > img').animate({
+                'width'  : '120px',
+                'height' : '120px'
             },{
                 'duration' : 200
             })
@@ -142,6 +156,7 @@ function resolverPartida(){
             if (segundaSeleccion === 'rock'){
                 //Empate
                 $('#fight').show();
+                $('#resultats').append("<div id='empate'>EMPATE</div>");
                 $('#jugador1 > img#rock1').show();
                 $('#jugador2 > img#rock2').show();
                 break;
@@ -157,6 +172,7 @@ function resolverPartida(){
             if (segundaSeleccion === 'paper'){
                 //Empate
                 $('#fight').show();
+                $('#resultats').append("<div id='empate'>EMPATE</div>");
                 $('#jugador1 > img#paper1').show();
                 $('#jugador2 > img#paper2').show();
                 break;
@@ -172,6 +188,7 @@ function resolverPartida(){
             if (segundaSeleccion === 'scissors'){
                 //Empate
                 $('#fight').show();
+                $('#resultats').append("<div id='empate'>EMPATE</div>");
                 $('#jugador1 > img#scissor1').show();
                 $('#jugador2 > img#scissor2').show();
                 break;
