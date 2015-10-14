@@ -42,27 +42,27 @@ function startGame(){
     
     $('#jugador1 > img').each(function(){
         $(this).mouseenter(function(){         
-            $(this).animate({
+            $(this).stop().animate({
                 'width'  : '140px',
                 'height' : '140px'
             },{
-                'duration' : 200
+                'duration' : 100
             });
             
-            $(this).siblings('img').animate({
+            $(this).siblings('img').stop().animate({
                 'width'  : '100px',
                 'height' : '100px'
             },{
-                'duration' : 200
+                'duration' : 100
             });
         });
         
         $(this).mouseleave(function(){
-            $('#jugador1 > img').animate({
+            $('#jugador1 > img').stop().animate({
                 'width'  : '120px',
                 'height' : '120px'
             },{
-                'duration' : 200
+                'duration' : 100
             });
         });
     });
@@ -95,28 +95,28 @@ function turnoSegundoJugador(){
      //Falta que se reduzcan los otros a 100px
     $('#jugador2 > img').each(function(){
         $(this).mouseenter(function(){         
-            $(this).animate({
+            $(this).stop().animate({
                 'width'  : '140px',
                 'height' : '140px'
             },{
-                'duration' : 200
+                'duration' : 100
             });
             
-            $(this).siblings('img').animate({
+            $(this).siblings('img').stop().animate({
                     'width'  : '100px',
                     'height' : '100px'
                 },{
-                    'duration' : 200
+                    'duration' : 100
                 });
         });
         
         $(this).mouseleave(function(){
-            $('#jugador2 > img').animate({
+            $('#jugador2 > img').stop().animate({
                 'width'  : '120px',
                 'height' : '120px'
             },{
-                'duration' : 200
-            })
+                'duration' : 100
+            });
         });
     });
     
@@ -210,25 +210,25 @@ function resolverPartida(){
     }
     
     $('#jugador1 > img').each(function(){
-        if ($(this).attr('style').search('inline-block') != -1){
-            $(this).animate({
+        if ($(this).attr('style').search('inline-block') !== -1){
+            $(this).stop().animate({
                 'position' : 'absolute',
                 'left'     : '150px',
                 'top'      : '150px'
             },{
-                'duration' : 200
+                'duration' : 100
             });
         }
     });
     
     $('#jugador2 > img').each(function(){
-        if ($(this).attr('style').search('block') != -1){
-            $(this).animate({
+        if ($(this).attr('style').search('block') !== -1){
+            $(this).stop().animate({
                 'position' : 'absolute',
                 'left'     : '-150px',
                 'top'      : '150px'
             },{
-                'duration' : 200
+                'duration' : 100
             });
         }
     });
