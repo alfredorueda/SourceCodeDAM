@@ -11,7 +11,6 @@ import java.util.Set;
  * Created by jhipster on 12/10/15.
  */
 @Entity
-@PrimaryKeyJoinColumn(name="id")
 public class Equipo {
 
     @Id
@@ -28,7 +27,6 @@ public class Equipo {
     @Column
     protected Date fechaCreacion;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "equipo")
     private Set<Jugador> jugadores = new HashSet<>();
 

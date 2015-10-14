@@ -111,6 +111,14 @@ public class Jugador {
         this.posicionCampo = posicionCampo;
     }
 
+    public Equipo getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
+    }
+
     @Override
     public String toString() {
         return "Jugador{" +
@@ -121,6 +129,7 @@ public class Jugador {
                 ", asistenciasTotales=" + asistenciasTotales +
                 ", rebotesTotales=" + rebotesTotales +
                 ", posicionCampo='" + posicionCampo + '\'' +
+                ", equipo=" + equipo +
                 '}';
     }
 }
