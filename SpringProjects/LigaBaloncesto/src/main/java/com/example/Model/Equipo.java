@@ -30,6 +30,9 @@ public class Equipo {
     @OneToMany(mappedBy = "equipo")
     private Set<Jugador> jugadores = new HashSet<>();
 
+    /*@ManyToMany(mappedBy = "temporada)
+    private Set<Temporada> temporada = new HashSet<>();*/
+
     public Equipo(){
     }
 
@@ -86,7 +89,6 @@ public class Equipo {
                 ", nombre='" + nombre + '\'' +
                 ", localidad='" + localidad + '\'' +
                 ", fechaCreacion=" + fechaCreacion +
-                ", jugadores=" + jugadores +
                 '}';
     }
 }

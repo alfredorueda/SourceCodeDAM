@@ -1,6 +1,8 @@
 package com.example.Service;
 
+import com.example.Model.Equipo;
 import com.example.Model.Jugador;
+import com.example.Repository.EquipoRepository;
 import com.example.Repository.JugadorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,9 @@ public class JugadorService {
 
     @Autowired
     private JugadorRepository jugadorRepository;
+
+    @Autowired
+    private EquipoRepository equipoRepository;
 
     public void testJugador(){
 
@@ -44,6 +49,8 @@ public class JugadorService {
         jugador1.setAsistenciasTotales(250L);
         jugador1.setRebotesTotales(50L);
         jugador1.setPosicionCampo("Alero");
+        Equipo equipo1 = equipoRepository.findByNombreContaining("Equip1").get(0);
+        jugador1.setEquipo(equipo1);
         jugadorRepository.save(jugador1);
 
         Jugador jugador2 = new Jugador();
@@ -53,6 +60,8 @@ public class JugadorService {
         jugador2.setAsistenciasTotales(300L);
         jugador2.setRebotesTotales(90L);
         jugador2.setPosicionCampo("Pivot");
+        Equipo equipo2 = equipoRepository.findByNombreContaining("Equip1").get(0);
+        jugador2.setEquipo(equipo2);
         jugadorRepository.save(jugador2);
 
         Jugador jugador3 = new Jugador();
@@ -62,6 +71,8 @@ public class JugadorService {
         jugador3.setAsistenciasTotales(150L);
         jugador3.setRebotesTotales(2L);
         jugador3.setPosicionCampo("Base");
+        Equipo equipo3 = equipoRepository.findByNombreContaining("Equip1").get(0);
+        jugador3.setEquipo(equipo3);
         jugadorRepository.save(jugador3);
 
         Jugador jugador4 = new Jugador();
@@ -71,6 +82,8 @@ public class JugadorService {
         jugador4.setAsistenciasTotales(15L);
         jugador4.setRebotesTotales(1L);
         jugador4.setPosicionCampo("Alero");
+        Equipo equipo4 = equipoRepository.findByNombreContaining("Equip1").get(0);
+        jugador4.setEquipo(equipo4);
         jugadorRepository.save(jugador4);
 
         Jugador jugador5 = new Jugador();
@@ -80,6 +93,8 @@ public class JugadorService {
         jugador5.setAsistenciasTotales(500L);
         jugador5.setRebotesTotales(200L);
         jugador5.setPosicionCampo("Pivot");
+        Equipo equipo5 = equipoRepository.findByNombreContaining("Equip1").get(0);
+        jugador5.setEquipo(equipo5);
         jugadorRepository.save(jugador5);
 
 
