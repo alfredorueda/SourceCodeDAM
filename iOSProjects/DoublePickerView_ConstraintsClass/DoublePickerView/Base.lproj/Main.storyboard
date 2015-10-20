@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DoublePickerView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qgp-fL-svA">
+                                <rect key="frame" x="33" y="48" width="240" height="200"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="n5X-fx-6s9"/>
+                                    <constraint firstAttribute="height" constant="200" id="wjo-NQ-uLa"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ojW-cE-YbE">
+                                <rect key="frame" x="370" y="48" width="191" height="200"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="9dG-ta-QNq"/>
+                                    <constraint firstAttribute="height" constant="200" id="TFN-Tr-JMN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XW-5k-0UA">
+                                <rect key="frame" x="0.0" y="289" width="600" height="0.0"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m47-oc-a5K">
+                                <rect key="frame" x="345" y="318" width="240" height="216"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="GAg-Mp-iWF"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="OUD-wV-URG"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TdX-Ph-pjN"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qiy-dI-GIz">
+                                <rect key="frame" x="33" y="318" width="240" height="216"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="kyf-mA-HjV"/>
+                                    <constraint firstAttribute="height" constant="216" id="pTp-Sv-aDq"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="AS4-oM-0jx"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ojW-cE-YbE" secondAttribute="trailing" constant="19" id="2cj-Hj-TG5"/>
+                            <constraint firstItem="0XW-5k-0UA" firstAttribute="top" secondItem="Qgp-fL-svA" secondAttribute="bottom" constant="41" id="3No-au-Z5D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="m47-oc-a5K" secondAttribute="trailing" constant="-5" id="5Ii-Pr-s2Q"/>
+                            <constraint firstItem="m47-oc-a5K" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="8df-iY-nTd"/>
+                            <constraint firstItem="Qgp-fL-svA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="JJB-Kx-JPV"/>
+                            <constraint firstItem="Qiy-dI-GIz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="NgT-fg-7JH"/>
+                            <constraint firstItem="m47-oc-a5K" firstAttribute="top" secondItem="Qgp-fL-svA" secondAttribute="bottom" constant="49" id="NzU-FU-hl5"/>
+                            <constraint firstItem="ojW-cE-YbE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="OcU-Wj-zUG"/>
+                            <constraint firstItem="Qiy-dI-GIz" firstAttribute="top" secondItem="ojW-cE-YbE" secondAttribute="bottom" constant="49" id="SRI-DS-nIm"/>
+                            <constraint firstItem="ojW-cE-YbE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="aD9-ol-3dw"/>
+                            <constraint firstItem="Qgp-fL-svA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="byK-5L-609"/>
+                            <constraint firstItem="0XW-5k-0UA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="mfj-wr-BOi"/>
+                            <constraint firstItem="Qgp-fL-svA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="uew-2a-TBp"/>
+                            <constraint firstItem="Qiy-dI-GIz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="unP-bD-020"/>
+                            <constraint firstItem="0XW-5k-0UA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ysZ-4Y-cdv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageDerecha" destination="ojW-cE-YbE" id="kdY-eq-96W"/>
+                        <outlet property="imageIzquierda" destination="Qgp-fL-svA" id="lYl-Ai-60h"/>
+                        <outlet property="pickerDerecha" destination="m47-oc-a5K" id="exV-my-Ld6"/>
+                        <outlet property="pickerIzquierda" destination="Qiy-dI-GIz" id="D2H-HU-Q6Z"/>
+                        <outlet property="textLabel" destination="0XW-5k-0UA" id="nZO-bb-kDr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="348"/>
+        </scene>
+    </scenes>
+</document>

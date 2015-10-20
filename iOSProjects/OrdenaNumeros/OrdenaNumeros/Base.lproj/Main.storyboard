@@ -21,48 +21,39 @@
                                 <animations/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="firstButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GsW-OU-9dv"/>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sf8-0S-GTV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBS-Df-XFF">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="button2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBS-Df-XFF">
                                 <rect key="frame" x="277" y="131" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="firstButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="47h-mO-UC3"/>
-                                    <action selector="secondButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tYp-i1-gsA"/>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GKb-3B-5Hg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjo-Uz-RJN">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="button3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjo-Uz-RJN">
                                 <rect key="frame" x="277" y="169" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="thirdButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="haW-OW-a8a"/>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JaV-dA-dLT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewY-yG-ETK">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="button4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewY-yG-ETK">
                                 <rect key="frame" x="277" y="207" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="fourthButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iKO-vf-MAC"/>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mbe-rB-BP8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEZ-8u-zwN">
-                                <rect key="frame" x="277" y="245" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="fifthButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OCK-jw-bwX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hN-2f-xfU">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="button6" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hN-2f-xfU">
                                 <rect key="frame" x="277" y="283" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="sixthButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CZv-vG-fbA"/>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1xr-B1-QDE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYi-pP-pr6">
@@ -72,6 +63,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="button5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEZ-8u-zwN">
+                                <rect key="frame" x="277" y="245" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VAG-D0-15A"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

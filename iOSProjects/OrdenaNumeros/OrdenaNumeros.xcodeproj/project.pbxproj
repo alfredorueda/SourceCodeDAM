@@ -14,6 +14,8 @@
 		472BEB231BD52C2F0079A08E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472BEB211BD52C2F0079A08E /* LaunchScreen.storyboard */; };
 		472BEB2E1BD52C2F0079A08E /* OrdenaNumerosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472BEB2D1BD52C2F0079A08E /* OrdenaNumerosTests.swift */; };
 		472BEB391BD52C2F0079A08E /* OrdenaNumerosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472BEB381BD52C2F0079A08E /* OrdenaNumerosUITests.swift */; };
+		47A0A9AB1BD6A0B900EEF596 /* Mario_Pipe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47A0A9A91BD6A0B900EEF596 /* Mario_Pipe.mp3 */; settings = {ASSET_TAGS = (); }; };
+		47A0A9AC1BD6A0B900EEF596 /* Mario_Power_Up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47A0A9AA1BD6A0B900EEF596 /* Mario_Power_Up.mp3 */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		472BEB341BD52C2F0079A08E /* OrdenaNumerosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrdenaNumerosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		472BEB381BD52C2F0079A08E /* OrdenaNumerosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdenaNumerosUITests.swift; sourceTree = "<group>"; };
 		472BEB3A1BD52C2F0079A08E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47A0A9A91BD6A0B900EEF596 /* Mario_Pipe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Mario_Pipe.mp3; path = ../../AdivinaNumero/AdivinaNumero/Mario_Pipe.mp3; sourceTree = "<group>"; };
+		47A0A9AA1BD6A0B900EEF596 /* Mario_Power_Up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Mario_Power_Up.mp3; path = ../../AdivinaNumero/AdivinaNumero/Mario_Power_Up.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				472BEB181BD52C2F0079A08E /* AppDelegate.swift */,
+				47A0A9A91BD6A0B900EEF596 /* Mario_Pipe.mp3 */,
+				47A0A9AA1BD6A0B900EEF596 /* Mario_Power_Up.mp3 */,
 				472BEB1A1BD52C2F0079A08E /* ViewController.swift */,
 				472BEB1C1BD52C2F0079A08E /* Main.storyboard */,
 				472BEB1F1BD52C2F0079A08E /* Assets.xcassets */,
@@ -229,6 +235,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				472BEB231BD52C2F0079A08E /* LaunchScreen.storyboard in Resources */,
+				47A0A9AC1BD6A0B900EEF596 /* Mario_Power_Up.mp3 in Resources */,
+				47A0A9AB1BD6A0B900EEF596 /* Mario_Pipe.mp3 in Resources */,
 				472BEB201BD52C2F0079A08E /* Assets.xcassets in Resources */,
 				472BEB1E1BD52C2F0079A08E /* Main.storyboard in Resources */,
 			);
@@ -483,6 +491,7 @@
 				472BEB3F1BD52C2F0079A08E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		472BEB401BD52C2F0079A08E /* Build configuration list for PBXNativeTarget "OrdenaNumerosTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +500,7 @@
 				472BEB421BD52C2F0079A08E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		472BEB431BD52C2F0079A08E /* Build configuration list for PBXNativeTarget "OrdenaNumerosUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +509,7 @@
 				472BEB451BD52C2F0079A08E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
