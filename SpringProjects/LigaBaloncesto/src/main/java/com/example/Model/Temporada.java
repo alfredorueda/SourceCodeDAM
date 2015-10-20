@@ -1,5 +1,7 @@
 package com.example.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -19,8 +21,8 @@ public class Temporada {
     @Column
     protected Integer year;
 
-    /*@ManyToMany
-    private Set<Equipo> = new HashSet<>();*/
+    @ManyToMany
+    private Set<Equipo> equipo = new HashSet<>();
 
     public Temporada(){
 

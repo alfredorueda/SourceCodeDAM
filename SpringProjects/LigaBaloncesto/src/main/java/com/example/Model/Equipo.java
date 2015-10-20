@@ -30,8 +30,8 @@ public class Equipo {
     @OneToMany(mappedBy = "equipo")
     private Set<Jugador> jugadores = new HashSet<>();
 
-    /*@ManyToMany(mappedBy = "temporada)
-    private Set<Temporada> temporada = new HashSet<>();*/
+    @ManyToMany(mappedBy = "equipo")
+    private Set<Temporada> temporada = new HashSet<>();
 
     public Equipo(){
     }
