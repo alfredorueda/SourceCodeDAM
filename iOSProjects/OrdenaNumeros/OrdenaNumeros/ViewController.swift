@@ -18,12 +18,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var button4: UIButton!
     @IBOutlet weak var button5: UIButton!
     @IBOutlet weak var button6: UIButton!
+    @IBOutlet weak var puntuacionLabel: UILabel!
     
     var numeros: [Int] = []
     var valor: Int!
     var valueButton: Int!
     
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer = AVAudioPlayer();
+    
+    var count = 30;
+    var timer: NSTimer!;
+    
+    //Property observer. Updates the view with the variable value when it's set to a new value.
+    var puntuacion: Int = 0 {
+        didSet {
+        puntuacionLabel.text = "\(puntuacion)"
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -38,6 +49,11 @@ class ViewController: UIViewController {
     }
     
     func startGame(){
+        puntuacion = 0;
+        //Start the countdown
+        count = 30;
+        timer?.invalidate();
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         
         //Generate random numbers and store them in an array. Checks if the number exists before storing it.
         while(numeros.count < 6){
@@ -75,12 +91,17 @@ class ViewController: UIViewController {
         if (valueButton == numeros[0]){
             numeros.removeAtIndex(0)
             sender.hidden = true
+            playSound("Mario_Power_Up");
+            puntuacion = puntuacion+10;
+        } else {
+            playSound("Mario_Pipe");
+            puntuacion = puntuacion-10;
         }
         
         if (button1.hidden == true && button2.hidden == true && button3.hidden == true && button4.hidden == true && button5.hidden == true && button6.hidden == true){
             
             //Display an alert and start again the game
-            let alert = UIAlertController(title: "¡Has Ganado!", message: "Enhorabuena.", preferredStyle: .Alert);
+            let alert = UIAlertController(title: "¡Has Ganado!", message: "Tu puntuación es: \(puntuacion) de 60", preferredStyle: .Alert);
             let action = UIAlertAction(title: "Volver a jugar", style: .Default, handler: nil)
             alert.addAction(action)
             self.presentViewController(alert, animated: true, completion: startGame);
@@ -88,16 +109,30 @@ class ViewController: UIViewController {
         }
     }
     
-//    func playSound(sound: String){ do {
-//        if let bundle = NSBundle.mainBundle().pathForResource(sound, ofType: "mp3") {
-//        let alertSound = NSURL(fileURLWithPath: bundle)
-//        try
-//        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCatego ryPlayback)
-//        try AVAudioSession.sharedInstance().setActive(true)
-//        try audioPlayer = AVAudioPlayer(contentsOfURL: alertSound)
-//        audioPlayer.prepareToPlay()
-//        audioPlayer.play() }
-//    } catch { print(error)
-//        } }
+    func playSound(sound: String){
+        do {
+            if let bundle = NSBundle.mainBundle().pathForResource(sound, ofType: "mp3") {
+                let alertSound = NSURL(fileURLWithPath: bundle)
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                try AVAudioSession.sharedInstance().setActive(true)
+                try audioPlayer = AVAudioPlayer(contentsOfURL: alertSound)
+                audioPlayer.prepareToPlay()
+                audioPlayer.play() }
+            } catch {
+                print(error)
+        }
+    }
+    
+    func update() {
+        if(count > 0){
+            labelTime.text = String(count--)
+        }else{
+            timer.invalidate()
+            let alert = UIAlertController(title: "Game Over", message: "Tu puntuación es: \(puntuacion) de 60", preferredStyle: .Alert)
+            let aceptar = UIAlertAction(title: "Aceptar", style: .Default, handler: nil)
+            alert.addAction(aceptar)
+            self.presentViewController(alert, animated: true, completion: startGame)
+        }
+    }
 }
 
