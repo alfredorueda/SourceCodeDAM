@@ -63,7 +63,7 @@ public class EquipoService {
         Equipo equipo5 = new Equipo();
         equipo5.setNombre("Equip5");
         equipo5.setFechaCreacion(calendar5.getTime());
-        equipo5.setLocalidad("Zaragoza");
+        equipo5.setLocalidad("Barcelona");
         equipoRepository.save(equipo5);
 
     }

@@ -1,7 +1,5 @@
 package com.example.Model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -30,8 +28,8 @@ public class Equipo {
     @OneToMany(mappedBy = "equipo")
     private Set<Jugador> jugadores = new HashSet<>();
 
-    @ManyToMany(mappedBy = "equipo")
-    private Set<Temporada> temporada = new HashSet<>();
+    @ManyToMany(mappedBy = "equipos")
+    private Set<Temporada> temporadas = new HashSet<>();
 
     public Equipo(){
     }
@@ -82,12 +80,12 @@ public class Equipo {
         this.jugadores = jugadores;
     }
 
-    public Set<Temporada> getTemporada() {
-        return temporada;
+    public Set<Temporada> getTemporadas() {
+        return temporadas;
     }
 
-    public void setTemporada(Set<Temporada> temporada) {
-        this.temporada = temporada;
+    public void setTemporadas(Set<Temporada> temporadas) {
+        this.temporadas = temporadas;
     }
 
     @Override

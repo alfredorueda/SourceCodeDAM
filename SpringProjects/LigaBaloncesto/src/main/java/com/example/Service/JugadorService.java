@@ -97,6 +97,26 @@ public class JugadorService {
         jugador5.setEquipo(equipo5);
         jugadorRepository.save(jugador5);
 
+        //Exercise 2. Adding a few more players because :shrug:
+        Jugador jugador6 = new Jugador("Jugador6", calendar5.getTime(), 100L, 200L, 300L, "Alero");
+        jugador6.setEquipo(equipoRepository.findByNombreContaining("Equip1").get(0));
+        jugadorRepository.save(jugador6);
+
+        Jugador jugador7 = new Jugador("Jugador7", calendar4.getTime(), 200L, 200L, 300L, "Pivot");
+        jugador7.setEquipo(equipoRepository.findByNombreContaining("Equip1").get(0));
+        jugadorRepository.save(jugador7);
+
+        Jugador jugador8 = new Jugador("Jugador8", calendar3.getTime(), 100L, 500L, 300L, "Base");
+        jugador8.setEquipo(equipoRepository.findByNombreContaining("Equip1").get(0));
+        jugadorRepository.save(jugador8);
+
+        Jugador jugador9 = new Jugador("Jugador9", calendar5.getTime(), 10L, 5L, 20L, "Base");
+        jugador9.setEquipo(equipoRepository.findByNombreContaining("Equip1").get(0));
+        jugadorRepository.save(jugador9);
+
+        Jugador jugador10 = new Jugador("Jugador10", calendar5.getTime(), 10L, 5L, 20L, "Pivot");
+        jugador10.setEquipo(equipoRepository.findByNombreContaining("Equip2").get(0));
+        jugadorRepository.save(jugador10);
 
         // Methods
 

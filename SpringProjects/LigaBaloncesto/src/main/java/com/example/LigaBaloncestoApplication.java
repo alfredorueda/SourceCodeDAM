@@ -17,14 +17,15 @@ public class LigaBaloncestoApplication {
     public static void main(String[] args) {
 
         ConfigurableApplicationContext context = SpringApplication.run(LigaBaloncestoApplication.class, args);
-        ligaService = context.getBean(LigaService.class);
-        ligaService.crearEntidades();
 
         equipoService = context.getBean(EquipoService.class);
         equipoService.testEquipo();
 
         jugadorService = context.getBean(JugadorService.class);
         jugadorService.testJugador();
+
+        ligaService = context.getBean(LigaService.class);
+        ligaService.crearEntidades();
 
 
     }

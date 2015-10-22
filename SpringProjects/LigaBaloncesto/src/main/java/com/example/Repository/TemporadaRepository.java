@@ -9,5 +9,5 @@ import java.util.List;
  * Created by jhipster on 21/10/15.
  */
 public interface TemporadaRepository extends PagingAndSortingRepository<Temporada, Long> {
-    //public List<Temporada> findByYear(Integer year);
+
 }

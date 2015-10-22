@@ -14,7 +14,7 @@
       <column name="nombre" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <exported-key name="FK_ljpmlwvojynx17t88w2jcx27l" table="jugador" schema="" catalog="LigaBaloncesto" columns="equipo_id"/>
-      <exported-key name="FK_e4skkhpljk32nqh8tfrrjt5px" table="temporada_equipo" schema="" catalog="LigaBaloncesto" columns="equipo_id"/>
+      <exported-key name="FK_lsni17j1rikqvo5vxqqtn4q2u" table="temporada_equipos" schema="" catalog="LigaBaloncesto" columns="equipos_id"/>
     </table>
     <table name="jugador" schema="" catalog="LigaBaloncesto" type="TABLE">
       <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
@@ -41,16 +41,16 @@
       <column name="liga_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="FK_59ytpcakp3tv6xxxl34v7p3nj" columns="liga_id" ref-table="liga" ref-schema="" ref-catalog="LigaBaloncesto" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="FK_gxkmnub2hyghejmk0glmkbl7i" table="temporada_equipo" schema="" catalog="LigaBaloncesto" columns="temporada_id"/>
+      <exported-key name="FK_81rqb7812clqtuwmnqgd87q4p" table="temporada_equipos" schema="" catalog="LigaBaloncesto" columns="temporadas_id"/>
       <index name="FK_59ytpcakp3tv6xxxl34v7p3nj" unique="false" columns="liga_id"/>
     </table>
-    <table name="temporada_equipo" schema="" catalog="LigaBaloncesto" type="TABLE">
-      <column name="temporada_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="equipo_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <primary-key name="PRIMARY" columns="temporada_id,equipo_id"/>
-      <foreign-key name="FK_e4skkhpljk32nqh8tfrrjt5px" columns="equipo_id" ref-table="equipo" ref-schema="" ref-catalog="LigaBaloncesto" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="FK_gxkmnub2hyghejmk0glmkbl7i" columns="temporada_id" ref-table="temporada" ref-schema="" ref-catalog="LigaBaloncesto" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="FK_e4skkhpljk32nqh8tfrrjt5px" unique="false" columns="equipo_id"/>
+    <table name="temporada_equipos" schema="" catalog="LigaBaloncesto" type="TABLE">
+      <column name="temporadas_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="equipos_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="temporadas_id,equipos_id"/>
+      <foreign-key name="FK_81rqb7812clqtuwmnqgd87q4p" columns="temporadas_id" ref-table="temporada" ref-schema="" ref-catalog="LigaBaloncesto" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_lsni17j1rikqvo5vxqqtn4q2u" columns="equipos_id" ref-table="equipo" ref-schema="" ref-catalog="LigaBaloncesto" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_lsni17j1rikqvo5vxqqtn4q2u" unique="false" columns="equipos_id"/>
     </table>
   </data-source>
 </component>

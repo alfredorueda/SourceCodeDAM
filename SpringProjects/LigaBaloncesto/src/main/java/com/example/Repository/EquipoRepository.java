@@ -10,4 +10,5 @@ import java.util.List;
  */
 public interface EquipoRepository extends PagingAndSortingRepository<Equipo, Long> {
     public List<Equipo> findByNombreContaining(String nombre);
+    public List<Equipo> findByLocalidad(String localidad);
 }

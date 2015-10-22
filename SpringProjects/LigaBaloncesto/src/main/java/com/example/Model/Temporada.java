@@ -1,9 +1,6 @@
 package com.example.Model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,7 +19,7 @@ public class Temporada {
     protected Integer year;
 
     @ManyToMany
-    private Set<Equipo> equipo = new HashSet<>();
+    private Set<Equipo> equipos = new HashSet<>();
 
     @ManyToOne
     private Liga liga;
@@ -51,12 +48,12 @@ public class Temporada {
         this.year = year;
     }
 
-    public Set<Equipo> getEquipo() {
-        return equipo;
+    public Set<Equipo> getEquipos() {
+        return equipos;
     }
 
-    public void setEquipo(Set<Equipo> equipo) {
-        this.equipo = equipo;
+    public void setEquipos(Set<Equipo> equipos) {
+        this.equipos = equipos;
     }
 
     public Liga getLiga() {

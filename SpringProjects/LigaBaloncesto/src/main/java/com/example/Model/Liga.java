@@ -18,9 +18,8 @@ public class Liga {
     @Column
     protected String nombre;
 
-    //Not sure if it's ok
     @OneToMany(mappedBy = "liga")
-    private Set<Temporada> temporada = new HashSet<>();
+    private Set<Temporada> temporadas = new HashSet<>();
 
     public Liga(){
 
@@ -46,12 +45,12 @@ public class Liga {
         this.id = id;
     }
 
-    public Set<Temporada> getTemporada() {
-        return temporada;
+    public Set<Temporada> getTemporadas() {
+        return temporadas;
     }
 
-    public void setTemporada(Set<Temporada> temporada) {
-        this.temporada = temporada;
+    public void setTemporadas(Set<Temporada> temporadas) {
+        this.temporadas = temporadas;
     }
 
     @Override
