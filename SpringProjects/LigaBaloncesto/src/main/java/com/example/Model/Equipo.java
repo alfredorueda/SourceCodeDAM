@@ -82,6 +82,14 @@ public class Equipo {
         this.jugadores = jugadores;
     }
 
+    public Set<Temporada> getTemporada() {
+        return temporada;
+    }
+
+    public void setTemporada(Set<Temporada> temporada) {
+        this.temporada = temporada;
+    }
+
     @Override
     public String toString() {
         return "Equipo{" +

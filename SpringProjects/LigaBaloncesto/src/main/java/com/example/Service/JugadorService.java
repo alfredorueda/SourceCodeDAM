@@ -60,7 +60,7 @@ public class JugadorService {
         jugador2.setAsistenciasTotales(300L);
         jugador2.setRebotesTotales(90L);
         jugador2.setPosicionCampo("Pivot");
-        Equipo equipo2 = equipoRepository.findByNombreContaining("Equip1").get(0);
+        Equipo equipo2 = equipoRepository.findByNombreContaining("Equip2").get(0);
         jugador2.setEquipo(equipo2);
         jugadorRepository.save(jugador2);
 
@@ -71,7 +71,7 @@ public class JugadorService {
         jugador3.setAsistenciasTotales(150L);
         jugador3.setRebotesTotales(2L);
         jugador3.setPosicionCampo("Base");
-        Equipo equipo3 = equipoRepository.findByNombreContaining("Equip1").get(0);
+        Equipo equipo3 = equipoRepository.findByNombreContaining("Equip3").get(0);
         jugador3.setEquipo(equipo3);
         jugadorRepository.save(jugador3);
 
@@ -82,7 +82,7 @@ public class JugadorService {
         jugador4.setAsistenciasTotales(15L);
         jugador4.setRebotesTotales(1L);
         jugador4.setPosicionCampo("Alero");
-        Equipo equipo4 = equipoRepository.findByNombreContaining("Equip1").get(0);
+        Equipo equipo4 = equipoRepository.findByNombreContaining("Equip4").get(0);
         jugador4.setEquipo(equipo4);
         jugadorRepository.save(jugador4);
 
@@ -93,7 +93,7 @@ public class JugadorService {
         jugador5.setAsistenciasTotales(500L);
         jugador5.setRebotesTotales(200L);
         jugador5.setPosicionCampo("Pivot");
-        Equipo equipo5 = equipoRepository.findByNombreContaining("Equip1").get(0);
+        Equipo equipo5 = equipoRepository.findByNombreContaining("Equip5").get(0);
         jugador5.setEquipo(equipo5);
         jugadorRepository.save(jugador5);
 

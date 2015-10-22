@@ -34,6 +34,7 @@ public class LigaService {
         temporada2.setYear(2015);
         temporadaRepository.save(temporada2);
 
-    }
+        //liga1.setTemporada(temporadaRepository.findByYear(2014).get(0));
 
+    }
 }

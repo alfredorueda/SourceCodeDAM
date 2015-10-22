@@ -24,6 +24,9 @@ public class Temporada {
     @ManyToMany
     private Set<Equipo> equipo = new HashSet<>();
 
+    @ManyToOne
+    private Liga liga;
+
     public Temporada(){
 
     }
@@ -46,6 +49,22 @@ public class Temporada {
 
     public void setYear(Integer year) {
         this.year = year;
+    }
+
+    public Set<Equipo> getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(Set<Equipo> equipo) {
+        this.equipo = equipo;
+    }
+
+    public Liga getLiga() {
+        return liga;
+    }
+
+    public void setLiga(Liga liga) {
+        this.liga = liga;
     }
 
     @Override
