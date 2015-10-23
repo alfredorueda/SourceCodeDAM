@@ -7,6 +7,7 @@
 var cont = 1;
 
 $(document).ready(iniciar);
+$("#set_password").click(enviaAjaxJSON);
 
 function iniciar(){
     $('#start').click(function(){
@@ -28,4 +29,8 @@ function startGame(){
             cont++;
         });
     });
+}
+
+function enviarAjaxJSON(){
+    
 }
