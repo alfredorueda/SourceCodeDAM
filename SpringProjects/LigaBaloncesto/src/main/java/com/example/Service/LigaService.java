@@ -64,23 +64,24 @@ public class LigaService {
     }
 
     public void consultasEntidades(){
-        //Queries
+        //Queries para el ejercicio 2
         //Consulta los equipos existentes en una localidad determinada.
-        System.out.println(equipoRepository.findByLocalidad("Barcelona"));
+        System.out.println("Equipos en una localidad: " + equipoRepository.findByLocalidad("Barcelona"));
 
         //Devuelve todos los jugadores de un equipo, a partir del nombre completo del equipo.
-        System.out.println();
+        System.out.println("Jugador de un equipo: " + jugadorRepository.findByEquipoNombre("Equip2"));
 
         //Devuelve todos los jugadores de un equipo, que además jueguen en la misma posición, por ejemplo, alero.
-
+        System.out.println("Jugadores de un equipo + posicion: " + jugadorRepository.findByEquipoNombreAndPosicionCampo("Equip1", "Pivot"));
 
         //Devuelve el jugador que más canastas ha conseguido del total de jugadores
-
+        System.out.println("Jugador con MAX canastas: " + jugadorRepository.findFirstByOrderByCanastasTotalesDesc());
 
         //Devuelve los cinco jugadores que más asistencias han efectuado
-
+        System.out.println("5 jugadores con más asistencias: " + jugadorRepository.findFirst5ByOrderByAsistenciasTotalesDesc());
 
         //Devuelve el jugador que más canastas ha realizado de un equipo determinado como parámetro.
+        System.out.println("Jugador con MAX canastas de un equipo: " + jugadorRepository.findByEquipoNombreCanastasTotalesDesc("Equip1").get(0));
 
     }
 }

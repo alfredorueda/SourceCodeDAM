@@ -18,7 +18,7 @@ public class Temporada {
     @Column
     protected Integer year;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "temporadas")
     private Set<Equipo> equipos = new HashSet<>();
 
     @ManyToOne

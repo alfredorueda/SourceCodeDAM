@@ -28,7 +28,7 @@ public class Equipo {
     @OneToMany(mappedBy = "equipo")
     private Set<Jugador> jugadores = new HashSet<>();
 
-    @ManyToMany(mappedBy = "equipos")
+    @ManyToMany
     private Set<Temporada> temporadas = new HashSet<>();
 
     public Equipo(){
