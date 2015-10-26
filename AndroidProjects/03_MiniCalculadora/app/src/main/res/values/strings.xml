@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MiniCalculadora</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="label_value_1">Valor 1:</string>
+    <string name="label_value_2">Valor 2:</string>
+    <string name="label_btn_add">+</string>
+    <string name="label_btn_sub">-</string>
+    <string name="label_btn_mul">*</string>
+    <string name="label_btn_div">/</string>
+    <string name="label_result_empty">"   "</string>
+
+</resources>

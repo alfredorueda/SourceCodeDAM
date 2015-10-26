@@ -9,17 +9,17 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mensaje;
-    private Button tecla;
-    private int contador;
+    //private TextView mensaje;
+    //private Button tecla;
+    //private int contador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("xmollv", "onCreate()");
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.prod_cat);
 
-        mensaje = (TextView) findViewById(R.id.mensaje);
+        /*mensaje = (TextView) findViewById(R.id.mensaje);
         tecla   = (Button) findViewById(R.id.tecla);
 
         tecla.setOnClickListener(new View.OnClickListener() {
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 mensaje.setText("Hola" + contador);
                 contador++;
             }
-        });
+        }); */
     }
 
     @Override protected void onStart(){
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     @Override protected void onResume(){
         super.onResume();
         Log.d("xmollv", "onResume()");
-        mensaje.setText("Hola" + contador);
+        //mensaje.setText("Hola" + contador);
     }
 
     @Override protected void onPause(){
