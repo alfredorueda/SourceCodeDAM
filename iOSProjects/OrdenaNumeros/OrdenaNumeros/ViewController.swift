@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     var count = 30;
     var timer: NSTimer!;
     
+    var gameOver = false;
+    
     //Property observer. Updates the view with the variable value when it's set to a new value.
     var puntuacion: Int = 0 {
         didSet {
@@ -36,10 +38,10 @@ class ViewController: UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
          //Do any additional setup after loading the view, typically from a nib.
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         startGame()
     }
 
@@ -49,11 +51,11 @@ class ViewController: UIViewController {
     }
     
     func startGame(){
-        puntuacion = 0;
-        //Start the countdown
-        count = 30;
-        timer?.invalidate();
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        if gameOver {
+            puntuacion = 0;
+            count = 30;
+            gameOver = false
+        }
         
         //Generate random numbers and store them in an array. Checks if the number exists before storing it.
         while(numeros.count < 6){
@@ -99,13 +101,7 @@ class ViewController: UIViewController {
         }
         
         if (button1.hidden == true && button2.hidden == true && button3.hidden == true && button4.hidden == true && button5.hidden == true && button6.hidden == true){
-            
-            //Display an alert and start again the game
-            let alert = UIAlertController(title: "¡Has Ganado!", message: "Tu puntuación es: \(puntuacion) de 60", preferredStyle: .Alert);
-            let action = UIAlertAction(title: "Volver a jugar", style: .Default, handler: nil)
-            alert.addAction(action)
-            self.presentViewController(alert, animated: true, completion: startGame);
-            
+            startGame()
         }
     }
     
@@ -127,11 +123,12 @@ class ViewController: UIViewController {
         if(count > 0){
             labelTime.text = String(count--)
         }else{
-            timer.invalidate()
-            let alert = UIAlertController(title: "Game Over", message: "Tu puntuación es: \(puntuacion) de 60", preferredStyle: .Alert)
+            timer?.invalidate()
+            gameOver = true
+            let alert = UIAlertController(title: "Game Over", message: "Tu puntuación es: \(puntuacion)", preferredStyle: .Alert)
             let aceptar = UIAlertAction(title: "Aceptar", style: .Default, handler: nil)
             alert.addAction(aceptar)
-            self.presentViewController(alert, animated: true, completion: startGame)
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
 }
