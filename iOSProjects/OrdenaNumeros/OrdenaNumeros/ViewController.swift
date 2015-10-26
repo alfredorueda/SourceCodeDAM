@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     var count = 30;
     var timer: NSTimer!;
     
-    var gameOver = false;
+    var restartingGame = false
     
     //Property observer. Updates the view with the variable value when it's set to a new value.
     var puntuacion: Int = 0 {
@@ -51,10 +51,11 @@ class ViewController: UIViewController {
     }
     
     func startGame(){
-        if gameOver {
-            puntuacion = 0;
-            count = 30;
-            gameOver = false
+        //Restart the timer when the player finishes the game
+        if restartingGame {
+            timer?.invalidate()
+            count = 30
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         }
         
         //Generate random numbers and store them in an array. Checks if the number exists before storing it.
@@ -75,6 +76,7 @@ class ViewController: UIViewController {
         button5.setTitle(String(numeros[4]), forState: .Normal)
         button6.setTitle(String(numeros[5]), forState: .Normal)
         
+        
         //Show the buttons that were previously hidden
         button1.hidden = false;
         button2.hidden = false;
@@ -88,7 +90,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonClicked(sender: UIButton) {
-        
         valueButton = Int(sender.titleLabel!.text!)
         if (valueButton == numeros[0]){
             numeros.removeAtIndex(0)
@@ -101,6 +102,7 @@ class ViewController: UIViewController {
         }
         
         if (button1.hidden == true && button2.hidden == true && button3.hidden == true && button4.hidden == true && button5.hidden == true && button6.hidden == true){
+            restartingGame = false
             startGame()
         }
     }
@@ -124,9 +126,20 @@ class ViewController: UIViewController {
             labelTime.text = String(count--)
         }else{
             timer?.invalidate()
-            gameOver = true
+            button1.hidden = true;
+            button2.hidden = true;
+            button3.hidden = true;
+            button4.hidden = true;
+            button5.hidden = true;
+            button6.hidden = true;
             let alert = UIAlertController(title: "Game Over", message: "Tu puntuación es: \(puntuacion)", preferredStyle: .Alert)
-            let aceptar = UIAlertAction(title: "Aceptar", style: .Default, handler: nil)
+            //This is a closure. You can add code to the "handler" now gone. Seths the flag to restart the game and calls the main method.
+            let aceptar = UIAlertAction(title: "Aceptar", style: .Default) {
+                UIAlertAction in
+                self.restartingGame = true
+                self.puntuacion = 0
+                self.startGame()
+            }
             alert.addAction(aceptar)
             self.presentViewController(alert, animated: true, completion: nil)
         }
