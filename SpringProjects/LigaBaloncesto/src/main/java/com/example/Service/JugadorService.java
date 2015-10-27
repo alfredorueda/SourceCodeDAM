@@ -118,6 +118,18 @@ public class JugadorService {
         jugador10.setEquipo(equipoRepository.findByNombreContaining("Equip2").get(0));
         jugadorRepository.save(jugador10);
 
+        Jugador jugador11 = new Jugador("Jugador11", calendar4.getTime(), 100L, 500L, 200L, "Alero");
+        jugador11.setEquipo(equipoRepository.findByNombreContaining("Equip3").get(0));
+        jugadorRepository.save(jugador11);
+
+        Jugador jugador12 = new Jugador("Jugador12", calendar3.getTime(), 200L, 300L, 2000L, "Base");
+        jugador12.setEquipo(equipoRepository.findByNombreContaining("Equip4").get(0));
+        jugadorRepository.save(jugador12);
+
+        Jugador jugador13 = new Jugador("Jugador13", calendar2.getTime(), 1000L, 900L, 700L, "Pivot");
+        jugador13.setEquipo(equipoRepository.findByNombreContaining("Equip5").get(0));
+        jugadorRepository.save(jugador13);
+
         // Methods
 
         //Buscar jugadores por nombre, de manera que no sea necesario introducir el nombre completo.
