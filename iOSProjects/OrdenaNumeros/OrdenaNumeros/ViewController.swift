@@ -126,12 +126,6 @@ class ViewController: UIViewController {
             labelTime.text = String(count--)
         }else{
             timer?.invalidate()
-            button1.hidden = true;
-            button2.hidden = true;
-            button3.hidden = true;
-            button4.hidden = true;
-            button5.hidden = true;
-            button6.hidden = true;
             let alert = UIAlertController(title: "Game Over", message: "Tu puntuación es: \(puntuacion)", preferredStyle: .Alert)
             //This is a closure. You can add code to the "handler" now gone. Seths the flag to restart the game and calls the main method.
             let aceptar = UIAlertAction(title: "Aceptar", style: .Default) {
