@@ -8,6 +8,7 @@ $op2 = $_POST['op2'];
 $op3 = $_POST['op3'];
 $op4 = $_POST['op4'];
 
+
 if($op=="setPassword"){
     $_SESSION['ok1']=$op1; 
     $_SESSION['ok2']=$op2; 
@@ -23,7 +24,7 @@ if($op=="setPassword"){
 }
 
 //Tipo de archivo a retornar:
- $resposta='{"op":"'.$op.'",
+ $resposta='{   "op":"'.$op.'",
                 "op1":"'.$op1.'",
                 "op2":"'.$op2.'",
                 "op3":"'.$op3.'",

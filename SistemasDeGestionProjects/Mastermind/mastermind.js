@@ -7,9 +7,10 @@
 var cont = 1;
 
 $(document).ready(iniciar);
-$("#set_password").click(enviaAjaxJSON);
+
 
 function iniciar(){
+    $('#set_password').click(enviarAjaxJSON);
     $('#start').click(function(){
         $('#find_password').hide();
         $(this).hide();
@@ -18,10 +19,11 @@ function iniciar(){
 }
 
 function startGame(){
-    
     $('.opcions > div').each(function(){
         $(this).click(function(){
-            $(this).removeClass('opc' + (cont-1));
+            for (i=1; i<=4; i++){
+                $(this).removeClass('opc' + i);
+            }
             if (cont > 4){
                 cont = 1;
             }
@@ -32,5 +34,20 @@ function startGame(){
 }
 
 function enviarAjaxJSON(){
-    
+    $.ajax({
+        type    : "POST",
+        url     : "checkMastermind.php",
+        dataType: "json",
+        data    : {
+                    op1: $('#pas1').attr('class'),
+                    op2: $('#pas2').attr('class'),
+                    op3: $('#pas3').attr('class'),
+                    op4: $('#pas4').attr('class')
+                },
+        success : function(){
+            $('#crea_password').hide();
+            $('#find_password').show();
+        }
+    });
+    return false;
 }
