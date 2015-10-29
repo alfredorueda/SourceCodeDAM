@@ -1,5 +1,7 @@
 package com.example.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -38,7 +40,8 @@ public class Jugador {
     @NotNull
     protected String posicionCampo;
 
-    //Afegit practica 2
+    //Added JsonIgnore so the GET query works. Without it, it makes an infinite loop
+    @JsonIgnore
     @ManyToOne
     private Equipo equipo;
 

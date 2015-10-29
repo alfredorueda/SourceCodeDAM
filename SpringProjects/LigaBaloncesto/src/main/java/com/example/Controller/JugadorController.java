@@ -22,13 +22,14 @@ public class JugadorController {
     @Autowired
     public JugadorRepository jugadorRepository;
 
-    //Get every developer. Something is wrong with the DB? Shows the first player and then loops over the same
+    // Get every developer. I needed to add @JsonIgnore to the Equipo property on the
+    // Jugador class.
     @RequestMapping(method = RequestMethod.GET)
     public List<Jugador> findAll() {
         List<Jugador> jugadores = new ArrayList<>();
         Iterator<Jugador> iterator = jugadorRepository.findAll().iterator();
 
-        while (iterator.hasNext()) {
+        while(iterator.hasNext()) {
             jugadores.add(iterator.next());
         }
 
@@ -43,7 +44,7 @@ public class JugadorController {
         try {
             jugador = jugadorRepository.findOne(id).toString();
         } catch (Exception e){
-            jugador = "PLayer not found. Check the console for more info";
+            jugador = "Player not found. Check the console for more info";
             System.out.println(e);
         }
         return jugador;
