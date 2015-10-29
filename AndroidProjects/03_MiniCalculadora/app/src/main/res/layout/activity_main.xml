@@ -31,7 +31,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/editValue1"
-        android:layout_alignBottom="@+id/editValue1"
         android:layout_alignParentLeft="true"
         android:text="@string/label_value_1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -40,7 +39,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/editValue2"
-        android:layout_alignBottom="@+id/editValue2"
         android:layout_alignParentLeft="true"
         android:text="@string/label_value_2"
         android:textAppearance="?android:attr/textAppearanceLarge" />
