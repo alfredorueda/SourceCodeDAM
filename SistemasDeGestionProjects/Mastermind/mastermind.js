@@ -11,6 +11,7 @@ $(document).ready(iniciar);
 
 function iniciar(){
     $('#set_password').click(enviarAjaxJSON);
+    $('#check_password').click(checkPassword);
     $('#start').click(function(){
         $('#find_password').hide();
         $(this).hide();
@@ -39,6 +40,7 @@ function enviarAjaxJSON(){
         url     : "checkMastermind.php",
         dataType: "json",
         data    : {
+                    op : "setPassword",
                     op1: $('#pas1').attr('class'),
                     op2: $('#pas2').attr('class'),
                     op3: $('#pas3').attr('class'),
@@ -47,6 +49,50 @@ function enviarAjaxJSON(){
         success : function(){
             $('#crea_password').hide();
             $('#find_password').show();
+        }
+    });
+    return false;
+}
+
+function checkPassword(){
+    $.ajax({
+        type    : "POST",
+        url     : "checkMastermind.php",
+        dataType: "json",
+        data    : {
+                    op1: $('#op1').attr('class'),
+                    op2: $('#op2').attr('class'),
+                    op3: $('#op3').attr('class'),
+                    op4: $('#op4').attr('class')
+                },
+        success : function(respuesta){
+            //$('#resultats').html(respuesta.op1 + respuesta.op2 + respuesta.op3 + respuesta.op4);
+            //$('#resultats').html("<ul><li>'test'</li></ul>");
+            var htmlToPrint;
+            htmlToPrint = "<ul>";
+            if (respuesta.op1 != 0){
+                htmlToPrint = htmlToPrint + "<li>Valor 1: Correcto</li>";
+            } else {
+                htmlToPrint = htmlToPrint + "<li style='color:red'>Valor 1: Incorrecto</li>";
+            }
+            if (respuesta.op2 != 0){
+                htmlToPrint = htmlToPrint + "<li>Valor 2: Correcto</li>";
+            } else {
+                htmlToPrint = htmlToPrint + "<li style='color:red'>Valor 2: Incorrecto</li>";
+            }
+            if (respuesta.op3 != 0){
+                htmlToPrint = htmlToPrint + "<li>Valor 3: Correcto</li>";
+            } else {
+                htmlToPrint = htmlToPrint + "<li style='color:red'>Valor 3: Incorrecto</li>";
+            }
+            if (respuesta.op4 != 0){
+                htmlToPrint = htmlToPrint + "<li>Valor 4: Correcto</li>";
+            } else {
+                htmlToPrint = htmlToPrint + "<li style='color:red'>Valor 4: Incorrecto</li>";
+            }
+
+            $('#resultats').html(htmlToPrint + "</ul>");
+            console.log(respuesta);
         }
     });
     return false;
