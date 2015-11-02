@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">LoremIpsum</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_next">Next</string>
+    <string name="title_activity_lorem_ipsum">LoremIpsum (2)</string>
+    <string name="lipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Donec varius quis dui auctor dapibus. Donec tincidunt nulla eleifend justo
+        tempus consectetur. Phasellus feugiat et lorem a consectetur. Aenean
+        vestibulum tempor mi id lobortis. Phasellus eu tortor id velit fringilla
+        elementum. Aenean bibendum nisi sed nunc tristique interdum. Sed aliquet nisl
+        at tellus malesuada rutrum. Quisque in iaculis nunc. Vestibulum volutpat
+        scelerisque nibh, quis bibendum diam condimentum eu. Nunc egestas dignissim
+        quam, a venenatis augue lobortis vitae.</string>
+</resources>
