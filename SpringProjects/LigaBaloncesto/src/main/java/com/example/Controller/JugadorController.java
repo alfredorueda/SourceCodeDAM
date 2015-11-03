@@ -3,10 +3,8 @@ package com.example.Controller;
 import com.example.Model.Jugador;
 import com.example.Repository.JugadorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -22,8 +20,7 @@ public class JugadorController {
     @Autowired
     public JugadorRepository jugadorRepository;
 
-    // Get every developer. I needed to add @JsonIgnore to the Equipo property on the
-    // Jugador class.
+    // Get every developer.
     @RequestMapping(method = RequestMethod.GET)
     public List<Jugador> findAll() {
         List<Jugador> jugadores = new ArrayList<>();
@@ -38,15 +35,21 @@ public class JugadorController {
 
     //Get one developer
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String findOne(@PathVariable Long id){
-        String jugador;
+    public Jugador findById(@PathVariable Long id){
+        Jugador jugador = new Jugador();
 
         try {
-            jugador = jugadorRepository.findOne(id).toString();
+            jugador = jugadorRepository.findOne(id);
         } catch (Exception e){
-            jugador = "Player not found. Check the console for more info";
             System.out.println(e);
         }
         return jugador;
+    }
+
+    //Save a player
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public Jugador save(@RequestBody Jugador jugador) {
+        return jugadorRepository.save(jugador);
     }
 }

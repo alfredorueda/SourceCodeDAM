@@ -135,6 +135,4 @@ public class Jugador {
                 ", equipo=" + equipo +
                 '}';
     }
-
-
 }
