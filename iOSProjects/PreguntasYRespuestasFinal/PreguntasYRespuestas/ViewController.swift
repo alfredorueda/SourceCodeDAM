@@ -46,6 +46,7 @@ class ViewController: UIViewController {
     var cont = 0
     var clickedButton: String!
     var restartingGame = true
+    var rightAnswers = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +89,12 @@ class ViewController: UIViewController {
             }
         }
         
+        // Restart the background color for every button and enables it
+        for button in arrayOfButtons{
+            button.backgroundColor = UIColor.clearColor()
+            button.enabled = true
+        }
+        
         preguntaLabel.text = preguntas[arrayNumbersForButtons[cont]].enunciado
         arrayOfButtons[arrayRandomButtons[0]].setTitle(preguntas[arrayNumbersForButtons[cont]].respuestaOK, forState: .Normal)
         arrayOfButtons[arrayRandomButtons[1]].setTitle(preguntas[arrayNumbersForButtons[cont]].respuestaKO1, forState: .Normal)
@@ -97,29 +104,61 @@ class ViewController: UIViewController {
     
     @IBAction func checkAnswer(sender: UIButton) {
         clickedButton = sender.titleLabel!.text!
+        //Right answer
         if(clickedButton == preguntas[arrayNumbersForButtons[cont]].respuestaOK){
             puntuacion = puntuacion + 10
-            cont++
-            if (cont < preguntas.count){
-                restartingGame = false
-                startGame()
-            } else {
-                let alert = UIAlertController(title: "Game Over", message: "Tu puntuación es: \(puntuacion)", preferredStyle: .Alert)
-                let aceptar = UIAlertAction(title: "Aceptar", style: .Default){
-                    UIAlertAction in
-                    self.restartingGame = true
-                    self.startGame()
-                }
-                alert.addAction(aceptar)
-                self.presentViewController(alert, animated: true, completion: nil)
-                puntuacion = 0
-                cont = 0
-            }
+            sender.backgroundColor = UIColor.greenColor()
+            
+            //If ended, show an alert. If not, continue the game
+            checkIfItsEndedOrWeArePlaying()
+            rightAnswers++;
+            
+        //Wrong answer
         } else {
             puntuacion = puntuacion - 10
+            sender.backgroundColor = UIColor.redColor()
+            
+            //Shows the right answer
+            arrayOfButtons[arrayRandomButtons[0]].backgroundColor = UIColor.greenColor()
+            
+            //If ended, show an alert. If not, continue the game
+            checkIfItsEndedOrWeArePlaying()
         }
     }
     
-
+    
+    func checkIfItsEndedOrWeArePlaying(){
+        cont++
+        
+        for button in arrayOfButtons{
+            button.enabled = false
+        }
+        
+        if (cont < preguntas.count){
+            restartingGame = false
+            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("startGame"), userInfo: nil, repeats: false)
+            
+        } else {
+            let alert = UIAlertController(title: "Game Over", message: "Tu puntuación es: \(puntuacion)", preferredStyle: .Alert)
+            let aceptar = UIAlertAction(title: "Aceptar", style: .Default){
+                UIAlertAction in
+                /*self.restartingGame = true
+                self.puntuacion = 0
+                self.cont = 0
+                self.rightAnswers = 0
+                self.startGame()*/
+                
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("winner") as! WinnerViewController
+                
+                let topController = UIApplication.sharedApplication().keyWindow!.rootViewController
+                topController!.dismissViewControllerAnimated(true, completion: nil)
+                topController!.presentViewController(vc, animated: true, completion: nil)
+                //Sets the value on the new view
+                vc.rightAnswersLabel.text = String(self.rightAnswers)
+            }
+            alert.addAction(aceptar)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
 }
 
