@@ -20,7 +20,14 @@ public class JugadorController {
     @Autowired
     public JugadorRepository jugadorRepository;
 
-    // Get every developer.
+    //Save a player
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public Jugador save(@RequestBody Jugador jugador) {
+        return jugadorRepository.save(jugador);
+    }
+
+    // Get every player
     @RequestMapping(method = RequestMethod.GET)
     public List<Jugador> findAll() {
         List<Jugador> jugadores = new ArrayList<>();
@@ -33,7 +40,7 @@ public class JugadorController {
         return jugadores;
     }
 
-    //Get one developer
+    //Get one player
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Jugador findById(@PathVariable Long id){
         Jugador jugador = new Jugador();
@@ -46,10 +53,34 @@ public class JugadorController {
         return jugador;
     }
 
-    //Save a player
-    @RequestMapping(method = RequestMethod.POST)
-    @ResponseStatus(HttpStatus.CREATED)
-    public Jugador save(@RequestBody Jugador jugador) {
+    //Delete one player
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void deleteById(@PathVariable Long id) {
+        Jugador jugador = new Jugador();
+
+        try {
+            jugador = jugadorRepository.findOne(id);
+        } catch (Exception e){
+            System.out.println(e);
+        }
+
+        jugadorRepository.delete(id);
+    }
+
+    //Update a player
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public Jugador updateById(@PathVariable Long id, @RequestBody Jugador jugador) {
+        Jugador j1 = new Jugador();
+
+        try {
+            j1 = jugadorRepository.findOne(id);
+        } catch (Exception e){
+            System.out.println(e);
+        }
+
         return jugadorRepository.save(jugador);
     }
+
+
+
 }

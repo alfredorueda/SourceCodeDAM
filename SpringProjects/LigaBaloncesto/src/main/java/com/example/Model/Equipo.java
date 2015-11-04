@@ -27,7 +27,7 @@ public class Equipo {
     @Column
     protected Date fechaCreacion;
 
-    @OneToMany(mappedBy = "equipo")
+    @OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)
     private Set<Jugador> jugadores = new HashSet<>();
 
     @ManyToMany
