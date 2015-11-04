@@ -35,7 +35,11 @@ function startGame(){
 }
 
 function enviarAjaxJSON(){
-    $.ajax({
+    
+    if ($('#pas1').attr('class') == null || $('#pas2').attr('class') == null || $('#pas3').attr('class') == null || $('#pas4').attr('class') == null){
+        alert("La password no pot ser buida!")
+    } else {
+        $.ajax({
         type    : "POST",
         url     : "checkMastermind.php",
         dataType: "json",
@@ -52,10 +56,15 @@ function enviarAjaxJSON(){
         }
     });
     return false;
+    }   
 }
 
 function checkPassword(){
-    $.ajax({
+    
+    if ($('#op1').attr('class') == null || $('#op2').attr('class') == null || $('#op3').attr('class') == null || $('#op4').attr('class') == null){
+        alert("La password no pot ser buida!")
+    } else {
+        $.ajax({
         type    : "POST",
         url     : "checkMastermind.php",
         dataType: "json",
@@ -66,10 +75,8 @@ function checkPassword(){
                     op4: $('#op4').attr('class')
                 },
         success : function(respuesta){
-            //$('#resultats').html(respuesta.op1 + respuesta.op2 + respuesta.op3 + respuesta.op4);
-            //$('#resultats').html("<ul><li>'test'</li></ul>");
             var htmlToPrint;
-            htmlToPrint = "<ul>";
+            htmlToPrint = "<ul style='list-style-type: none; padding-left: 0px;'>";
             if (respuesta.op1 != 0){
                 htmlToPrint = htmlToPrint + "<li>Valor 1: Correcto</li>";
             } else {
@@ -96,4 +103,8 @@ function checkPassword(){
         }
     });
     return false;
+    }
+    
+    
+    
 }
