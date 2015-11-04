@@ -15,10 +15,15 @@ class WinnerViewController: UIViewController {
     //ViewController object
     var mainView = ViewController()
     
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        //let puntuacionGuardada = userDefaults.integerForKey("Puntuacion")
+        
+        //print(puntuacionGuardada)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,22 +32,5 @@ class WinnerViewController: UIViewController {
     }
     @IBAction func playAgain(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        mainView.restartingGame = true
-        mainView.puntuacion = 0
-        mainView.cont = 0
-        mainView.rightAnswers = 0
-        mainView.startGame()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

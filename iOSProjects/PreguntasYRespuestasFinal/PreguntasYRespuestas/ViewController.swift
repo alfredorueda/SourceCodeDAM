@@ -48,6 +48,8 @@ class ViewController: UIViewController {
     var restartingGame = true
     var rightAnswers = 0
     
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -139,25 +141,33 @@ class ViewController: UIViewController {
             NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("startGame"), userInfo: nil, repeats: false)
             
         } else {
-            let alert = UIAlertController(title: "Game Over", message: "Tu puntuación es: \(puntuacion)", preferredStyle: .Alert)
-            let aceptar = UIAlertAction(title: "Aceptar", style: .Default){
-                UIAlertAction in
-                /*self.restartingGame = true
-                self.puntuacion = 0
-                self.cont = 0
-                self.rightAnswers = 0
-                self.startGame()*/
-                
-                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("winner") as! WinnerViewController
-                
-                let topController = UIApplication.sharedApplication().keyWindow!.rootViewController
-                topController!.dismissViewControllerAnimated(true, completion: nil)
-                topController!.presentViewController(vc, animated: true, completion: nil)
-                //Sets the value on the new view
-                vc.rightAnswersLabel.text = String(self.rightAnswers)
-            }
-            alert.addAction(aceptar)
-            self.presentViewController(alert, animated: true, completion: nil)
+            //Store the amount of right answers
+            //MIRA AQUI QUE NO FUNCIONA :(
+            userDefaults.setValue(rightAnswers, forKey: "Puntuacion")
+            
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("winner") as! WinnerViewController
+            let topController = UIApplication.sharedApplication().keyWindow!.rootViewController
+            topController!.dismissViewControllerAnimated(true, completion: nil)
+            topController!.presentViewController(vc, animated: true, completion: nil)
+            //Sets the value on the new view
+            vc.rightAnswersLabel.text = String(rightAnswers)
+            
+            //Restart the game on the background, so when the user dismisses the popup, the game is ready to be played again.
+            restartingGame = true
+            puntuacion = 0
+            cont = 0
+            rightAnswers = 0
+            startGame()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let showTutorial = userDefaults.boolForKey("SettingsShowTutorialOnLaunch")
+        if(showTutorial){
+            let alertView: UIAlertController = UIAlertController(title: "Instrucciones", message: "Selecciona la respuesta correcta de cada pregunta. Cada acierto te dará 10 puntos y cada fallo te restara -10 puntos. Pasas a la siguiente pregunta al contestar la anterior, aciertes o falles.", preferredStyle: .Alert)
+            let aceptar = UIAlertAction(title: "Aceptar", style: .Default, handler: nil)
+            alertView.addAction(aceptar)
+            self.presentViewController(alertView, animated: true, completion: nil)
         }
     }
 }
