@@ -11,19 +11,13 @@ import UIKit
 class WinnerViewController: UIViewController {
 
     @IBOutlet weak var rightAnswersLabel: UILabel!
-    
-    //ViewController object
-    var mainView = ViewController()
-    
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+
+    var actualScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //let puntuacionGuardada = userDefaults.integerForKey("Puntuacion")
-        
-        //print(puntuacionGuardada)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,5 +26,23 @@ class WinnerViewController: UIViewController {
     }
     @IBAction func playAgain(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        //Shows the amount of right answers
+        rightAnswersLabel.text = String(actualScore)
+        
+        //Store the amount of right answers
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if (actualScore > userDefaults.integerForKey("Puntuacion")){
+            userDefaults.setValue(actualScore, forKey: "Puntuacion")
+            
+            let alertView: UIAlertController = UIAlertController(title: "¡Máxima puntuación!", message: "¡Has superado la puntuación más alta!", preferredStyle: .Alert)
+            let aceptar = UIAlertAction(title: "Aceptar", style: .Default, handler: nil)
+            alertView.addAction(aceptar)
+            self.presentViewController(alertView, animated: true, completion: nil)
+        }
     }
 }
