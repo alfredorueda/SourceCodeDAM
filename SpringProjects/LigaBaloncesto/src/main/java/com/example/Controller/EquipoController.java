@@ -53,7 +53,7 @@ public class EquipoController {
         return equipo;
     }
 
-    //Delete one team
+    //Delete one team. On the Equipo model, i've added a cascade property to delete the players in that team
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteById(@PathVariable Long id) {
         Equipo equipo = new Equipo();
@@ -65,5 +65,19 @@ public class EquipoController {
         }
 
         equipoRepository.delete(id);
+    }
+
+    //Update a team
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public Equipo updateById(@PathVariable Long id, @RequestBody Equipo equipo) {
+        Equipo e1 = new Equipo();
+
+        try {
+            e1 = equipoRepository.findOne(id);
+        } catch (Exception e){
+            System.out.println(e);
+        }
+
+        return equipoRepository.save(equipo);
     }
 }
