@@ -31,6 +31,7 @@ public class Equipo {
     private Set<Jugador> jugadores = new HashSet<>();
 
     @ManyToMany
+    @JsonIgnore
     private Set<Temporada> temporadas = new HashSet<>();
 
     public Equipo(){

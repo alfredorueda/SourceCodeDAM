@@ -1,5 +1,6 @@
 package com.example.Service;
 
+import com.example.Model.Equipo;
 import com.example.Model.Liga;
 import com.example.Model.Temporada;
 import com.example.Repository.EquipoRepository;
@@ -45,18 +46,36 @@ public class LigaService {
         temporada1.setLiga(liga1);
         temporada2.setLiga(liga1);
 
-        temporada1.getEquipos().add(equipoRepository.findByNombreContaining("Equip1").get(0));
-        temporada1.getEquipos().add(equipoRepository.findByNombreContaining("Equip2").get(0));
-        temporada1.getEquipos().add(equipoRepository.findByNombreContaining("Equip3").get(0));
-        temporada1.getEquipos().add(equipoRepository.findByNombreContaining("Equip4").get(0));
-        temporada1.getEquipos().add(equipoRepository.findByNombreContaining("Equip5").get(0));
-
-
-        temporada2.getEquipos().add(equipoRepository.findByNombreContaining("Equip4").get(0));
-        temporada2.getEquipos().add(equipoRepository.findByNombreContaining("Equip5").get(0));
-
         temporadaRepository.save(temporada1);
         temporadaRepository.save(temporada2);
+
+        Equipo equipo1 = equipoRepository.findByNombreContaining("Equip1").get(0);
+        equipo1.getTemporadas().add(temporada1);
+        Equipo equipo2 = equipoRepository.findByNombreContaining("Equip2").get(0);
+        equipo2.getTemporadas().add(temporada1);
+        Equipo equipo3 = equipoRepository.findByNombreContaining("Equip3").get(0);
+        equipo3.getTemporadas().add(temporada1);
+        Equipo equipo4 = equipoRepository.findByNombreContaining("Equip4").get(0);
+        equipo4.getTemporadas().add(temporada1);
+        Equipo equipo5 = equipoRepository.findByNombreContaining("Equip5").get(0);
+        equipo5.getTemporadas().add(temporada1);
+
+
+
+        Equipo equipo6 = equipoRepository.findByNombreContaining("Equip1").get(0);
+        equipo6.getTemporadas().add(temporada2);
+        Equipo equipo7 = equipoRepository.findByNombreContaining("Equip2").get(0);
+        equipo7.getTemporadas().add(temporada2);
+
+        equipoRepository.save(equipo1);
+        equipoRepository.save(equipo2);
+        equipoRepository.save(equipo3);
+        equipoRepository.save(equipo4);
+        equipoRepository.save(equipo5);
+        equipoRepository.save(equipo6);
+        equipoRepository.save(equipo7);
+
+
 
         consultasEntidades();
 
