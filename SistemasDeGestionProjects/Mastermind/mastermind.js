@@ -25,6 +25,11 @@ function startGame(){
             for (i=1; i<=4; i++){
                 $(this).removeClass('opc' + i);
             }
+            
+            if($(this).attr('class') == null){
+                cont = 1;
+            }
+            
             if (cont > 4){
                 cont = 1;
             }
@@ -75,31 +80,35 @@ function checkPassword(){
                     op4: $('#op4').attr('class')
                 },
         success : function(respuesta){
+            var actualAnswer = $('#resultats').html()
             var htmlToPrint;
-            htmlToPrint = "<ul style='list-style-type: none; padding-left: 0px;'>";
+            htmlToPrint = actualAnswer + "<div class='opcions'>";
             if (respuesta.op1 != 0){
-                htmlToPrint = htmlToPrint + "<li>Valor 1: Correcto</li>";
+                htmlToPrint = htmlToPrint + "<div class='" + respuesta.op1 +"' style='margin:3px;'></div>";
             } else {
-                htmlToPrint = htmlToPrint + "<li style='color:red'>Valor 1: Incorrecto</li>";
+                htmlToPrint = htmlToPrint + "<div style='border-color:red; margin:3px;'></div>";
             }
             if (respuesta.op2 != 0){
-                htmlToPrint = htmlToPrint + "<li>Valor 2: Correcto</li>";
+                htmlToPrint = htmlToPrint + "<div class='" + respuesta.op2 +"' style='margin:3px;'></div>";
             } else {
-                htmlToPrint = htmlToPrint + "<li style='color:red'>Valor 2: Incorrecto</li>";
+                htmlToPrint = htmlToPrint + "<div style='border-color:red; margin:3px;'></div>";
             }
             if (respuesta.op3 != 0){
-                htmlToPrint = htmlToPrint + "<li>Valor 3: Correcto</li>";
+                htmlToPrint = htmlToPrint + "<div class='" + respuesta.op3 +"' style='margin:3px;'></div>";
             } else {
-                htmlToPrint = htmlToPrint + "<li style='color:red'>Valor 3: Incorrecto</li>";
+                htmlToPrint = htmlToPrint + "<div style='border-color:red; margin:3px;'></div>";
             }
             if (respuesta.op4 != 0){
-                htmlToPrint = htmlToPrint + "<li>Valor 4: Correcto</li>";
+                htmlToPrint = htmlToPrint + "<div class='" + respuesta.op4 +"' style='margin:3px;'></div>";
             } else {
-                htmlToPrint = htmlToPrint + "<li style='color:red'>Valor 4: Incorrecto</li>";
+                htmlToPrint = htmlToPrint + "<div style='border-color:red; margin:3px;'></div>";
             }
-
-            $('#resultats').html(htmlToPrint + "</ul>");
-            console.log(respuesta);
+            $('#resultats').html(htmlToPrint + "</div>");
+            
+            if (respuesta.op1 !=0 && respuesta.op2 !=0 && respuesta.op3 !=0 && respuesta.op4 !=0){
+                $('#check_password').hide();
+                alert("Has guanyat!")
+            }
         }
     });
     return false;
