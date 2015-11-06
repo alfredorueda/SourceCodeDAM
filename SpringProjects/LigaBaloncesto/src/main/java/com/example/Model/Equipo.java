@@ -30,8 +30,8 @@ public class Equipo {
     @OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)
     private Set<Jugador> jugadores = new HashSet<>();
 
-    @ManyToMany
     @JsonIgnore
+    @ManyToMany(mappedBy = "equipos")
     private Set<Temporada> temporadas = new HashSet<>();
 
     public Equipo(){
