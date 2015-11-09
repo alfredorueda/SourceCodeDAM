@@ -1,0 +1,133 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <EditTextPreference
+        android:inputType="text"
+        android:key="text01"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/text01" />
+    <EditTextPreference
+        android:inputType="textUri"
+        android:key="url01"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/url01" />
+
+    <EditTextPreference
+        android:inputType="text"
+        android:key="text02"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/text02" />
+    <EditTextPreference
+        android:inputType="textUri"
+        android:key="url02"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/url02" />
+
+    <EditTextPreference
+        android:inputType="text"
+        android:key="text03"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/text03" />
+    <EditTextPreference
+        android:inputType="textUri"
+        android:key="url03"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/url03" />
+
+    <EditTextPreference
+        android:inputType="text"
+        android:key="text04"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/text04" />
+    <EditTextPreference
+        android:inputType="textUri"
+        android:key="url04"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/url04" />
+
+    <EditTextPreference
+        android:inputType="text"
+        android:key="text05"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/text05" />
+    <EditTextPreference
+        android:inputType="textUri"
+        android:key="url05"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/url05" />
+
+    <EditTextPreference
+        android:inputType="text"
+        android:key="text06"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/text06" />
+    <EditTextPreference
+        android:inputType="textUri"
+        android:key="url06"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/url06" />
+
+    <EditTextPreference
+        android:inputType="text"
+        android:key="text07"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/text07" />
+    <EditTextPreference
+        android:inputType="textUri"
+        android:key="url07"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/url07" />
+
+    <EditTextPreference
+        android:inputType="text"
+        android:key="text08"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/text08" />
+    <EditTextPreference
+        android:inputType="textUri"
+        android:key="url08"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/url08" />
+
+    <EditTextPreference
+        android:inputType="text"
+        android:key="text09"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/text09" />
+    <EditTextPreference
+        android:inputType="textUri"
+        android:key="url09"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/url09" />
+
+    <EditTextPreference
+        android:inputType="text"
+        android:key="text10"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/text10" />
+    <EditTextPreference
+        android:inputType="textUri"
+        android:key="url10"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/url10" />
+
+</PreferenceScreen>

@@ -1,0 +1,21 @@
+<resources>
+
+    <string name="title_activity_settings" >Settings</string>
+
+    <string name="pref_header_general" >General</string>
+
+    <string name="pref_show_date_title" >Show the date</string>
+    <string name="pref_show_date_description" >Whether to show the date in the main
+activity or not</string>
+
+    <string name="pref_sel12or24h_title" >Time format</string>
+    <string-array name="pref_sel12or24h_titles" >
+        <item>12h</item>
+        <item>24h</item>
+    </string-array>
+    <string-array name="pref_sel12or24h_values" >
+        <item>12</item>
+        <item>24</item>
+    </string-array>
+
+</resources>

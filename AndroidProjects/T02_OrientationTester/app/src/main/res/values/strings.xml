@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">T02_OrientationTester</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="label_result">Resultat aquí</string>
+    <string name="btn_salute">Saludar</string>
+    <string name="label_name">Nom</string>
+</resources>
