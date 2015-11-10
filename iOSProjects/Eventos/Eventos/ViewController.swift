@@ -54,15 +54,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
             if setaImage != nil {
                     if (CGRectIntersectsRect(marioImage.frame, setaImage.frame)){
+                        playSound("Mario_Power_Up");
                         setaImage.removeFromSuperview()
-                        //playSound("Mario_Power_Up");
                     }
             }
             
         return true
     }
     
-    /*func playSound(sound: String){
+    func playSound(sound: String){
         do {
             if let bundle = NSBundle.mainBundle().pathForResource(sound, ofType: "mp3") {
         let alertSound = NSURL(fileURLWithPath: bundle)
@@ -74,7 +74,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         } catch {
             print(error)
         }
-    }*/
+    }
     
 
 }
