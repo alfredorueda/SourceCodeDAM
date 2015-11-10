@@ -37,7 +37,7 @@ class WinnerViewController: UIViewController {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
         if (actualScore > userDefaults.integerForKey("Puntuacion")){
-            userDefaults.setValue(actualScore, forKey: "Puntuacion")
+            userDefaults.setValue(String(actualScore), forKey: "Puntuacion")
             
             let alertView: UIAlertController = UIAlertController(title: "¡Máxima puntuación!", message: "¡Has superado la puntuación más alta!", preferredStyle: .Alert)
             let aceptar = UIAlertAction(title: "Aceptar", style: .Default, handler: nil)

@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>StringsTable</key>
-	<string>Root</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
@@ -29,10 +27,10 @@
 			<string>Puntuación</string>
 		</dict>
 		<dict>
-			<key>DefaultValue</key>
-			<integer>0</integer>
 			<key>Type</key>
-			<string>Title</string>
+			<string>PSTitleValueSpecifier</string>
+			<key>DefaultValue</key>
+			<string>0</string>
 			<key>Title</key>
 			<string>Puntuación</string>
 			<key>Key</key>

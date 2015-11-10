@@ -15,7 +15,7 @@
 		470860F41BDFD9240031AD2D /* PreguntasYRespuestasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470860F31BDFD9240031AD2D /* PreguntasYRespuestasTests.swift */; };
 		470860FF1BDFD9240031AD2D /* PreguntasYRespuestasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470860FE1BDFD9240031AD2D /* PreguntasYRespuestasUITests.swift */; };
 		4708610D1BDFD98C0031AD2D /* PreguntasRespuestas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4708610C1BDFD98C0031AD2D /* PreguntasRespuestas.swift */; };
-		47931C791BEA8FF400D888D6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 47931C781BEA8FF400D888D6 /* Settings.bundle */; };
+		4746E2A61BF24A3F00B65F8F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4746E2A51BF24A3F00B65F8F /* Settings.bundle */; };
 		47CCD7CA1BE913D000D56A75 /* WinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CCD7C91BE913D000D56A75 /* WinnerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,7 @@
 		470860FE1BDFD9240031AD2D /* PreguntasYRespuestasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreguntasYRespuestasUITests.swift; sourceTree = "<group>"; };
 		470861001BDFD9240031AD2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4708610C1BDFD98C0031AD2D /* PreguntasRespuestas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreguntasRespuestas.swift; sourceTree = "<group>"; };
-		47931C781BEA8FF400D888D6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		4746E2A51BF24A3F00B65F8F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		47CCD7C91BE913D000D56A75 /* WinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinnerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,9 +109,9 @@
 				470860E51BDFD9230031AD2D /* Assets.xcassets */,
 				470860E71BDFD9230031AD2D /* LaunchScreen.storyboard */,
 				470860EA1BDFD9230031AD2D /* Info.plist */,
+				4746E2A51BF24A3F00B65F8F /* Settings.bundle */,
 				4708610C1BDFD98C0031AD2D /* PreguntasRespuestas.swift */,
 				47CCD7C91BE913D000D56A75 /* WinnerViewController.swift */,
-				47931C781BEA8FF400D888D6 /* Settings.bundle */,
 			);
 			path = PreguntasYRespuestas;
 			sourceTree = "<group>";
@@ -238,7 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47931C791BEA8FF400D888D6 /* Settings.bundle in Resources */,
+				4746E2A61BF24A3F00B65F8F /* Settings.bundle in Resources */,
 				470860E91BDFD9230031AD2D /* LaunchScreen.storyboard in Resources */,
 				470860E61BDFD9230031AD2D /* Assets.xcassets in Resources */,
 				470860E41BDFD9230031AD2D /* Main.storyboard in Resources */,

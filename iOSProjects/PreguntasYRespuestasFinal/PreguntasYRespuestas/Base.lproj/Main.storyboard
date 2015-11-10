@@ -126,41 +126,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACR-AG-2NV">
-                                <rect key="frame" x="255" y="263" width="90" height="74"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACR-AG-2NV">
+                                <rect key="frame" x="284.5" y="270" width="31" height="60"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meC-c1-F7x">
-                                <rect key="frame" x="249" y="444" width="102" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número de respuestas correctas:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NpP-VD-9f9">
+                                <rect key="frame" x="20" y="155" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meC-c1-F7x">
+                                <rect key="frame" x="249" y="420" width="102" height="30"/>
                                 <animations/>
                                 <state key="normal" title="¡Volver a jugar!"/>
                                 <connections>
                                     <action selector="playAgain:" destination="pM8-Vl-lrT" eventType="touchUpInside" id="pw3-uk-1vC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Número de respuestas correctas:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NpP-VD-9f9">
-                                <rect key="frame" x="106" y="133" width="388" height="35"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ACR-AG-2NV" firstAttribute="top" secondItem="NpP-VD-9f9" secondAttribute="bottom" constant="95" id="2Mt-Mt-abg"/>
+                            <constraint firstItem="ACR-AG-2NV" firstAttribute="top" secondItem="NpP-VD-9f9" secondAttribute="bottom" constant="85" id="2Mt-Mt-abg"/>
                             <constraint firstItem="ACR-AG-2NV" firstAttribute="centerX" secondItem="Inq-Gz-t2z" secondAttribute="centerX" id="6WG-rw-Bb6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NpP-VD-9f9" secondAttribute="trailing" constant="20" id="CW6-7V-XEq"/>
-                            <constraint firstItem="meC-c1-F7x" firstAttribute="top" secondItem="ACR-AG-2NV" secondAttribute="bottom" constant="107" id="RQF-un-Zh8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NpP-VD-9f9" secondAttribute="trailing" id="OyS-hw-ZpF"/>
+                            <constraint firstItem="meC-c1-F7x" firstAttribute="top" secondItem="ACR-AG-2NV" secondAttribute="bottom" constant="90" id="RQF-un-Zh8"/>
                             <constraint firstItem="NpP-VD-9f9" firstAttribute="centerX" secondItem="Inq-Gz-t2z" secondAttribute="centerX" id="Z0g-ct-kPB"/>
                             <constraint firstItem="meC-c1-F7x" firstAttribute="centerX" secondItem="Inq-Gz-t2z" secondAttribute="centerX" id="e52-pP-LbY"/>
                             <constraint firstItem="ACR-AG-2NV" firstAttribute="centerY" secondItem="Inq-Gz-t2z" secondAttribute="centerY" id="kPn-Zm-u2Z"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="NpP-VD-9f9" secondAttribute="leading" id="mWw-6n-pXG"/>
                             <constraint firstItem="NpP-VD-9f9" firstAttribute="leading" secondItem="Inq-Gz-t2z" secondAttribute="leadingMargin" constant="20" id="wCH-CL-eEK"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CW6-7V-XEq"/>
+                                <exclude reference="wCH-CL-eEK"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="rightAnswersLabel" destination="ACR-AG-2NV" id="Ewz-50-U30"/>
