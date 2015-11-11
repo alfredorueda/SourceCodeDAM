@@ -113,7 +113,4 @@ function checkPassword(){
     });
     return false;
     }
-    
-    
-    
 }
