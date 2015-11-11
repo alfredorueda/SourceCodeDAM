@@ -13,6 +13,7 @@
 		4746E2BB1BF2512D00B65F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4746E2BA1BF2512D00B65F8F /* Assets.xcassets */; };
 		4746E2BE1BF2512D00B65F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4746E2BC1BF2512D00B65F8F /* LaunchScreen.storyboard */; };
 		4746E2C61BF25E0400B65F8F /* Mario_Power_Up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4746E2C51BF25E0400B65F8F /* Mario_Power_Up.mp3 */; };
+		4755A1A61BF3CFC700984820 /* Sonic_Ring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4755A1A51BF3CFC700984820 /* Sonic_Ring.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4746E2BD1BF2512D00B65F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4746E2BF1BF2512D00B65F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4746E2C51BF25E0400B65F8F /* Mario_Power_Up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mario_Power_Up.mp3; sourceTree = "<group>"; };
+		4755A1A51BF3CFC700984820 /* Sonic_Ring.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sonic_Ring.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				4746E2BC1BF2512D00B65F8F /* LaunchScreen.storyboard */,
 				4746E2BF1BF2512D00B65F8F /* Info.plist */,
 				4746E2C51BF25E0400B65F8F /* Mario_Power_Up.mp3 */,
+				4755A1A51BF3CFC700984820 /* Sonic_Ring.mp3 */,
 			);
 			path = Eventos;
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4755A1A61BF3CFC700984820 /* Sonic_Ring.mp3 in Resources */,
 				4746E2C61BF25E0400B65F8F /* Mario_Power_Up.mp3 in Resources */,
 				4746E2BE1BF2512D00B65F8F /* LaunchScreen.storyboard in Resources */,
 				4746E2BB1BF2512D00B65F8F /* Assets.xcassets in Resources */,
@@ -290,6 +294,7 @@
 				4746E2C41BF2512D00B65F8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

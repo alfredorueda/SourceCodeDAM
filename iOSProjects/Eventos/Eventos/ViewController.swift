@@ -16,7 +16,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var audioPlayer = AVAudioPlayer();
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,7 +25,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    //Mover
+    
+    //Move
     @IBAction func handlePan(sender: UIPanGestureRecognizer) {
         let translation = sender.translationInView(self.view)
         if let view = sender.view {
@@ -43,7 +43,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    //Rotar
+    //Rotate
     @IBAction func handleRotate(sender: UIRotationGestureRecognizer) {
         if let view = sender.view {
                 view.transform = CGAffineTransformRotate(view.transform, sender.rotation)
@@ -51,14 +51,39 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    //Swipe
+    @IBAction func handleSwipe(sender: UISwipeGestureRecognizer) {
+        if sender.direction == .Right {
+            marioImage.image = UIImage(named: "Sonic")
+            marioImage.restorationIdentifier = "Sonic"
+            if setaImage != nil {
+                setaImage.image = UIImage(named: "Ring")
+                setaImage.restorationIdentifier = "Ring"
+            }
+        }
+        if sender.direction == .Left {
+            marioImage.image = UIImage(named: "Mario")
+            marioImage.restorationIdentifier = "Mario"
+            if setaImage != nil{
+                setaImage.image = UIImage(named: "Seta")
+                setaImage.restorationIdentifier = "Seta"
+            }
+        }
+    }
+    
+    
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
             if setaImage != nil {
-                    if (CGRectIntersectsRect(marioImage.frame, setaImage.frame)){
+                if (CGRectIntersectsRect(marioImage.frame, setaImage.frame)){
+                    if (marioImage.restorationIdentifier == "Mario"){
                         playSound("Mario_Power_Up");
-                        setaImage.removeFromSuperview()
+                    } else {
+                        playSound("Sonic_Ring");
                     }
+                
+                    setaImage.removeFromSuperview()
+                }
             }
-            
         return true
     }
     
@@ -75,7 +100,5 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             print(error)
         }
     }
-    
-
 }
 
