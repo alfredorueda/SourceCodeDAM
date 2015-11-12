@@ -80,30 +80,21 @@ function checkPassword(){
                     op4: $('#op4').attr('class')
                 },
         success : function(respuesta){
-            var actualAnswer = $('#resultats').html()
-            var htmlToPrint;
-            htmlToPrint = actualAnswer + "<div class='opcions'>";
-            if (respuesta.op1 != 0){
-                htmlToPrint = htmlToPrint + "<div class='" + respuesta.op1 +"' style='margin:3px;'></div>";
-            } else {
-                htmlToPrint = htmlToPrint + "<div style='border-color:red; margin:3px;'></div>";
+            var actualAnswer = $('#resultats').html();
+            
+            $('#resultats').append("<div class='opcions'></div>");
+            lastOptions = $('.opcions').last();
+            for (elem in respuesta){
+                if (elem == "op") {
+                    continue
+                }
+                if (respuesta[elem] != 0){
+                    lastOptions.append("<div class='" + respuesta[elem] +"' style='margin:3px;'></div>");
+                } 
+                if (respuesta[elem] == 0){
+                    lastOptions.append("<div style='border-color:red; margin:3px;'</div>");
+                }
             }
-            if (respuesta.op2 != 0){
-                htmlToPrint = htmlToPrint + "<div class='" + respuesta.op2 +"' style='margin:3px;'></div>";
-            } else {
-                htmlToPrint = htmlToPrint + "<div style='border-color:red; margin:3px;'></div>";
-            }
-            if (respuesta.op3 != 0){
-                htmlToPrint = htmlToPrint + "<div class='" + respuesta.op3 +"' style='margin:3px;'></div>";
-            } else {
-                htmlToPrint = htmlToPrint + "<div style='border-color:red; margin:3px;'></div>";
-            }
-            if (respuesta.op4 != 0){
-                htmlToPrint = htmlToPrint + "<div class='" + respuesta.op4 +"' style='margin:3px;'></div>";
-            } else {
-                htmlToPrint = htmlToPrint + "<div style='border-color:red; margin:3px;'></div>";
-            }
-            $('#resultats').html(htmlToPrint + "</div>");
             
             if (respuesta.op1 !=0 && respuesta.op2 !=0 && respuesta.op3 !=0 && respuesta.op4 !=0){
                 $('#check_password').hide();
