@@ -1,0 +1,28 @@
+<resources>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="pref_header_general">General</string>
+    <string name="text01">Favorite #1</string>
+    <string name="text02">Favorite #2</string>
+    <string name="text03">Favorite #3</string>
+    <string name="text04">Favorite #4</string>
+    <string name="text05">Favorite #5</string>
+    <string name="text06">Favorite #6</string>
+    <string name="text07">Favorite #7</string>
+    <string name="text08">Favorite #8</string>
+    <string name="text09">Favorite #9</string>
+    <string name="text10">Favorite #10</string>
+
+    <string name="url01">URL #1</string>
+    <string name="url02">URL #2</string>
+    <string name="url03">URL #3</string>
+    <string name="url04">URL #4</string>
+    <string name="url05">URL #5</string>
+    <string name="url06">URL #6</string>
+    <string name="url07">URL #7</string>
+    <string name="url08">URL #8</string>
+    <string name="url09">URL #9</string>
+    <string name="url10">URL #10</string>
+
+</resources>
