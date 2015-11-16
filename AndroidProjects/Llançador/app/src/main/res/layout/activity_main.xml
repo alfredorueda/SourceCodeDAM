@@ -18,13 +18,13 @@
             android:id="@+id/btn01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Obrir Navegador" />
+            android:text="Abrir Navegador" />
 
         <Button
             android:id="@+id/btn02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Obrir Cámera" />
+            android:text="Abrir Camara" />
 
         <Button
             android:id="@+id/btn03"
@@ -36,43 +36,43 @@
             android:id="@+id/btn04"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="STUCOM al Mapa" />
+            android:text="STUCOM en el Mapa" />
 
         <Button
             android:id="@+id/btn05"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SMS to 666" />
+            android:text="SMS al 666" />
 
         <Button
             android:id="@+id/btn06"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/undefined" />
+            android:text="Enviar email" />
 
         <Button
             android:id="@+id/btn07"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/undefined" />
+            android:text="Abrir calculadora" />
 
         <Button
             android:id="@+id/btn08"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/undefined" />
+            android:text="Abrir calendario" />
 
         <Button
             android:id="@+id/btn09"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/undefined" />
+            android:text="Abrir ajustes" />
 
         <Button
             android:id="@+id/btn10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/undefined" />
+            android:text="Mostrar los contactos" />
 
     </LinearLayout>
 
