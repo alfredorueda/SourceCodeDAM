@@ -12,6 +12,57 @@ $(document).ready(iniciar);
 function iniciar(){
     $('#set_password').click(enviarAjaxJSON);
     $('#check_password').click(checkPassword);
+    
+    
+    
+    $('#backWhite').hide();
+    $('#showInfo').click(function(){
+        $('#backWhite').fadeIn();
+        
+        $('#backWhite').css({
+            'display'         : 'block',
+            'position'        : 'fixed',
+            'background-color': 'white',
+            'opacity'         : 0.7,
+            'width'           : '100%',
+            'height'          : '100%',
+            'z-index'         : '100',
+            'top'             : 0,
+            'left'            : 0
+        });
+        
+        $('#getInfo').css({
+            'position': 'absolute',
+            'width'   : '200px',
+            'height'  : '120px',
+            'left'    : 0
+        });
+        
+        $('#getInfo').animate({
+            'margin-top':'90px',
+            'margin-left': '100px'
+        },{
+            'duration' : 1500
+        });
+    });
+    
+    
+    $('#getInfo').click(function(){
+        $.ajax({
+        type    : "POST",
+        url     : "checkMastermind.php",
+        dataType: "json",
+        data    : {
+                    op : 'getInfo'
+                },
+        success : function(respuesta){
+                $('#info').append("<p>"+ respuesta.nombre + "</p>");
+                $('#info').append("<p>"+ respuesta.email + "</p>");
+            }
+        });
+    });    
+    
+    
     $('#start').click(function(){
         $('#find_password').hide();
         $(this).hide();
