@@ -1,0 +1,8 @@
+{
+    "name": "Phonegap",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "Xavi",
+    "contributors": [],
+    "dependencies": {}
+}

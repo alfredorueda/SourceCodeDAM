@@ -2,14 +2,13 @@
   "project": {
     "projectSettingsVersion": "2.0.0",
     "creationData": {
-      "type": "App Designer",
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
-      "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
-      "projectGuid": "8b83caac-d193-4d80-b1ff-bc11be388a95",
-      "lastModifiedDate": 1447266001004,
-      "creationDate": 1447265943937
+      "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
+      "projectGuid": "9c9255f4-1774-487e-aac2-685e22c38906",
+      "lastModifiedDate": 1448051599489,
+      "creationDate": 1448050426935
     },
-    "XDK-app-designer": "true",
+    "XDK-app-designer": "false",
     "sourceDirectory": "www",
     "startFile": "index.html",
     "projectFiles": {},
@@ -82,8 +81,8 @@
           "android-installLocation": "auto"
         },
         "isActive_": true,
-        "appName_": "Calculadora",
-        "appID_": "xdk.intel.blank.ad.template.crosswalk",
+        "appName_": "Practica04_IntelXDK",
+        "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
           "mode": "legacy",
           "network": [
@@ -99,8 +98,8 @@
         "cordovaCLIVersion_": "5.1.1",
         "crosswalkVersion_": "15",
         "appVersion_": "0.0.1",
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser.",
         "appAuthor_": "Intel XDK",
-        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor.",
         "appVersionCode_": "1"
       },
       "Android": {
@@ -113,8 +112,8 @@
           "android-installLocation": "auto"
         },
         "isActive_": true,
-        "appName_": "Calculadora",
-        "appID_": "xdk.intel.blank.ad.template",
+        "appName_": "Practica04_IntelXDK",
+        "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
           "mode": "legacy",
           "network": [
@@ -130,8 +129,8 @@
         "cordovaCLIVersion_": "5.1.1",
         "crosswalkVersion_": "14",
         "appVersion_": "0.0.1",
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser.",
         "appAuthor_": "Intel XDK",
-        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor.",
         "appVersionCode_": "1"
       },
       "iOS": {
@@ -143,8 +142,8 @@
           "ios-configuration": "adhoc"
         },
         "isActive_": true,
-        "appName_": "Calculadora",
-        "appID_": "xdk.intel.blank.ad.template",
+        "appName_": "Practica04_IntelXDK",
+        "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
           "mode": "legacy",
           "network": [
@@ -159,10 +158,10 @@
         "excludedLibraries_": "",
         "iosProvs_": [],
         "cordovaCLIVersion_": "5.1.1",
+        "appAuthor_": "Intel XDK",
         "crosswalkVersion_": "14",
         "appVersion_": "0.0.1",
-        "appAuthor_": "Intel XDK",
-        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor."
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
       },
       "Windows8": {
         "platform_": "windows8",
@@ -173,8 +172,8 @@
           "windows-publisher-id": ""
         },
         "isActive_": true,
-        "appName_": "Calculadora",
-        "appID_": "xdk.intel.blank.ad.template",
+        "appName_": "Practica04_IntelXDK",
+        "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
           "mode": "legacy",
           "network": [
@@ -189,9 +188,9 @@
         "excludedLibraries_": "",
         "cordovaCLIVersion_": "5.1.1",
         "crosswalkVersion_": "14",
-        "appVersion_": "0.0.0.1",
         "appAuthor_": "Intel XDK",
-        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor."
+        "appVersion_": "0.0.0.1",
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
       },
       "WebApp": {
         "platform_": "webapp",
@@ -199,7 +198,7 @@
         "name_": "WebApp",
         "preferences_": {},
         "isActive_": false,
-        "appName_": "Calculadora",
+        "appName_": "Practica04_IntelXDK",
         "appID_": "not.yet.specified",
         "appAccess_": {
           "mode": "legacy",
@@ -214,7 +213,8 @@
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "appAuthor_": "Intel XDK",
-        "appVersion_": "0.0.1"
+        "appVersion_": "0.0.1",
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
       },
       "Chrome": {
         "platform_": "chromeos",
@@ -222,7 +222,7 @@
         "name_": "Chrome",
         "preferences_": {},
         "isActive_": false,
-        "appName_": "Calculadora",
+        "appName_": "Practica04_IntelXDK",
         "appID_": "not.yet.specified",
         "appAccess_": {
           "mode": "legacy",
@@ -237,7 +237,8 @@
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "appAuthor_": "Intel XDK",
-        "appVersion_": "0.0.1"
+        "appVersion_": "0.0.1",
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
       },
       "Firefox": {
         "platform_": "firefoxos",
@@ -245,7 +246,7 @@
         "name_": "Firefox",
         "preferences_": {},
         "isActive_": false,
-        "appName_": "Calculadora",
+        "appName_": "Practica04_IntelXDK",
         "appID_": "not.yet.specified",
         "appAccess_": {
           "mode": "legacy",
@@ -260,7 +261,8 @@
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "appAuthor_": "Intel XDK",
-        "appVersion_": "0.0.1"
+        "appVersion_": "0.0.1",
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
       },
       "Facebook": {
         "platform_": "facebook",
@@ -268,7 +270,7 @@
         "name_": "Facebook",
         "preferences_": {},
         "isActive_": false,
-        "appName_": "Calculadora",
+        "appName_": "Practica04_IntelXDK",
         "appID_": "not.yet.specified",
         "appAccess_": {
           "mode": "legacy",
@@ -283,7 +285,8 @@
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "appAuthor_": "Intel XDK",
-        "appVersion_": "0.0.1"
+        "appVersion_": "0.0.1",
+        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
       },
       "WP81": {
         "platform_": "wp81",
@@ -291,13 +294,11 @@
         "name_": "WP81",
         "preferences_": {},
         "isActive_": true,
-        "appName_": "Calculadora",
+        "appName_": "Practica04_IntelXDK",
         "appID_": "not.yet.specified",
         "appAccess_": {
           "mode": "legacy",
-          "network": [
-            "*"
-          ],
+          "network": [],
           "intents": [],
           "navigation": []
         },
