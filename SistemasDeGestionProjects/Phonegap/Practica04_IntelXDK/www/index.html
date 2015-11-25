@@ -16,16 +16,19 @@
         @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
     </style>
     
-    <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
-
     <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
     <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
     <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+    <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
 </head>
 
 <body>
     
-    <div id="botonClick">CLICK ME!</div>
+    <input id="inputText" type="text">
+    <button id="button">Click me!</button><br/>
+    <div id="contenido"></div>
+    <br/>
+    
 
 </body>
 </html>

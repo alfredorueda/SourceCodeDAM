@@ -33,12 +33,16 @@ function onAppReady() {
     if( navigator.splashscreen && navigator.splashscreen.hide ) {   // Cordova API detected
         navigator.splashscreen.hide() ;
     }
+    
+    $('#button').click(function(){
+        $('#contenido').html($('#inputText').val());
+    });
+    
+    
 }
+
 document.addEventListener("app.Ready", onAppReady, false) ;
 
-function hola(){
-    alert("Hola");
-}
 // document.addEventListener("deviceready", onAppReady, false) ;
 // document.addEventListener("onload", onAppReady, false) ;
 

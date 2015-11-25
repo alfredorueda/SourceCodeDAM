@@ -239,7 +239,6 @@ dev.initDeviceReady = function() {
     dev.consoleLog(fName, "navigator.userAgent:", navigator.userAgent) ;
 
     dev.consoleLog(fName, "exit") ;
-    $("#botonClick").click(hola)
 } ;
 
 
