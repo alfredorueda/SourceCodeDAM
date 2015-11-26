@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "jHipsterLigaBaloncesto",
+    "packageName": "com.xmollv",
+    "packageFolder": "com/xmollv",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "696464111f8e2c6a13a3b60c98f08e47538b5e41",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}
