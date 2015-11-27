@@ -20,6 +20,35 @@
     <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
     <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
     <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
+    <style>
+        .numbers {
+            display: inline;
+            margin: 10px;
+            padding: 5px;
+            background-color: lightgray;
+        }
+        
+        .operands {
+            display: inline;
+            margin: 10px;
+            padding: 5px;
+            background-color: lightgray;
+        }
+        
+        table {
+            border: 1px solid black; 
+            width: 100%; 
+        }
+        
+        tr {
+            border: 1px solid black; 
+        }
+        
+        td {
+            border: 1px solid black; 
+        }
+        
+    </style>
 </head>
 
 <body>
@@ -28,6 +57,35 @@
     <button id="button">Click me!</button><br/>
     <div id="contenido"></div>
     <br/>
+    <br/>
+    
+    <div class="numeros"><input id="primerNumero"/></div>
+    <div class="numeros"><input id="segundoNumero"/></div><br/>
+    <div class="operands" id="sumar">+</div>
+    <div class="operands" id="restar">-</div>
+    <div class="operands" id="multiplicar">*</div>
+    <div class="operands" id="dividir">/</div><br/><br/>
+    <div id=resultatCalculadora></div><br/><br/>
+    
+    <table>
+        <tr>
+            <td class="horariEditable">9:00-10:00</td>
+            <td class="horariEditable">Programació</td>
+            <td class="horariEditable">Sistemes de Gestió</td>
+        </tr>
+        <tr>
+            <td class="horariEditable">10:00-11:00</td>
+            <td class="horariEditable">Android</td>
+            <td class="horariEditable">iOS</td>
+        </tr>
+        <tr>
+            <td class="horariEditable">11:00-12:00</td>
+            <td class="horariEditable">Spring</td>
+            <td class="horariEditable">Spring</td>
+        </tr>
+    </table>
+    
+    
     
 
 </body>

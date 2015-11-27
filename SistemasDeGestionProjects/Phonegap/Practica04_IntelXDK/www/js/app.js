@@ -38,6 +38,18 @@ function onAppReady() {
         $('#contenido').html($('#inputText').val());
     });
     
+    $('.operands').click(function(){
+        primerNumero = $('#primerNumero').val();
+        segundoNumero = $('#segundoNumero').val();
+        resultat = eval(primerNumero + $(this).text() + segundoNumero);
+        $('#resultatCalculadora').html("Resultat: " + resultat);
+    });
+    
+    $('.horariEditable').click(function(){
+        var text = prompt("Introduce el texto:");
+        $(this).html(text);
+    });
+    
     
 }
 
