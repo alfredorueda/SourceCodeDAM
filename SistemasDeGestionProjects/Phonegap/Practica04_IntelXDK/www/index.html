@@ -48,25 +48,41 @@
             border: 1px solid black; 
         }
         
+        .resultatCalculadora {
+            border: 1px solid black;
+            width: 100%;
+        } 
+        
     </style>
 </head>
 
 <body>
-    
+    <h4>Eco</h4>
     <input id="inputText" type="text">
     <button id="button">Click me!</button><br/>
     <div id="contenido"></div>
     <br/>
     <br/>
     
-    <div class="numeros"><input id="primerNumero"/></div>
-    <div class="numeros"><input id="segundoNumero"/></div><br/>
-    <div class="operands" id="sumar">+</div>
-    <div class="operands" id="restar">-</div>
-    <div class="operands" id="multiplicar">*</div>
-    <div class="operands" id="dividir">/</div><br/><br/>
+    <h4>Calculadora:</h4>
+    <div class="numbers">7</div>
+    <div class="numbers">8</div>
+    <div class="numbers">9</div><br/><br/>
+    <div class="numbers">4</div>
+    <div class="numbers">5</div>
+    <div class="numbers">6</div><br/><br/>
+    <div class="numbers">1</div>
+    <div class="numbers">2</div>
+    <div class="numbers">3</div><br/><br/>
+    <div class="numbers">+</div>
+    <div class="numbers">-</div>
+    <div class="numbers">*</div>
+    <div class="numbers">/</div>
+    <div class="operands" id="calcularResultat">=</div><br/><br/>
+    
     <div id=resultatCalculadora></div><br/><br/>
     
+    <h4>Horario:</h4>
     <table>
         <tr>
             <td class="horariEditable">9:00-10:00</td>
@@ -85,8 +101,17 @@
         </tr>
     </table>
     
+    <h4>Lista de tareas:</h4>
+    <ul id="taskList">
+        <li class="taskElement">Primera tarea</li>
+    </ul>
+    <button value="add" id="addTask">Añadir tarea</button>
     
     
+    <h4>Cuenta atrás:</h4>
+    <input id="numeroUsuario"/><button id="startCountdown">Cuenta atrás</button><div id="resultadoCountdown"></div>
+    
+    <br/><br/><br/><br/>
 
 </body>
 </html>

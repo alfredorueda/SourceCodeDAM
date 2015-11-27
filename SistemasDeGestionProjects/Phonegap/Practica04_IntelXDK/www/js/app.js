@@ -34,20 +34,60 @@ function onAppReady() {
         navigator.splashscreen.hide() ;
     }
     
+    //Exercici 1
     $('#button').click(function(){
         $('#contenido').html($('#inputText').val());
     });
-    
-    $('.operands').click(function(){
-        primerNumero = $('#primerNumero').val();
-        segundoNumero = $('#segundoNumero').val();
-        resultat = eval(primerNumero + $(this).text() + segundoNumero);
-        $('#resultatCalculadora').html("Resultat: " + resultat);
+
+    //Exercici 2
+    $('.numbers').click(function(){
+       $('#resultatCalculadora').append($(this).text());
     });
     
+    $('#calcularResultat').click(function(){
+        $('#resultatCalculadora').html(eval($('#resultatCalculadora').text()));
+    });
+    
+    //Exercici 3
     $('.horariEditable').click(function(){
         var text = prompt("Introduce el texto:");
         $(this).html(text);
+    });
+    
+    //Exercici 4
+    $('#addTask').click(function(){
+        textoTarea = prompt("Escribe una breve descripción de la tarea:");
+        $('#taskList').append("<li class='taskElement'>" + textoTarea + "</li>");
+    });
+    
+    //FIX-ME. Solo elimina la primera tarea, es como si al añadir una tarea, ese elemento no tenga ningún evento.
+    $('.taskElement').click(function(){
+        respuesta = prompt("¿Eliminar la tarea?(Si/No)");
+        if (respuesta === "Si") {
+            $(this).remove();
+        }
+    });
+    
+    //Exercici 5
+    
+    $('#startCountdown').click(function(){
+        $('#resultadoCountdown').css({"color":"black"});
+        if ($('#numeroUsuario').val() > 0) {
+            //Start countdown
+            counter = $('#numeroUsuario').val();
+            id = setInterval(function() {
+                counter--;
+                if(counter <= 10) {
+                    $('#resultadoCountdown').css({"color":"red"});
+                    if (counter <=0) {
+                        clearInterval(id);
+                    }
+                }
+                $('#resultadoCountdown').html(counter);
+            }, 1000);
+        } else {
+            alert("El número ha de ser mayor a 10");
+        }
     });
     
     
