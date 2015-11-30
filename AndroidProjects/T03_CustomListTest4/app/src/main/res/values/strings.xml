@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CustomListTest4</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_item_delete">Delete</string>
+    <string name="action_item_edit">Edit</string>
+    <string name="click_in_position">Click in position %1$d</string>
+    <string name="editing">Editing </string>
+    <string name="removing">Removing </string>
+    <string name="configuring">Configuring</string>
+
+</resources>

@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">T03_Tests</string>
+    <string name="title1">ArrayAdapter per codi</string>
+    <string name="title2">ArrayAdapter per XML</string>
+    <string name="title3">ArrayAdapter amb layout</string>
+    <string name="title4">SimpleCursorAdapter</string>
+
+    <string-array name="items">
+        <item>Centre</item>
+        <item>Estudis</item>
+        <item>Stucom</item>
+        <item>DAM</item>
+        <item>M08</item>
+        <item>Programació multimèdia i mòbils</item>
+        <item>Centre</item>
+        <item>Estudis</item>
+        <item>Stucom</item>
+        <item>DAM</item>
+        <item>M08</item>
+        <item>Programació multimèdia i mòbils</item>
+        <item>Centre</item>
+        <item>Estudis</item>
+        <item>Stucom</item>
+        <item>DAM</item>
+        <item>M08</item>
+        <item>Programació multimèdia i mòbils</item>
+        <item>Centre</item>
+        <item>Estudis</item>
+        <item>Stucom</item>
+        <item>DAM</item>
+        <item>M08</item>
+        <item>Programació multimèdia i mòbils</item>
+        <item>Centre</item>
+        <item>Estudis</item>
+        <item>Stucom</item>
+        <item>DAM</item>
+        <item>M08</item>
+        <item>Programació multimèdia i mòbils</item>
+    </string-array>
+
+    <string-array name="materies_nom">
+        <item>M03 Programació bàsica II</item>
+        <item>M05 Entorns de desenv.</item>
+        <item>M06 Accès a dades</item>
+        <item>M07 Disseny d\'interfícies</item>
+        <item>M08 Prog. multimèdia i mòbil</item>
+        <item>M09 Prog. de serveis i processos</item>
+        <item>M10 Sist. de gestió empresarial</item>
+        <item>M13 Projecte</item>
+        <item>M15 Anglès</item>
+    </string-array>
+
+    <string-array name="materies_profes">
+        <item>Alfredo i Francesc</item>
+        <item>Diana</item>
+        <item>Alfredo</item>
+        <item>Diana i Angela</item>
+        <item>Fèlix</item>
+        <item>Dani</item>
+        <item>Cristian</item>
+        <item>Dani i Alfredo</item>
+        <item>Noelia i Juanjo</item>
+    </string-array>
+</resources>
