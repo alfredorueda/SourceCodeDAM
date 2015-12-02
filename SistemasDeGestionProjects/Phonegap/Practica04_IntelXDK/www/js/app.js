@@ -42,6 +42,7 @@ function onAppReady() {
     //Exercici 2
     $('.numbers').click(function(){
        $('#resultatCalculadora').append($(this).text());
+       navigator.notification.vibrate(500);
     });
     
     $('#calcularResultat').click(function(){
@@ -57,13 +58,19 @@ function onAppReady() {
     //Exercici 4
     $('#addTask').click(function(){
         textoTarea = prompt("Escribe una breve descripción de la tarea:");
-        $('#taskList').append("<li class='taskElement'>" + textoTarea + "</li>");
+        var el = $("<li class='taskElement'>" + textoTarea + "</li>");
+        el.click(function(){
+            respuesta = prompt("¿Eliminar la tarea?(Si/No)");
+            if (respuesta === "Si" || respuesta === "si") {
+                $(this).remove();
+            }
+        });
+        $('#taskList').append(el);
     });
     
-    //FIX-ME. Solo elimina la primera tarea, es como si al añadir una tarea, ese elemento no tenga ningún evento.
     $('.taskElement').click(function(){
         respuesta = prompt("¿Eliminar la tarea?(Si/No)");
-        if (respuesta === "Si") {
+        if (respuesta === "Si" || respuesta === "si") {
             $(this).remove();
         }
     });
@@ -79,8 +86,11 @@ function onAppReady() {
                 counter--;
                 if(counter <= 10) {
                     $('#resultadoCountdown').css({"color":"red"});
+                    navigator.notification.beep(1);
                     if (counter <=0) {
                         clearInterval(id);
+                        navigator.notification.vibrate(500);
+                        navigator.notification.beep(5);
                     }
                 }
                 $('#resultadoCountdown').html(counter);
