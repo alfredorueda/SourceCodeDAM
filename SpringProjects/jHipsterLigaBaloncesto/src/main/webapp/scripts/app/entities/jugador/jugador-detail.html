@@ -1,0 +1,86 @@
+
+<div>
+    <h2><span translate="jHipsterLigaBaloncestoApp.jugador.detail.title">Jugador</span> {{jugador.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="jHipsterLigaBaloncestoApp.jugador.nombre">Nombre</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{jugador.nombre}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jHipsterLigaBaloncestoApp.jugador.fechaNacimiento">FechaNacimiento</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{jugador.fechaNacimiento | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jHipsterLigaBaloncestoApp.jugador.canastasTotales">CanastasTotales</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{jugador.canastasTotales}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jHipsterLigaBaloncestoApp.jugador.asistenciasTotales">AsistenciasTotales</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{jugador.asistenciasTotales}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jHipsterLigaBaloncestoApp.jugador.rebotesTotales">RebotesTotales</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{jugador.rebotesTotales}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jHipsterLigaBaloncestoApp.jugador.posicionCampo">PosicionCampo</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{jugador.posicionCampo}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jHipsterLigaBaloncestoApp.jugador.captain">captain</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="equipo.detail({id:jugador.captain.id})">{{jugador.captain.nombre}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jHipsterLigaBaloncestoApp.jugador.equipoRelacion">equipoRelacion</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="equipo.detail({id:jugador.equipoRelacion.id})">{{jugador.equipoRelacion.nombre}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

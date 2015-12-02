@@ -1,0 +1,39 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "jugador",
+            "otherEntityName": "jugador",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "captain"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "jugadorRelacion",
+            "otherEntityName": "jugador",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "equipoRelacion"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "localidad",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "fechaCreacion",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20151202155044",
+    "dto": "no",
+    "pagination": "pagination"
+}
