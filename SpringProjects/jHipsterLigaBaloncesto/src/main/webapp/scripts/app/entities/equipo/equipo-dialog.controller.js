@@ -1,11 +1,30 @@
 'use strict';
 
 angular.module('jHipsterLigaBaloncestoApp').controller('EquipoDialogController',
-    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Equipo', 'Jugador',
-        function($scope, $stateParams, $modalInstance, entity, Equipo, Jugador) {
+    ['$scope', '$stateParams', '$modalInstance', '$q', 'entity', 'Equipo', 'Jugador', 'Socio', 'Entrenador', 'Estadio',
+        function($scope, $stateParams, $modalInstance, $q, entity, Equipo, Jugador, Socio, Entrenador, Estadio) {
 
         $scope.equipo = entity;
         $scope.jugadors = Jugador.query();
+        $scope.socios = Socio.query();
+        $scope.entrenadors = Entrenador.query({filter: 'equipo-is-null'});
+        $q.all([$scope.equipo.$promise, $scope.entrenadors.$promise]).then(function() {
+            if (!$scope.equipo.entrenador || !$scope.equipo.entrenador.id) {
+                return $q.reject();
+            }
+            return Entrenador.get({id : $scope.equipo.entrenador.id}).$promise;
+        }).then(function(entrenador) {
+            $scope.entrenadors.push(entrenador);
+        });
+        $scope.estadios = Estadio.query({filter: 'equipo-is-null'});
+        $q.all([$scope.equipo.$promise, $scope.estadios.$promise]).then(function() {
+            if (!$scope.equipo.estadio || !$scope.equipo.estadio.id) {
+                return $q.reject();
+            }
+            return Estadio.get({id : $scope.equipo.estadio.id}).$promise;
+        }).then(function(estadio) {
+            $scope.estadios.push(estadio);
+        });
         $scope.load = function(id) {
             Equipo.get({id : id}, function(result) {
                 $scope.equipo = result;

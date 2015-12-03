@@ -32,6 +32,22 @@
                      />
         </div>
 
+        <div class="form-group">
+            <label translate="jHipsterLigaBaloncestoApp.equipo.socio" for="field_socio">socio</label>
+            <select class="form-control" id="field_socio" multiple name="socio" ng-model="equipo.socios" ng-options="socio as socio.nombre for socio in socios track by socio.id"></select>
+        </div>
+        <div class="form-group">
+            <label translate="jHipsterLigaBaloncestoApp.equipo.entrenador" for="field_entrenador">entrenador</label>
+            <select class="form-control" id="field_entrenador" name="entrenador" ng-model="equipo.entrenador" ng-options="entrenador as entrenador.nombre for entrenador in entrenadors | orderBy:'id' track by entrenador.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="jHipsterLigaBaloncestoApp.equipo.estadio" for="field_estadio">estadio</label>
+            <select class="form-control" id="field_estadio" name="estadio" ng-model="equipo.estadio" ng-options="estadio as estadio.nombre for estadio in estadios | orderBy:'id' track by estadio.id">
+                <option value=""></option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">

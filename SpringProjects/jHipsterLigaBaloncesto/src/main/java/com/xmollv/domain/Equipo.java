@@ -41,6 +41,17 @@ public class Equipo implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Jugador> jugadorRelacions = new HashSet<>();
 
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "equipo_socio",
+               joinColumns = @JoinColumn(name="equipos_id", referencedColumnName="ID"),
+               inverseJoinColumns = @JoinColumn(name="socios_id", referencedColumnName="ID"))
+    private Set<Socio> socios = new HashSet<>();
+
+    @OneToOne    private Entrenador entrenador;
+
+    @OneToOne    private Estadio estadio;
+
     public Long getId() {
         return id;
     }
@@ -87,6 +98,30 @@ public class Equipo implements Serializable {
 
     public void setJugadorRelacions(Set<Jugador> jugadors) {
         this.jugadorRelacions = jugadors;
+    }
+
+    public Set<Socio> getSocios() {
+        return socios;
+    }
+
+    public void setSocios(Set<Socio> socios) {
+        this.socios = socios;
+    }
+
+    public Entrenador getEntrenador() {
+        return entrenador;
+    }
+
+    public void setEntrenador(Entrenador entrenador) {
+        this.entrenador = entrenador;
+    }
+
+    public Estadio getEstadio() {
+        return estadio;
+    }
+
+    public void setEstadio(Estadio estadio) {
+        this.estadio = estadio;
     }
 
     @Override

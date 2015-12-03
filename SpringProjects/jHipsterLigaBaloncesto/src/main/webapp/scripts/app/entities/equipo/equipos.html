@@ -19,6 +19,8 @@
                     <th translate="jHipsterLigaBaloncestoApp.equipo.nombre">Nombre</th>
                     <th translate="jHipsterLigaBaloncestoApp.equipo.localidad">Localidad</th>
                     <th translate="jHipsterLigaBaloncestoApp.equipo.fechaCreacion">FechaCreacion</th>
+                    <th translate="jHipsterLigaBaloncestoApp.equipo.entrenador">entrenador</th>
+                    <th translate="jHipsterLigaBaloncestoApp.equipo.estadio">estadio</th>
                     <th></th>
                 </tr>
             </thead>
@@ -28,6 +30,12 @@
                     <td>{{equipo.nombre}}</td>
                     <td>{{equipo.localidad}}</td>
                         <td>{{equipo.fechaCreacion | date:'mediumDate'}}</td>
+                    <td>
+                        <a ui-sref="entrenador.detail({id:equipo.entrenador.id})">{{equipo.entrenador.nombre}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="estadio.detail({id:equipo.estadio.id})">{{equipo.estadio.nombre}}</a>
+                    </td>
                     <td>
                         <button type="submit"
                                 ui-sref="equipo.detail({id:equipo.id})"

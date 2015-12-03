@@ -19,7 +19,10 @@
             "localidad": "Localidad",
             "fechaCreacion": "FechaCreacion",
             "jugador": "Jugador",
-            "jugadorRelacion": "JugadorRelacion"
+            "jugadorRelacion": "JugadorRelacion",
+            "socio": "Socio",
+            "entrenador": "Entrenador",
+            "estadio": "Estadio"
         }
     }
 }

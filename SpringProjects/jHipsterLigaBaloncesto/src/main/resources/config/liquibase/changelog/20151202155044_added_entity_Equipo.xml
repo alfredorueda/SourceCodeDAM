@@ -24,7 +24,48 @@
             <column name="nombre" type="varchar(255)"/>
             <column name="localidad" type="varchar(255)"/>
             <column name="fecha_creacion" type="date"/>
+            <column name="entrenador_id" type="bigint">
+                <constraints unique="true"/>
+            </column>
+            <column name="estadio_id" type="bigint">
+                <constraints unique="true"/>
+            </column>
         </createTable>
         
+        <createTable tableName="equipo_socio">
+            <column name="socios_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="equipos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="equipos_id, socios_id" tableName="equipo_socio"/>
+
+        <addForeignKeyConstraint baseColumnNames="equipos_id"
+                                 baseTableName="equipo_socio"
+                                 constraintName="fk_equipo_socio_socio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="equipo"/>
+
+        <addForeignKeyConstraint baseColumnNames="socios_id"
+                                 baseTableName="equipo_socio"
+                                 constraintName="fk_socio_socio_equipo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="socio"/>
+        
+        <addForeignKeyConstraint baseColumnNames="entrenador_id"
+                                 baseTableName="equipo"
+                                 constraintName="fk_equipo_entrenador_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="entrenador"/>
+
+        <addForeignKeyConstraint baseColumnNames="estadio_id"
+                                 baseTableName="equipo"
+                                 constraintName="fk_equipo_estadio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="estadio"/>
+
     </changeSet>
 </databaseChangeLog>

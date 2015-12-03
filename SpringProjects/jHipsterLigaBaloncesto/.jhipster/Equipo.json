@@ -14,6 +14,32 @@
             "otherEntityName": "jugador",
             "relationshipType": "one-to-many",
             "otherEntityRelationshipName": "equipoRelacion"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "socio",
+            "otherEntityName": "socio",
+            "relationshipType": "many-to-many",
+            "ownerSide":true,
+            "otherEntityField":"nombre"
+        },
+        {
+            "relationshipId": 4,
+            "relationshipName": "entrenador",
+            "otherEntityName": "entrenador",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "nombre",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "equipo"
+        },
+        {
+            "relationshipId": 5,
+            "relationshipName": "estadio",
+            "otherEntityName": "estadio",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "nombre",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "equipo"
         }
     ],
     "fields": [

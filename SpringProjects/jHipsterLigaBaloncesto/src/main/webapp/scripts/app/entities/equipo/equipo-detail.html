@@ -34,6 +34,32 @@
                     <span class="form-control-static">{{equipo.fechaCreacion | date:'mediumDate'}}</span>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <span translate="jHipsterLigaBaloncestoApp.equipo.socio">socio</span>
+                </td>
+                <td>
+                    <span ng-repeat="socio in equipo.socios">
+                        <a class="form-control-static" ui-sref="socio.detail({id: {{socio.id}}})">{{socio.nombre}}</a>{{$last ? '' : ', '}}
+                    <span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jHipsterLigaBaloncestoApp.equipo.entrenador">entrenador</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="entrenador.detail({id:equipo.entrenador.id})">{{equipo.entrenador.nombre}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="jHipsterLigaBaloncestoApp.equipo.estadio">estadio</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="estadio.detail({id:equipo.estadio.id})">{{equipo.estadio.nombre}}</a>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

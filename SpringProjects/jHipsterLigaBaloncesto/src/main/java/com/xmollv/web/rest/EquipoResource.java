@@ -102,7 +102,7 @@ public class EquipoResource {
     @Timed
     public ResponseEntity<Equipo> getEquipo(@PathVariable Long id) {
         log.debug("REST request to get Equipo : {}", id);
-        return Optional.ofNullable(equipoRepository.findOne(id))
+        return Optional.ofNullable(equipoRepository.findOneWithEagerRelationships(id))
             .map(equipo -> new ResponseEntity<>(
                 equipo,
                 HttpStatus.OK))
