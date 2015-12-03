@@ -1,0 +1,25 @@
+{
+    "jHipsterLigaBaloncestoApp": {
+        "estadisticas" : {
+            "home": {
+                "title": "Estadisticass",
+                "createLabel": "Créer un nouveau Estadisticas",
+                "createOrEditLabel": "Créer ou éditer un Estadisticas"
+            },
+            "created": "Un nouveau Estadisticas a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Estadisticas avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Estadisticas avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Estadisticas {{ id }} ?"
+            },
+            "detail": {
+                "title": "Estadisticas"
+            },
+            "canastas": "Canastas",
+            "faltas": "Faltas",
+            "jugador": "Jugador",
+            "partido": "Partido"
+        }
+    }
+}
+

@@ -10,5 +10,7 @@
     <include file="classpath:config/liquibase/changelog/20151202162303_added_entity_Estadio.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20151202155044_added_entity_Equipo.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20151202155826_added_entity_Jugador.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203183631_added_entity_Partido.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203182421_added_entity_Estadisticas.xml" relativeToChangelogFile="false"/>
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>
