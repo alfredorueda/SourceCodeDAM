@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "b770a80b-ea79-409e-a500-2942828a647c",
-      "lastModifiedDate": 1449261245750,
+      "lastModifiedDate": 1449686654955,
       "creationDate": 1449258628147
     },
     "XDK-app-designer": "false",
@@ -129,6 +129,81 @@
           ]
         },
         "description": "Cordova Camera Plugin",
+        "data": {},
+        "dependedBy": []
+      },
+      {
+        "id": "cordova-plugin-file",
+        "name": "File",
+        "version": "2.1.0",
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-file",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-file",
+        "selectedState": "Included",
+        "checksum": "a32414d6",
+        "dependsOn": [],
+        "topLevel": false,
+        "permissions": {
+          "android:name": [
+            "android.permission.WRITE_EXTERNAL_STORAGE"
+          ]
+        },
+        "description": "Cordova File Plugin",
+        "data": {},
+        "dependedBy": [
+          "cordova-plugin-media-capture",
+          "cordova-plugin-file-transfer"
+        ]
+      },
+      {
+        "id": "cordova-plugin-media-capture",
+        "name": "Capture",
+        "version": "1.0.1",
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-media-capture",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-media-capture",
+        "selectedState": "Included",
+        "checksum": "dd896f29",
+        "dependsOn": [
+          "cordova-plugin-file"
+        ],
+        "topLevel": true,
+        "permissions": {
+          "android:name": [
+            "android.permission.RECORD_AUDIO",
+            "android.permission.RECORD_VIDEO",
+            "android.permission.WRITE_EXTERNAL_STORAGE"
+          ]
+        },
+        "description": "Cordova Media Capture Plugin",
+        "data": {},
+        "dependedBy": []
+      },
+      {
+        "id": "cordova-plugin-file-transfer",
+        "name": "File Transfer",
+        "version": "1.3.0",
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-file-transfer",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-file-transfer",
+        "selectedState": "Included",
+        "checksum": "dceb8081",
+        "dependsOn": [
+          "cordova-plugin-file"
+        ],
+        "topLevel": true,
+        "permissions": {
+          "android:name": [
+            "android.permission.WRITE_EXTERNAL_STORAGE"
+          ]
+        },
+        "description": "Cordova File Transfer Plugin",
         "data": {},
         "dependedBy": []
       }

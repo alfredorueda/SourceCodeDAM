@@ -34,6 +34,8 @@ function onAppReady() {
         navigator.splashscreen.hide() ;
     }
     
+    cont = 0
+    
     //Ejercicio 1
     $('#buttonNotifications').click(function(){
         var numeroNotificaciones = prompt("Entra el número de sonidos que quieres reproducir");
@@ -59,30 +61,55 @@ function onAppReady() {
     });
     //Ejercicio 3
     //Crear un boton para lanzar esto
-    /*navigator.camera.getPicture(onSuccess, onFail, { quality : 75, 
+    
+    $('#mostraFoto').click(function(){
+        navigator.camera.getPicture(onSuccess, onFail, { quality : 75, 
         destinationType : Camera.DestinationType.DATA_URL, 
         sourceType : Camera.PictureSourceType.PHOTOLIBRARY, 
         allowEdit : true,
         encodingType: Camera.EncodingType.JPEG,
         targetWidth: 100,
         targetHeight: 100 
-    }); 
+        }); 
+    });
 
     function onSuccess(imageData) {
-        var image = document.getElementById('myImage');
-        image.src = "data:image/jpeg;base64," + imageData;
-        console.log(image.src)
+        rand = Math.floor((Math.random() * 1000) + 1);
+        rand2 = Math.floor((Math.random() * 1000) + 1);
+        $('#fotosMostrades').append('<img id="foto' + rand + rand2 + '" style="width:100px;height:100px;"/>');
+        $('#foto'+rand + rand2).attr("src", "data:image/jpeg;base64," + imageData);
     }
 
     function onFail(message) {
         alert('Failed because: ' + message);
-    }*/
+    }
     
     
     
     //Ejercicio 4
     
-    
+    $('#ferFoto').click(function(){
+        navigator.camera.getPicture(onSuccess2, onFail2, { quality : 75, 
+        destinationType : Camera.DestinationType.DATA_URL, 
+        sourceType : Camera.PictureSourceType.CAMERA, 
+        allowEdit : true,
+        encodingType: Camera.EncodingType.JPEG,
+        targetWidth: 100,
+        targetHeight: 100 
+        }); 
+    });
+
+    function onSuccess2(imageData) {
+        console.log("foto")
+        rand3 = Math.floor((Math.random() * 1000) + 1);
+        rand4 = Math.floor((Math.random() * 1000) + 1);
+        $('#fotosCapturades').append('<img id="foto' + rand3 + rand4 + '" style="width:100px;height:100px;"/>');
+        $('#foto'+rand3 + rand4).attr("src", "data:image/jpeg;base64," + imageData);
+    }
+
+    function onFail2(message) {
+        alert('Failed because: ' + message);
+    }
     
     //Ejercicio 5
     
