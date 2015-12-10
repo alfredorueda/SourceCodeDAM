@@ -40,6 +40,14 @@
             "otherEntityField": "nombre",
             "ownerSide": true,
             "otherEntityRelationshipName": "equipo"
+        },
+        {
+            "relationshipId": 6,
+            "relationshipName": "temporada",
+            "otherEntityName": "temporada",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "equipo"
         }
     ],
     "fields": [
