@@ -57,6 +57,16 @@ public class Equipo implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Temporada> temporadas = new HashSet<>();
 
+    @OneToMany(mappedBy = "equipoLocal")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Partido> partidoLocals = new HashSet<>();
+
+    @OneToMany(mappedBy = "equipoVisitante")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Partido> partidoVisitantes = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -135,6 +145,22 @@ public class Equipo implements Serializable {
 
     public void setTemporadas(Set<Temporada> temporadas) {
         this.temporadas = temporadas;
+    }
+
+    public Set<Partido> getPartidoLocals() {
+        return partidoLocals;
+    }
+
+    public void setPartidoLocals(Set<Partido> partidos) {
+        this.partidoLocals = partidos;
+    }
+
+    public Set<Partido> getPartidoVisitantes() {
+        return partidoVisitantes;
+    }
+
+    public void setPartidoVisitantes(Set<Partido> partidos) {
+        this.partidoVisitantes = partidos;
     }
 
     @Override

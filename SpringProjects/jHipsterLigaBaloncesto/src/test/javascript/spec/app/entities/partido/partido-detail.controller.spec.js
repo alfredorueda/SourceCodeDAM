@@ -1,44 +1,38 @@
 'use strict';
 
-describe('Equipo Detail Controller', function() {
+describe('Partido Detail Controller', function() {
     var $scope, $rootScope;
-    var MockEntity, MockEquipo, MockJugador, MockSocio, MockEntrenador, MockEstadio, MockTemporada, MockPartido;
+    var MockEntity, MockPartido, MockTemporada, MockArbitro, MockEquipo;
     var createController;
 
     beforeEach(inject(function($injector) {
         $rootScope = $injector.get('$rootScope');
         $scope = $rootScope.$new();
         MockEntity = jasmine.createSpy('MockEntity');
-        MockEquipo = jasmine.createSpy('MockEquipo');
-        MockJugador = jasmine.createSpy('MockJugador');
-        MockSocio = jasmine.createSpy('MockSocio');
-        MockEntrenador = jasmine.createSpy('MockEntrenador');
-        MockEstadio = jasmine.createSpy('MockEstadio');
-        MockTemporada = jasmine.createSpy('MockTemporada');
         MockPartido = jasmine.createSpy('MockPartido');
+        MockTemporada = jasmine.createSpy('MockTemporada');
+        MockArbitro = jasmine.createSpy('MockArbitro');
+        MockEquipo = jasmine.createSpy('MockEquipo');
         
 
         var locals = {
             '$scope': $scope,
             '$rootScope': $rootScope,
             'entity': MockEntity ,
-            'Equipo': MockEquipo,
-            'Jugador': MockJugador,
-            'Socio': MockSocio,
-            'Entrenador': MockEntrenador,
-            'Estadio': MockEstadio,
+            'Partido': MockPartido,
             'Temporada': MockTemporada,
-            'Partido': MockPartido
+            'Arbitro': MockArbitro,
+            'Equipo': MockEquipo
         };
         createController = function() {
-            $injector.get('$controller')("EquipoDetailController", locals);
+            $injector.get('$controller')("PartidoDetailController", locals);
         };
     }));
 
 
     describe('Root Scope Listening', function() {
         it('Unregisters root scope listener upon scope destruction', function() {
-            var eventType = 'jHipsterLigaBaloncestoApp:equipoUpdate';
+            var eventType = 'jHipsterLigaBaloncestoApp:partidoUpdate';
 
             createController();
             expect($rootScope.$$listenerCount[eventType]).toEqual(1);

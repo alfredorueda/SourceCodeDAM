@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('jHipsterLigaBaloncestoApp').controller('EquipoDialogController',
-    ['$scope', '$stateParams', '$modalInstance', '$q', 'entity', 'Equipo', 'Jugador', 'Socio', 'Entrenador', 'Estadio', 'Temporada',
-        function($scope, $stateParams, $modalInstance, $q, entity, Equipo, Jugador, Socio, Entrenador, Estadio, Temporada) {
+    ['$scope', '$stateParams', '$modalInstance', '$q', 'entity', 'Equipo', 'Jugador', 'Socio', 'Entrenador', 'Estadio', 'Temporada', 'Partido',
+        function($scope, $stateParams, $modalInstance, $q, entity, Equipo, Jugador, Socio, Entrenador, Estadio, Temporada, Partido) {
 
         $scope.equipo = entity;
         $scope.jugadors = Jugador.query();
@@ -26,6 +26,7 @@ angular.module('jHipsterLigaBaloncestoApp').controller('EquipoDialogController',
             $scope.estadios.push(estadio);
         });
         $scope.temporadas = Temporada.query();
+        $scope.partidos = Partido.query();
         $scope.load = function(id) {
             Equipo.get({id : id}, function(result) {
                 $scope.equipo = result;
