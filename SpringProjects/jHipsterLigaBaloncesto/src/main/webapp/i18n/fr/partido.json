@@ -19,7 +19,8 @@
             "temporada": "Temporada",
             "arbitro": "Arbitro",
             "equipoLocal": "EquipoLocal",
-            "equipoVisitante": "EquipoVisitante"
+            "equipoVisitante": "EquipoVisitante",
+            "estadisticas": "Estadisticas"
         }
     }
 }

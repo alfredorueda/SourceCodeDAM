@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('jHipsterLigaBaloncestoApp').controller('JugadorDialogController',
-    ['$scope', '$stateParams', '$modalInstance', '$q', 'entity', 'Jugador', 'Equipo',
-        function($scope, $stateParams, $modalInstance, $q, entity, Jugador, Equipo) {
+    ['$scope', '$stateParams', '$modalInstance', '$q', 'entity', 'Jugador', 'Equipo', 'Estadisticas',
+        function($scope, $stateParams, $modalInstance, $q, entity, Jugador, Equipo, Estadisticas) {
 
         $scope.jugador = entity;
         $scope.captains = Equipo.query({filter: 'jugador-is-null'});
@@ -15,6 +15,7 @@ angular.module('jHipsterLigaBaloncestoApp').controller('JugadorDialogController'
             $scope.captains.push(captain);
         });
         $scope.equipos = Equipo.query();
+        $scope.estadisticass = Estadisticas.query();
         $scope.load = function(id) {
             Jugador.get({id : id}, function(result) {
                 $scope.jugador = result;

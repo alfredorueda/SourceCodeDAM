@@ -1,13 +1,14 @@
 'use strict';
 
 angular.module('jHipsterLigaBaloncestoApp').controller('PartidoDialogController',
-    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Partido', 'Temporada', 'Arbitro', 'Equipo',
-        function($scope, $stateParams, $modalInstance, entity, Partido, Temporada, Arbitro, Equipo) {
+    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Partido', 'Temporada', 'Arbitro', 'Equipo', 'Estadisticas',
+        function($scope, $stateParams, $modalInstance, entity, Partido, Temporada, Arbitro, Equipo, Estadisticas) {
 
         $scope.partido = entity;
         $scope.temporadas = Temporada.query();
         $scope.arbitros = Arbitro.query();
         $scope.equipos = Equipo.query();
+        $scope.estadisticass = Estadisticas.query();
         $scope.load = function(id) {
             Partido.get({id : id}, function(result) {
                 $scope.partido = result;

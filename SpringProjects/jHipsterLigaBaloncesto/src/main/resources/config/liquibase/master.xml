@@ -14,5 +14,6 @@
     <include file="classpath:config/liquibase/changelog/20151210181458_added_entity_Temporada.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20151210181916_added_entity_Arbitro.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20151210183249_added_entity_Partido.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151210184042_added_entity_Estadisticas.xml" relativeToChangelogFile="false"/>
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

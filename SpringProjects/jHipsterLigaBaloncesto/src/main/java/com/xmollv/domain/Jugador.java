@@ -1,5 +1,6 @@
 package com.xmollv.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import java.time.LocalDate;
@@ -45,6 +46,11 @@ public class Jugador implements Serializable {
     @ManyToOne
     @JoinColumn(name = "equipo_relacion_id")
     private Equipo equipoRelacion;
+
+    @OneToMany(mappedBy = "jugador")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Estadisticas> estadisticass = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -116,6 +122,14 @@ public class Jugador implements Serializable {
 
     public void setEquipoRelacion(Equipo equipo) {
         this.equipoRelacion = equipo;
+    }
+
+    public Set<Estadisticas> getEstadisticass() {
+        return estadisticass;
+    }
+
+    public void setEstadisticass(Set<Estadisticas> estadisticass) {
+        this.estadisticass = estadisticass;
     }
 
     @Override

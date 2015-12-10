@@ -15,6 +15,7 @@
                 "liga": "Liga",
                 "arbitro": "Arbitro",
                 "partido": "Partido",
+                "estadisticas": "Estadisticas",
                 "additionalEntity": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

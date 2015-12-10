@@ -22,7 +22,8 @@
             "rebotesTotales": "RebotesTotales",
             "posicionCampo": "PosicionCampo",
             "captain": "Captain",
-            "equipoRelacion": "EquipoRelacion"
+            "equipoRelacion": "EquipoRelacion",
+            "estadisticas": "Estadisticas"
         }
     }
 }

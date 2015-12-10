@@ -1,40 +1,36 @@
 'use strict';
 
-describe('Partido Detail Controller', function() {
+describe('Estadisticas Detail Controller', function() {
     var $scope, $rootScope;
-    var MockEntity, MockPartido, MockTemporada, MockArbitro, MockEquipo, MockEstadisticas;
+    var MockEntity, MockEstadisticas, MockJugador, MockPartido;
     var createController;
 
     beforeEach(inject(function($injector) {
         $rootScope = $injector.get('$rootScope');
         $scope = $rootScope.$new();
         MockEntity = jasmine.createSpy('MockEntity');
-        MockPartido = jasmine.createSpy('MockPartido');
-        MockTemporada = jasmine.createSpy('MockTemporada');
-        MockArbitro = jasmine.createSpy('MockArbitro');
-        MockEquipo = jasmine.createSpy('MockEquipo');
         MockEstadisticas = jasmine.createSpy('MockEstadisticas');
+        MockJugador = jasmine.createSpy('MockJugador');
+        MockPartido = jasmine.createSpy('MockPartido');
         
 
         var locals = {
             '$scope': $scope,
             '$rootScope': $rootScope,
             'entity': MockEntity ,
-            'Partido': MockPartido,
-            'Temporada': MockTemporada,
-            'Arbitro': MockArbitro,
-            'Equipo': MockEquipo,
-            'Estadisticas': MockEstadisticas
+            'Estadisticas': MockEstadisticas,
+            'Jugador': MockJugador,
+            'Partido': MockPartido
         };
         createController = function() {
-            $injector.get('$controller')("PartidoDetailController", locals);
+            $injector.get('$controller')("EstadisticasDetailController", locals);
         };
     }));
 
 
     describe('Root Scope Listening', function() {
         it('Unregisters root scope listener upon scope destruction', function() {
-            var eventType = 'jHipsterLigaBaloncestoApp:partidoUpdate';
+            var eventType = 'jHipsterLigaBaloncestoApp:estadisticasUpdate';
 
             createController();
             expect($rootScope.$$listenerCount[eventType]).toEqual(1);
