@@ -15,13 +15,6 @@
             "otherEntityName": "equipo",
             "relationshipType": "many-to-one",
             "otherEntityField": "nombre"
-        },
-        {
-            "relationshipId": 3,
-            "relationshipName": "estadisticas",
-            "otherEntityName": "estadisticas",
-            "relationshipType": "one-to-many",
-            "otherEntityRelationshipName": "jugador"
         }
     ],
     "fields": [
