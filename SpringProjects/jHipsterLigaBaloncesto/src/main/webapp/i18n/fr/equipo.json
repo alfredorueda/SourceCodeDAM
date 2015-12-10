@@ -22,7 +22,8 @@
             "jugadorRelacion": "JugadorRelacion",
             "socio": "Socio",
             "entrenador": "Entrenador",
-            "estadio": "Estadio"
+            "estadio": "Estadio",
+            "temporada": "Temporada"
         }
     }
 }
