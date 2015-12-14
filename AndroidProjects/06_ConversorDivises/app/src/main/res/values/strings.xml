@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ConversorDivises</string>
+    <string name="action_update_currencies">Update currencies</string>
+    <string name="error_download">Error downloading data</string>
+    <string name="from">FROM&#8230;</string>
+    <string name="to">TO&#8230;</string>
+    <string name="zero">0</string>
+    <string name="please_wait">Please wait &#8230;</string>
+    <string name="updating_currencies">Updating Currencies &#8230;</string>
+    <string name="update_currencies_title">Update the currencies?</string>
+    <string name="last_update_message">Last time the currencies where updated 
+        was on @. Do you want to download an updated version?</string>
+    <string name="button_download">Download</string>
+    <string name="button_not_now">Not now</string>
+    <string name="notify_empty_file_title">Unable to download!</string>
+    <string name="notify_empty_file_message">Cannot download currencies database for the first time. Spinners will be empty until a database download has been accomplished.</string>
+</resources>
