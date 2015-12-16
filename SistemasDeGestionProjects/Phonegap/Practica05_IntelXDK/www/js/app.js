@@ -113,7 +113,28 @@ function onAppReady() {
     
     //Ejercicio 5
     
+    $('#imgBrujola').css({
+            'width':'100px', 
+            'height':'100px'
+        });
     
+    $('#mostraBrujola').click(function(){
+        navigator.compass.getCurrentHeading(onSuccess, onError);
+    });
+    
+    function onSuccess(heading) {
+        $('#divBrujola').html("Orientació: " + heading.magneticHeading);
+        $('#imgBrujola').css({
+            '-ms-transform': 'rotate(' + heading.magneticHeading + 'deg)', /* IE 9 */
+            '-webkit-transform': 'rotate(' + heading.magneticHeading + 'deg)', /* Chrome, Safari, Opera */
+            'transform': 'rotate(' + heading.magneticHeading + 'deg)'
+        });
+    };
+
+    function onError(error) {
+        alert('CompassError: ' + error.code);
+    };
+
     
     //Ejercicio 6
     

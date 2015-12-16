@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "b770a80b-ea79-409e-a500-2942828a647c",
-      "lastModifiedDate": 1449686654955,
+      "lastModifiedDate": 1450289894287,
       "creationDate": 1449258628147
     },
     "XDK-app-designer": "false",
@@ -204,6 +204,29 @@
           ]
         },
         "description": "Cordova File Transfer Plugin",
+        "data": {},
+        "dependedBy": []
+      },
+      {
+        "id": "cordova-plugin-device-orientation",
+        "name": "Device Orientation",
+        "version": "1.0.1",
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-device-orientation",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-device-orientation",
+        "selectedState": "Included",
+        "checksum": "7d3e5bc2",
+        "dependsOn": [],
+        "topLevel": true,
+        "permissions": {
+          "android:name": [
+            "android.permission.ACCESS_COARSE_LOCATION",
+            "android.permission.ACCESS_FINE_LOCATION"
+          ]
+        },
+        "description": "Cordova Device Orientation Plugin",
         "data": {},
         "dependedBy": []
       }
