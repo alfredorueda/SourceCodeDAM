@@ -117,9 +117,11 @@ function onAppReady() {
             'width':'100px', 
             'height':'100px'
         });
+        
+    var options2 = { frequency: 1 }; 
     
     $('#mostraBrujola').click(function(){
-        navigator.compass.getCurrentHeading(onSuccess, onError);
+        navigator.compass.watchHeading(onSuccess, onError, options2);
     });
     
     function onSuccess(heading) {
@@ -138,9 +140,37 @@ function onAppReady() {
     
     //Ejercicio 6
     
-    
+    $('#buttonAcceleracio').click(function(){
+        
+        function onSuccess(acceleration) {
+            $('#divAcceleracio').html('Aceleración X: ' + acceleration.x + '\n' +
+                  'Aceleración Y: ' + acceleration.y + '\n' +
+                  'Aceleración Z: ' + acceleration.z + '\n');
+        };
+
+        function onError() {
+            alert('onError!');
+        };
+
+        var options = { frequency: 1 };
+
+        var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+        
+        
+        window.addEventListener("deviceorientation", controlOrientation);
+        
+        function controlOrientation(event){
+            $('#divRotacio').html('X/Z: ' + event.gamma + '\n' +
+                  'Y/Z: ' + event.beta + '\n' +
+                  'Y/X: ' + event.alpha + '\n');
+        }
+        
+        
+    });
     
     //Ejercicio 7
+    
+    
     
     
     

@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "b770a80b-ea79-409e-a500-2942828a647c",
-      "lastModifiedDate": 1450289894287,
+      "lastModifiedDate": 1450468165055,
       "creationDate": 1449258628147
     },
     "XDK-app-designer": "false",
@@ -227,6 +227,24 @@
           ]
         },
         "description": "Cordova Device Orientation Plugin",
+        "data": {},
+        "dependedBy": []
+      },
+      {
+        "id": "cordova-plugin-device-motion",
+        "name": "Device Motion",
+        "version": "1.1.1",
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-device-motion",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-device-motion",
+        "selectedState": "Included",
+        "checksum": "132d4c05",
+        "dependsOn": [],
+        "topLevel": true,
+        "permissions": {},
+        "description": "Cordova Device Motion Plugin",
         "data": {},
         "dependedBy": []
       }
