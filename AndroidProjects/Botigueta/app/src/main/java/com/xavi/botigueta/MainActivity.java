@@ -44,9 +44,35 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Creates the products array
-        products.add(new Products(0, "Poma", 1.56, R.drawable.poma, 0));
+        products.add(new Products(0, "Cireres", 1.56, R.drawable.cireres, 0));
         products.add(new Products(1, "Plàtan", 0.15, R.drawable.platan, 0));
         products.add(new Products(2, "Pastís", 12.99, R.drawable.pastis, 0));
+        products.add(new Products(3, "Barra de pa", 0.42, R.drawable.barra_pa, 0));
+        products.add(new Products(4, "Pa dolç", 0.65, R.drawable.pa_dols, 0));
+        products.add(new Products(5, "Croissant", 0.85, R.drawable.croissant, 0));
+        products.add(new Products(6, "Bistec de vedella 1/2Kg", 14.50, R.drawable.bistec_vedella, 0));
+        products.add(new Products(7, "Panet de llet", 0.15, R.drawable.panet_llet, 0));
+        products.add(new Products(8, "Dotzena d'ous", 1.89, R.drawable.dotzena_ous, 0));
+        products.add(new Products(9, "Farina", 0.99, R.drawable.farina, 0));
+        products.add(new Products(10, "Raïm", 1.24, R.drawable.raim, 0));
+        products.add(new Products(11, "Pernil cuit", 9.99, R.drawable.pernil_cuit, 0));
+        products.add(new Products(12, "Piruleta", 0.10, R.drawable.piruleta, 0));
+        products.add(new Products(13, "Poma", 0.23, R.drawable.poma, 0));
+        products.add(new Products(14, "Pera", 0.24, R.drawable.pera, 0));
+        products.add(new Products(15, "Pinya", 1.50, R.drawable.pinya, 0));
+        products.add(new Products(16, "Maduixes", 1.25, R.drawable.maduixes, 0));
+        products.add(new Products(17, "Sucre", 0.99, R.drawable.sucre, 0));
+        products.add(new Products(18, "Síndria", 3.65, R.drawable.sindria, 0));
+        products.add(new Products(19, "Llet", 0.75, R.drawable.llet, 0));
+        products.add(new Products(20, "Cafè", 0.76, R.drawable.cafe, 0));
+        products.add(new Products(21, "Àpat preparat", 5.85, R.drawable.apat_preparat, 0));
+        products.add(new Products(22, "Pizza", 3.55, R.drawable.pizza, 0));
+        products.add(new Products(23, "Salmó", 4.56, R.drawable.salmo, 0));
+        products.add(new Products(24, "Pésols", 0.55, R.drawable.pesols, 0));
+        products.add(new Products(25, "Bolets", 0.42, R.drawable.bolets, 0));
+        products.add(new Products(26, "Ceba", 0.35, R.drawable.ceba, 0));
+        products.add(new Products(27, "Formatge", 2.30, R.drawable.formatge, 0));
+        products.add(new Products(28, "Pastanaga", 0.21, R.drawable.pastanaga, 0));
 
         //Getting the spinner and setting it's adapter
         spinner = (Spinner) findViewById(R.id.spinner);
@@ -99,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //This are both adapters.
+    //This is the adapter for the spinner
     private class SpinnerAdapter extends BaseAdapter{
 
         private Context context;
@@ -136,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //This is the adapter for the listView
     private class ShoppingCartAdapter extends BaseAdapter{
         private Context context;
         List<Products> productsShoppingCart;
