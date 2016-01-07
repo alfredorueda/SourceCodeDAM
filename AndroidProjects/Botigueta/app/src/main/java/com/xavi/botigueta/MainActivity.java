@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     Spinner spinner;
     SpinnerAdapter spinnerAdapter;
     Button addButton;
+    Button removeButton;
 
     ListView listShoppingCart;
     ShoppingCartAdapter shoppingCartAdapter;
@@ -86,6 +87,19 @@ public class MainActivity extends AppCompatActivity {
         totalAmount = (TextView) findViewById(R.id.textView4);
 
         addButton = (Button) findViewById(R.id.button);
+        removeButton = (Button) findViewById(R.id.button2);
+
+        if (!productsShoppingCart.isEmpty()) {
+            removeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    /** TO-DO **/
+                    //Reduce the quantity of elements from that product in the productsShoppingCart array
+                    //If there is only one "quantity", remove the entire product.
+
+                }
+            });
+        }
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
