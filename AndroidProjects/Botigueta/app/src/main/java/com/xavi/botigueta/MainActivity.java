@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,33 +34,30 @@ public class MainActivity extends AppCompatActivity {
 
     ListView listShoppingCart;
     ShoppingCartAdapter shoppingCartAdapter;
-    String[] values;
 
+    TextView totalAmount;
+    Double total;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*String[] rawData = getResources().getStringArray(R.array.food_array);
-        for (int i = 0; i < rawData.length; i++){
-            values = rawData[i].split(":");
-            //System.out.println(values[4].split("\\.")[0].toString());
-            products.add(new Products(Integer.parseInt(values[0]), values[1], Double.parseDouble(values[3]), Integer.parseInt("R.drawable."+values[4].split("\\.")[0]), 0));
-        }*/
-
+        //Creates the products array
         products.add(new Products(0, "Poma", 1.56, R.drawable.poma, 0));
         products.add(new Products(1, "Plàtan", 0.15, R.drawable.platan, 0));
         products.add(new Products(2, "Pastís", 12.99, R.drawable.pastis, 0));
 
-        //Populate spinner with data
+        //Getting the spinner and setting it's adapter
         spinner = (Spinner) findViewById(R.id.spinner);
         spinnerAdapter = new SpinnerAdapter(this, products);
         spinner.setAdapter(spinnerAdapter);
 
+        //Getting the listView and creating it's adapter
         listShoppingCart = (ListView) findViewById(R.id.listView);
         shoppingCartAdapter = new ShoppingCartAdapter(this, productsShoppingCart);
 
+        totalAmount = (TextView) findViewById(R.id.textView4);
 
         addButton = (Button) findViewById(R.id.button);
 
@@ -70,9 +68,11 @@ public class MainActivity extends AppCompatActivity {
                 boolean repeated = false;
                 int i = 1;
 
+                //This is the first time that the user adds a product
                 if (productsShoppingCart.isEmpty()){
                     productsShoppingCart.add(new Products(products.get(id).getId(), products.get(id).getName(), products.get(id).getPrice(), products.get(id).getImage(), 1));
                 } else {
+                    //If there are already products, check if we add a new one or update the quantity
                     for(Products product: productsShoppingCart){
                         if (product.getId() == id){
                             repeated = true;
@@ -85,12 +85,21 @@ public class MainActivity extends AppCompatActivity {
                         i++;
                     }
                 }
+                //Setting the adapter to the new list
                 listShoppingCart.setAdapter(shoppingCartAdapter);
+
+                //Setting the total amount for the shopping cart
+                total = 0.0;
+                DecimalFormat df = new DecimalFormat("#.00");
+                for(Products product: productsShoppingCart){
+                    total = total + (product.getPrice() * product.getQuantity());
+                }
+                totalAmount.setText(df.format(total) + "€");
             }
         });
     }
 
-
+    //This are both adapters.
     private class SpinnerAdapter extends BaseAdapter{
 
         private Context context;
