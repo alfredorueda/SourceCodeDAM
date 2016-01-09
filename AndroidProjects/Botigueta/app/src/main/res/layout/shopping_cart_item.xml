@@ -41,14 +41,4 @@
         android:layout_toRightOf="@+id/shoppingCartName"
         android:layout_toEndOf="@+id/shoppingCartName" />
 
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="X"
-        android:id="@+id/button2"
-        android:layout_alignBottom="@+id/price"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="20dp"/>
-
 </RelativeLayout>

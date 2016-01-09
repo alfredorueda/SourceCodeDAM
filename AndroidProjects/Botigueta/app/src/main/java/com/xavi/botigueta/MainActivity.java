@@ -1,25 +1,23 @@
 package com.xavi.botigueta;
 
-import android.app.Activity;
+/**
+ * Created by Xavi on 22/12/15.
+ */
+
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,16 +26,15 @@ public class MainActivity extends AppCompatActivity {
 
     List<Products> products = new ArrayList();
     List<Products> productsShoppingCart = new ArrayList();
+    TextView totalAmount;
+    Double total;
+
     Spinner spinner;
     SpinnerAdapter spinnerAdapter;
-    Button addButton;
-    Button removeButton;
-
     ListView listShoppingCart;
     ShoppingCartAdapter shoppingCartAdapter;
 
-    TextView totalAmount;
-    Double total;
+    Button addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,63 +77,79 @@ public class MainActivity extends AppCompatActivity {
         spinnerAdapter = new SpinnerAdapter(this, products);
         spinner.setAdapter(spinnerAdapter);
 
-        //Getting the listView and creating it's adapter
+        //Getting the listView and setting it's adapter
         listShoppingCart = (ListView) findViewById(R.id.listView);
         shoppingCartAdapter = new ShoppingCartAdapter(this, productsShoppingCart);
+        listShoppingCart.setAdapter(shoppingCartAdapter);
 
+        //This is the label to display the total amount for the shopping list
         totalAmount = (TextView) findViewById(R.id.textView4);
 
         addButton = (Button) findViewById(R.id.button);
-        removeButton = (Button) findViewById(R.id.button2);
 
-        if (!productsShoppingCart.isEmpty()) {
-            removeButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    /** TO-DO **/
-                    //Reduce the quantity of elements from that product in the productsShoppingCart array
-                    //If there is only one "quantity", remove the entire product.
-
+        //Remove items from the shopping list when the user "long clicks" the item
+        listShoppingCart.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                //Checks if it has to decrease the quantity or remove the product
+                if (productsShoppingCart.get(position).getQuantity() > 1) {
+                    productsShoppingCart.get(position).setQuantity(productsShoppingCart.get(position).getQuantity()-1);
+                } else {
+                    productsShoppingCart.remove(position);
                 }
-            });
-        }
+                //Refresh the adapter to be in sync with the data
+                shoppingCartAdapter.notifyDataSetChanged();
+
+                //Setting the total amount for the shopping cart
+                calculateTotalAmount();
+                return false;
+            }
+        });
+
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int id = spinner.getSelectedItemPosition();
-                boolean repeated = false;
-                int i = 1;
+                int spinnerId = spinner.getSelectedItemPosition();
+                int i = 0;
 
                 //This is the first time that the user adds a product
                 if (productsShoppingCart.isEmpty()){
-                    productsShoppingCart.add(new Products(products.get(id).getId(), products.get(id).getName(), products.get(id).getPrice(), products.get(id).getImage(), 1));
+                    productsShoppingCart.add(new Products(products.get(spinnerId).getId(), products.get(spinnerId).getName(), products.get(spinnerId).getPrice(), products.get(spinnerId).getImage(), 1));
                 } else {
                     //If there are already products, check if we add a new one or update the quantity
                     for(Products product: productsShoppingCart){
-                        if (product.getId() == id){
-                            repeated = true;
-                            productsShoppingCart.get(i-1).setQuantity(productsShoppingCart.get(i-1).getQuantity()+1);
+                        if (product.getId() == spinnerId){
+                            productsShoppingCart.get(i).setQuantity(productsShoppingCart.get(i).getQuantity()+1);
                             break;
                         }
-                        if (i == productsShoppingCart.size() && repeated == false){
-                            productsShoppingCart.add(new Products(products.get(id).getId(), products.get(id).getName(), products.get(id).getPrice(), products.get(id).getImage(), 1));
+                        if (i == productsShoppingCart.size()-1){
+                            productsShoppingCart.add(new Products(products.get(spinnerId).getId(), products.get(spinnerId).getName(), products.get(spinnerId).getPrice(), products.get(spinnerId).getImage(), 1));
                         }
                         i++;
                     }
                 }
-                //Setting the adapter to the new list
-                listShoppingCart.setAdapter(shoppingCartAdapter);
+                //Update the adapter to be in sync with the data
+                shoppingCartAdapter.notifyDataSetChanged();
 
                 //Setting the total amount for the shopping cart
-                total = 0.0;
-                DecimalFormat df = new DecimalFormat("#.00");
-                for(Products product: productsShoppingCart){
-                    total = total + (product.getPrice() * product.getQuantity());
-                }
-                totalAmount.setText(df.format(total) + "€");
+                calculateTotalAmount();
             }
         });
+    }
+
+    public void calculateTotalAmount(){
+        total = 0.0;
+        DecimalFormat df = new DecimalFormat("#.00");
+        for(Products product: productsShoppingCart){
+            total = total + (product.getPrice() * product.getQuantity());
+        }
+        if (total == 0.00){
+            totalAmount.setText("0.00" + "€");
+        } else {
+            totalAmount.setText(df.format(total) + "€");
+        }
+
     }
 
     //This is the adapter for the spinner
