@@ -126,6 +126,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Ypq-Sq-GPM" id="DSG-K2-6cI"/>
+                        <outlet property="mensajeLabel" destination="rcj-YG-Qvy" id="bRM-jw-Y6A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6PT-DQ-BMp" userLabel="First Responder" sceneMemberID="firstResponder"/>

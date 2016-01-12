@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     var randomWord: String?
     var underscoreWord = ""
     var errores = 0
+    var finished = false
+    var win = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,22 +37,62 @@ class ViewController: UIViewController {
         palabraRandom.text = underscoreWord
     }
 
-
     @IBAction func checkLetter(sender: UIButton) {
-        if let rango = randomWord!.rangeOfString((letraUsuario.text?.uppercaseString)!) {
-            print("Existe la letra \(letraUsuario.text?.uppercaseString)")
-            underscoreWord.replaceRange(rango, with: letraUsuario.text!)
-            palabraRandom.text = underscoreWord.uppercaseString
+        
+        if letraUsuario.text! == "" {
+            muestraAlert()
+
         } else {
-            print("No existe la letra \(letraUsuario.text?.uppercaseString)")
-            //imageView.image = UIImage(named: "\(errores).png")
-            imageView.image = UIImage(named: "6")
-            errores = errores + 1
+        
+            if let rango = randomWord!.rangeOfString((letraUsuario.text?.uppercaseString)!) {
+                print("Existe la letra \(letraUsuario.text?.uppercaseString)")
+                underscoreWord.replaceRange(rango, with: letraUsuario.text!)
+                palabraRandom.text = underscoreWord.uppercaseString
+                checkWinnerOrLooser()
+            } else {
+                print("No existe la letra \(letraUsuario.text?.uppercaseString)")
+                //imageView.image = UIImage(named: "\(errores).png")
+                imageView.image = UIImage(named: "6")
+                errores = errores + 1
+                checkWinnerOrLooser()
+            }
+            
+            if finished {
+                segueToTheSecondViewController()
+            }
+            letraUsuario.text = nil
+        }
+    }
+    
+    func checkWinnerOrLooser() {
+        if underscoreWord.rangeOfString("_") == nil {
+            //Win
+            finished = true
+            win = true
+        } else if errores == 6 {
+            //Loose
+            finished = true
+        }
+    }
+    
+    func segueToTheSecondViewController(){
+        let secondViewController: SecondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GameOver") as! SecondViewController
+        //Aquí debes establecer el texto y la imagen a mostrar, según se haya ganado o se haya perdido la partida
+        if win {
+            secondViewController.texto = "Winner!"
+            secondViewController.imagen = UIImage(named: "winner")
+        } else {
+            secondViewController.texto = "Game Over!"
+            secondViewController.imagen = UIImage(named: "looser")
         }
         
-        let secondViewController: SecondViewController = (self.storyboard?.instantiateViewControllerWithIdentifier("GameOver") as? SecondViewController)!
-        //Aquí debes establecer el texto y la imagen a mostrar, según se haya ganado o se haya perdido la partida 
         self.showViewController(secondViewController, sender: self)
+    }
+    
+    func muestraAlert(){
+        let alertController = UIAlertController(title: "¡Error!", message: "Tienes que entrar al menos una letra.", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }
 
