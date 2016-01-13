@@ -121,10 +121,10 @@ function onAppReady() {
     var options2 = { frequency: 1 }; 
     
     $('#mostraBrujola').click(function(){
-        navigator.compass.watchHeading(onSuccess, onError, options2);
+        navigator.compass.watchHeading(onSuccess5, onError5, options2);
     });
     
-    function onSuccess(heading) {
+    function onSuccess5(heading) {
         $('#divBrujola').html("Orientació: " + heading.magneticHeading);
         $('#imgBrujola').css({
             '-ms-transform': 'rotate(' + heading.magneticHeading + 'deg)', /* IE 9 */
@@ -133,7 +133,7 @@ function onAppReady() {
         });
     };
 
-    function onError(error) {
+    function onError5(error) {
         alert('CompassError: ' + error.code);
     };
 
@@ -142,19 +142,19 @@ function onAppReady() {
     
     $('#buttonAcceleracio').click(function(){
         
-        function onSuccess(acceleration) {
+        function onSuccess6(acceleration) {
             $('#divAcceleracio').html('Aceleración X: ' + acceleration.x + '\n' +
                   'Aceleración Y: ' + acceleration.y + '\n' +
                   'Aceleración Z: ' + acceleration.z + '\n');
         };
 
-        function onError() {
+        function onError6() {
             alert('onError!');
         };
 
         var options = { frequency: 1 };
 
-        var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+        var watchID = navigator.accelerometer.watchAcceleration(onSuccess6, onError6, options);
         
         
         window.addEventListener("deviceorientation", controlOrientation);
