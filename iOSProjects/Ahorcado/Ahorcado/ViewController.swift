@@ -19,7 +19,10 @@ class ViewController: UIViewController {
     
     var randomNumber: Int?
     var randomWord: String?
-    var underscoreWord = ""
+    var letrasPalabra = [String]()
+    var posLetrasCorrectas = [Int]()
+    var barrabajaArray = [String]()
+    var printableString = ""
     var errores = 0
     var finished = false
     var win = false
@@ -29,13 +32,25 @@ class ViewController: UIViewController {
         randomNumber = Int(arc4random_uniform(UInt32(arrayPalabras.count)))
         randomWord = arrayPalabras[randomNumber!].uppercaseString
         print(randomWord)
-        
-        for (var i = 0; i <= (randomWord?.characters.count)!-1; i++){
-            underscoreWord = underscoreWord + "_"
+
+        //Crea la array de letras con la palabra
+        for elem in randomWord!.characters{
+            letrasPalabra.append("\(elem)")
         }
         
-        palabraRandom.text = underscoreWord
+        //Crea una array de barrabajas con la cantidad de letras que tiene la palabra
+        for _ in letrasPalabra{
+            barrabajaArray.append("_")
+        }
+        
+        //Crea una string para mostrar en el label
+        for elem in barrabajaArray{
+            printableString = printableString + elem
+        }
+        palabraRandom.text = printableString
     }
+    
+
 
     @IBAction func checkLetter(sender: UIButton) {
         
@@ -43,19 +58,34 @@ class ViewController: UIViewController {
             muestraAlert()
 
         } else {
-        
-            if let rango = randomWord!.rangeOfString((letraUsuario.text?.uppercaseString)!) {
-                print("Existe la letra \(letraUsuario.text?.uppercaseString)")
-                underscoreWord.replaceRange(rango, with: letraUsuario.text!)
-                palabraRandom.text = underscoreWord.uppercaseString
+            printableString = ""
+            posLetrasCorrectas = []
+            
+            //Si la array tiene la letra entrada por el usuario, se comprueba en que posiciones está
+            if letrasPalabra.contains(letraUsuario.text!.uppercaseString){
+                for (index, elem) in letrasPalabra.enumerate(){
+                    if elem == letraUsuario.text!.uppercaseString{
+                        posLetrasCorrectas.append(index)
+                    }
+                }
+                //Por cada letra que coincide, se cambia la barra baja por la letra
+                for elem in posLetrasCorrectas{
+                    barrabajaArray[elem] = letraUsuario.text!.uppercaseString
+                }
                 checkWinnerOrLooser()
             } else {
-                print("No existe la letra \(letraUsuario.text?.uppercaseString)")
-                //imageView.image = UIImage(named: "\(errores).png")
                 imageView.image = UIImage(named: "6")
+                //imageView.image = UIImage(named: "\(errores)")
                 errores = errores + 1
                 checkWinnerOrLooser()
             }
+            
+            //Por cada elemento de la array que contiene barrabajas y letras correctas, se crea la string
+            //que se muestra en el label
+            for elem in barrabajaArray{
+                printableString = printableString + elem
+            }
+            palabraRandom.text = printableString
             
             if finished {
                 segueToTheSecondViewController()
@@ -65,12 +95,10 @@ class ViewController: UIViewController {
     }
     
     func checkWinnerOrLooser() {
-        if underscoreWord.rangeOfString("_") == nil {
-            //Win
+        if barrabajaArray.contains("_") == false {
             finished = true
             win = true
         } else if errores == 6 {
-            //Loose
             finished = true
         }
     }
