@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="jugadores=[
+{nombre:'Xavi',  posicion:'Alero', canastasTotales:'200'},
+{nombre:'Tania', posicion:'Base', canastasTotales:'300'},
+{nombre:'Marc',  posicion:'Pívot', canastasTotales:'100'}]">
+
+<p>Lista de jugadores:</p>
+<ul>
+  <li ng-repeat="jugador in jugadores">
+  {{ jugador.nombre + ', ' + jugador.posicion }}</li>
+</ul>
+
+<div>
+    <h2>Explicación:</h2>
+    <p></p>
+</div>
+
+</div>
+
+</body>
+</html>

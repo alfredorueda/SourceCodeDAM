@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="jugador={nombre:'Xavi',posicion:'Alero', canastasTotales: '200'}">
+
+<p>El jugador se llama {{ jugador.nombre }} y es {{ jugador.posicion }}</p>
+<p>{{ jugador.nombre }} lleva {{ jugador.canastasTotales }} canastas</p>
+
+<div>
+    <h2>Explicación:</h2>
+    <p>En el controlador, ya que si se manipula mucho el DOM una vez
+        renderizada la web, puede dar problemas de rendimiento.
+        Cuando más se haga al "iniciar", mejor.</p>
+</div>
+
+</div>
+
+</body>
+</html>

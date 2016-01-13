@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+ 
+<p>Introduce los datos del jugador:</p>
+<p>Nombre: <input type="text" ng-model="nombre"></p>
+<p>Posición: <input type="text" ng-model="posicion"></p>
+<p>Canastas Totales: <input type="text" ng-model="canastasTotales"></p>
+
+<p>El nombre del jugador es: {{nombre}}</p>
+<p>La posición del jugador es: {{posicion}}</p>
+<p>Las canastas totales del jugador son: {{canastasTotales}}</p>
+
+</div>
+
+<div>
+    <h2>Explicación:</h2>
+    <p>El controlador mete información por defecto en las variables que son
+        utilizadas en el renderizado de la web. Si cambias el valor por defecto
+        en la web, el valor se actualiza porque cambias la variable que se
+        dibuja más tarde.</p>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.nombre = "Xavi";
+    $scope.posicion = "Alero";
+    $scope.canastasTotales = "200";
+});
+</script>
+
+</body>
+</html>

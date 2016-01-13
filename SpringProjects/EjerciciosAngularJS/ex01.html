@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="">
+ 
+<p>Introduce los datos del jugador:</p>
+<p>Nombre: <input type="text" ng-model="nombre"></p>
+<p>Posición: <input type="text" ng-model="posicion"></p>
+<p>Canastas Totales: <input type="text" ng-model="canastasTotales"></p>
+
+<p>El nombre del jugador es: {{nombre}}</p>
+<p>La posición del jugador es: {{posicion}}</p>
+<p>Las canastas totales del jugador son: {{canastasTotales}}</p>
+
+</div>
+
+<div>
+    <h2>Explicación:</h2>
+    <p>La directiva ng-model, recoge la información y la guarda en una variable que puede ser 
+    usada en qualquier parte de la web. Lo que nosotros hacemos es mostrarla simplemente
+    con la sintaxis {{nombreVariable}}</p>
+</div>
+
+</body>
+</html>
