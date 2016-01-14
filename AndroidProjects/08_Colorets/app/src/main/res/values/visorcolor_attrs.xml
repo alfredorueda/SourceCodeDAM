@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="VisorColor">
+        <attr name="selectedColor" format="color" />
+        <attr name="randomColorOnClick" format="boolean" />
+    </declare-styleable>
+
+</resources>

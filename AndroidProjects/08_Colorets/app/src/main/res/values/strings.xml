@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Colorets</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="random_color_on_click">Random color on click</string>
+    <string name="magnet_each_16">Magnet each 16</string>
+    <string name="lock_in_grays">Lock in grays</string>
+
+</resources>

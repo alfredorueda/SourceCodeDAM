@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <cat.flx.potenciometrevertical.PotenciometreVertical
+        android:id="@+id/potenciometreVertical1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true" />
+
+    <cat.flx.potenciometrevertical.PotenciometreVertical
+        android:id="@+id/potenciometreVertical2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/potenciometreVertical1" />
+
+    <cat.flx.potenciometrevertical.PotenciometreVertical
+        android:id="@+id/potenciometreVertical3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/potenciometreVertical2" />
+
+</RelativeLayout>

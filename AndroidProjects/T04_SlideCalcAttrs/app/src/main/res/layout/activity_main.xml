@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <cat.flx.slidecalcattrs.SeekWithTextView
+        android:id="@+id/seekWithTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:maxValue="50"
+        custom:value="42" />
+
+    <cat.flx.slidecalcattrs.SeekWithTextView
+        android:id="@+id/seekWithTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:maxValue="255"
+        custom:value="8" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:textSize="96sp" />
+
+</LinearLayout>

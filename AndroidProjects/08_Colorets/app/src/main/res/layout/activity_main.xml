@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <cat.flx.colorets.PotenciometreVertical
+        android:id="@+id/potR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        custom:magnet="false"
+        custom:maxValue="255"
+        custom:minValue="0"
+        custom:showTicks="true"
+        custom:tickSize="16"
+        custom:value="128" />
+
+    <cat.flx.colorets.PotenciometreVertical
+        android:id="@+id/potG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/potR"
+        custom:magnet="false"
+        custom:maxValue="255"
+        custom:minValue="0"
+        custom:showTicks="true"
+        custom:tickSize="16"
+        custom:value="128" />
+
+    <cat.flx.colorets.PotenciometreVertical
+        android:id="@+id/potB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/potG"
+        custom:magnet="false"
+        custom:maxValue="255"
+        custom:minValue="0"
+        custom:showTicks="true"
+        custom:tickSize="16"
+        custom:value="128" />
+
+    <CheckBox
+        android:id="@+id/chkRandomColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/visorColor"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/random_color_on_click" />
+
+    <cat.flx.colorets.VisorColor
+        android:id="@+id/visorColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtColor"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/potB"
+        custom:randomColorOnClick="true" />
+
+    <CheckBox
+        android:id="@+id/chkMagnet16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/chkRandomColor"
+        android:layout_alignLeft="@+id/chkRandomColor"
+        android:layout_alignParentRight="true"
+        android:text="@string/magnet_each_16" />
+
+    <CheckBox
+        android:id="@+id/chkLockGrays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/chkMagnet16"
+        android:layout_alignLeft="@+id/chkMagnet16"
+        android:layout_alignParentRight="true"
+        android:text="@string/lock_in_grays" />
+
+    <TextView
+        android:id="@+id/txtColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/chkLockGrays"
+        android:layout_alignLeft="@+id/chkLockGrays"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>
