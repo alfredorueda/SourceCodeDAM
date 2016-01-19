@@ -51,7 +51,6 @@ class ViewController: UIViewController {
     }
     
 
-
     @IBAction func checkLetter(sender: UIButton) {
         
         if letraUsuario.text! == "" {
@@ -74,8 +73,7 @@ class ViewController: UIViewController {
                 }
                 checkWinnerOrLooser()
             } else {
-                imageView.image = UIImage(named: "6")
-                //imageView.image = UIImage(named: "\(errores)")
+                imageView.image = UIImage(named: "\(errores)")
                 errores = errores + 1
                 checkWinnerOrLooser()
             }
@@ -98,7 +96,7 @@ class ViewController: UIViewController {
         if barrabajaArray.contains("_") == false {
             finished = true
             win = true
-        } else if errores == 6 {
+        } else if errores == 10 {
             finished = true
         }
     }
