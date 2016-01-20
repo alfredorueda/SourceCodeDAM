@@ -7,9 +7,17 @@
 <h2>Listado de jugadores:</h2>
 <ul>
   <li ng-repeat="jugador in jsonJugadores">
-    {{ jugador.nombre + ' es ' + jugador.posicionCampo + ' y lleva ' + jugador.canastasTotales + ' canastas'}}
+    {{ jugador.nombre + ' es ' + jugador.posicionCampo + ' y lleva ' + jugador.canastasTotales + ' canastas.'}}
   </li>
 </ul>
+
+<div>
+    <h2>Explicación:</h2>
+    <p>Como tenemos el error de CrossOrigin, de momento este archivo hay que ponerlo en
+        la carpeta de webapp para que el servidor que hace la petición
+        sea el mismo que la sirve. Poniendo la anotación en el controlador
+        no lo arregla. //https://spring.io/blog/2015/06/08/cors-support-in-spring-framework</p>
+</div>
 
 </div>
 
@@ -17,8 +25,7 @@
 var app = angular.module('myApp', []);
 app.controller('jugadoresController', function($scope, $http) {
 
-    //Error de seguridad (Cross Domain) al intentar acceder a Spring
-    //Si se mete este script en la carpeta 'webapp' de spring, si que funciona
+    //Error de seguridad al intentar acceder a Spring
   $http.get("http://localhost:8080/api/jugadors").then(function (response) {
       $scope.jsonJugadores = response.data;
       console.log(response.data)
