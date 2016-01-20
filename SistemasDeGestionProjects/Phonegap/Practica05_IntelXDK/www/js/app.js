@@ -63,7 +63,8 @@ function onAppReady() {
     //Crear un boton para lanzar esto
     
     $('#mostraFoto').click(function(){
-        navigator.camera.getPicture(onSuccess, onFail, { quality : 75, 
+        navigator.camera.getPicture(onSuccess, onFail, { 
+        quality : 75, 
         destinationType : Camera.DestinationType.DATA_URL, 
         sourceType : Camera.PictureSourceType.PHOTOLIBRARY, 
         allowEdit : true,
@@ -169,6 +170,24 @@ function onAppReady() {
     });
     
     //Ejercicio 7
+    
+    
+    $('#playGame').click(function(){
+        window.addEventListener("deviceorientation", controlOrientation7);
+        
+        function controlOrientation7(event){
+            $('#divRotacio').html('X/Z: ' + event.gamma + '\n' +
+                  'Y/Z: ' + event.beta + '\n' +
+                  'Y/X: ' + event.alpha + '\n');
+          
+          
+          //FIX ME!!!!!!!!!
+          $('#pelota').css("left", event.gamma);
+          $('#pelota').css("top", event.beta);
+        }
+        
+        
+    });
     
     
     
