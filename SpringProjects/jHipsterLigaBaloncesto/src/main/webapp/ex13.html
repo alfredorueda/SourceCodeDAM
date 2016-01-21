@@ -22,7 +22,7 @@
             <td>Posicion</td>
             <td>Canastas</td>
         </tr>
-        <tr ng-repeat="jugador in jsonJugadores | filter:searchText"">
+        <tr ng-repeat="jugador in jsonJugadores | filter:searchText">
             <td ng-if="$odd" style="background-color:#f1f1f1">{{jugador.nombre}}</td>
             <td ng-if="$even">{{jugador.nombre}}</td>
             <td ng-if="$odd" style="background-color:#f1f1f1">{{jugador.posicionCampo}}</td>
