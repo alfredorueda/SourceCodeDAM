@@ -171,19 +171,24 @@ function onAppReady() {
     
     //Ejercicio 7
     
-    
+    intel.xdk.device.setRotateOrientation('portrait');
+
     $('#playGame').click(function(){
+        $('#pelota').show();
+        $('#pelota').css("left", 100);
+        $('#pelota').css("top", 100);
         window.addEventListener("deviceorientation", controlOrientation7);
         
         function controlOrientation7(event){
-            $('#divRotacio').html('X/Z: ' + event.gamma + '\n' +
-                  'Y/Z: ' + event.beta + '\n' +
-                  'Y/X: ' + event.alpha + '\n');
+          $('#pelota').css("left", parseInt(event.gamma)+90);
+          $('#pelota').css("top", parseInt(event.beta)+90);
           
+          if ((parseInt(event.gamma) > 20 && parseInt(event.beta) > 20) && (parseInt(event.gamma) < 70 && parseInt(event.beta) < 70)){
+              $('#pelota').hide();
+              window.removeEventListener("deviceorientation", controlOrientation7);
+              alert("Game Over!");
+          }
           
-          //FIX ME!!!!!!!!!
-          $('#pelota').css("left", event.gamma);
-          $('#pelota').css("top", event.beta);
         }
         
         
