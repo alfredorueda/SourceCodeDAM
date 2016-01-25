@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,7 +17,8 @@ public class TresEnRayaView extends View implements GestureDetector.OnGestureLis
 
     private Paint pCuadricula, pCirculo, pCruz;
 
-    private String estado = " X OOX XO";
+    private char[] estado;
+    private char jugando;
 
     private GestureDetector gd;
 
@@ -25,6 +27,7 @@ public class TresEnRayaView extends View implements GestureDetector.OnGestureLis
     public TresEnRayaView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         gd = new GestureDetector(context, this);
+        gd.setIsLongpressEnabled(false);
         pCuadricula = new Paint();
         pCuadricula.setColor(Color.LTGRAY);
         pCuadricula.setStyle(Paint.Style.STROKE);
@@ -36,6 +39,13 @@ public class TresEnRayaView extends View implements GestureDetector.OnGestureLis
 
         pCruz = new Paint(pCirculo);
         pCruz.setColor(Color.GREEN);
+        iniciarPartida();
+    }
+
+    public void iniciarPartida(){
+        jugando = 'X';
+        estado = "         ".toCharArray();
+        this.invalidate();
     }
 
     @Override
@@ -66,7 +76,7 @@ public class TresEnRayaView extends View implements GestureDetector.OnGestureLis
 
         for(int j = 0; j < 3; j++){
             for(int i = 0; i < 3; i++){
-                char simbolo = estado.charAt(j*3+i);
+                char simbolo = estado[j*3+i];
                 if (simbolo == ' ') continue;
 
                 if (simbolo == 'X') {
@@ -94,31 +104,67 @@ public class TresEnRayaView extends View implements GestureDetector.OnGestureLis
 
     @Override
     public boolean onDown(MotionEvent e) {
-        return false;
+        //Log.d("xmollv", "onDown(" + e.getX() + "," + e.getY() + ")" );
+        return true;
     }
 
     @Override
     public void onShowPress(MotionEvent e) {
-
+        //Log.d("xmollv", "onShowPress(" + e.getX() + "," + e.getY() + ")" );
     }
 
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
+        //Log.d("xmollv", "onSingleTapUp(" + e.getX() + "," + e.getY() + ")" );
+
+        int w = getWidth();
+        int cw = (w-10)/3;
+        int i = (int)Math.floor((e.getX() - 5) / cw);
+        int j = ((int)e.getY() - 5) / cw;
+
+        if (i<0) return false;
+        if (i>2) return false;
+        if (j<0) return false;
+        if (j>2) return false;
+
+        Log.d("xmollv", "celda i=" + i + ", j="+j);
+
+        int index = j * 3 + i;
+
+        if (estado[index] != ' ') return false;
+
+        estado[index] = jugando;
+        if(
+             ((estado[0] != ' ' ) && (estado[0] == estado[1]) && estado[1] == estado[2]) ||
+             ((estado[3] != ' ' ) && (estado[3] == estado[4]) && estado[4] == estado[5]) ||
+             ((estado[6] != ' ' ) && (estado[6] == estado[7]) && estado[7] == estado[8]) ||
+             ((estado[0] != ' ' ) && (estado[0] == estado[3]) && estado[3] == estado[6]) ||
+             ((estado[1] != ' ' ) && (estado[1] == estado[4]) && estado[4] == estado[7]) ||
+             ((estado[2] != ' ' ) && (estado[2] == estado[5]) && estado[5] == estado[8]) ||
+             ((estado[0] != ' ' ) && (estado[0] == estado[4]) && estado[4] == estado[8]) ||
+             ((estado[2] != ' ' ) && (estado[2] == estado[4]) && estado[4] == estado[6])
+           ) { Log.d("xmollv", "HA GANADO" + jugando); }
+
+        jugando = (jugando == 'X') ? 'O' : 'X';
+        this.invalidate();
+
         return false;
     }
 
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+        //Log.d("xmollv", "onScroll(" + e1.getX() + "," + e1.getY() + ") (" + e2.getX() + "," + e2.getY() + ")" );
         return false;
     }
 
     @Override
     public void onLongPress(MotionEvent e) {
-
+        //Log.d("xmollv", "onLongPress(" + e.getX() + "," + e.getY() + ")" );
     }
 
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+        //Log.d("xmollv", "onDown(" + e1.getX() + "," + e1.getY() + ") (" + e2.getX() + "," + e2.getY() + ")" );
         return false;
     }
 }
