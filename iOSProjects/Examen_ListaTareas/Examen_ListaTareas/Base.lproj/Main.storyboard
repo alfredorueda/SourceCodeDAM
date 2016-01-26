@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="49e-Tb-3d3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mis Tareas-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Examen_ListaTareas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OAs-u1-rEZ">
+                                <rect key="frame" x="-4" y="20" width="328" height="499"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celdaPersonalizada" rowHeight="88" id="fYS-RQ-pcc" customClass="CeldaPersonalizadaTableViewCell" customModule="Examen_ListaTareas" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="328" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fYS-RQ-pcc" id="N8U-mj-qTQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="295" height="87.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FKT-3c-NDa">
+                                                    <rect key="frame" x="8" y="9" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="NpU-2C-QLj"/>
+                                                        <constraint firstAttribute="width" constant="70" id="joz-ao-kBJ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4a-0p-kXL">
+                                                    <rect key="frame" x="86" y="9" width="152" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYX-1b-e8j">
+                                                    <rect key="frame" x="86" y="58" width="152" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PVW-Tr-Ndw">
+                                                    <rect key="frame" x="243" y="21.5" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="3ZP-uL-LWj"/>
+                                                        <constraint firstAttribute="height" constant="44" id="DMT-Eb-NcJ"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="B4a-0p-kXL" firstAttribute="leading" secondItem="FKT-3c-NDa" secondAttribute="trailing" constant="8" id="3fS-dN-hEz"/>
+                                                <constraint firstItem="B4a-0p-kXL" firstAttribute="top" secondItem="FKT-3c-NDa" secondAttribute="top" id="AaY-Kx-3v9"/>
+                                                <constraint firstItem="aYX-1b-e8j" firstAttribute="leading" secondItem="FKT-3c-NDa" secondAttribute="trailing" constant="8" id="AfP-MB-X1K"/>
+                                                <constraint firstItem="PVW-Tr-Ndw" firstAttribute="centerY" secondItem="FKT-3c-NDa" secondAttribute="centerY" id="DVn-c8-ajf"/>
+                                                <constraint firstItem="aYX-1b-e8j" firstAttribute="bottom" secondItem="FKT-3c-NDa" secondAttribute="bottom" id="K2d-qM-qb3"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PVW-Tr-Ndw" secondAttribute="trailing" id="PH3-rN-psm"/>
+                                                <constraint firstItem="FKT-3c-NDa" firstAttribute="centerY" secondItem="N8U-mj-qTQ" secondAttribute="centerY" id="cRy-Le-FgL"/>
+                                                <constraint firstItem="PVW-Tr-Ndw" firstAttribute="leading" secondItem="aYX-1b-e8j" secondAttribute="trailing" constant="5" id="gMB-NP-1Iv"/>
+                                                <constraint firstItem="PVW-Tr-Ndw" firstAttribute="leading" secondItem="B4a-0p-kXL" secondAttribute="trailing" constant="5" id="nXT-3Y-fwY"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="FKT-3c-NDa" secondAttribute="leading" id="xNu-2o-RDe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descripcionTarea" destination="aYX-1b-e8j" id="jW3-Sj-dnU"/>
+                                            <outlet property="imagenCheckbox" destination="PVW-Tr-Ndw" id="4oC-5b-W5Y"/>
+                                            <outlet property="imagenTarea" destination="FKT-3c-NDa" id="F17-Mr-f3C"/>
+                                            <outlet property="tituloTarea" destination="B4a-0p-kXL" id="RgP-jf-RoA"/>
+                                            <segue destination="3N5-jS-eE6" kind="modal" id="COQ-Wn-1AQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="vRu-fF-DrJ"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="dqW-G0-0tV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OAs-u1-rEZ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="gfF-BU-TwR"/>
+                            <constraint firstItem="OAs-u1-rEZ" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="n2a-7i-Cph"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OAs-u1-rEZ" secondAttribute="trailing" constant="-20" id="sHU-nD-yAS"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="OAs-u1-rEZ" secondAttribute="bottom" id="sYb-eZ-6c2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mis Tareas" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="tableView" destination="OAs-u1-rEZ" id="Few-af-uIG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="-303"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="xsL-zY-Z3U">
+            <objects>
+                <viewController id="3N5-jS-eE6" customClass="DetailViewController" customModule="Examen_ListaTareas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N9n-hI-29a"/>
+                        <viewControllerLayoutGuide type="bottom" id="GNX-0z-Dbh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lMN-2O-ZGT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editar Tarea" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cq-q6-vyX">
+                                <rect key="frame" x="114.5" y="30" width="91.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NIc-Uj-woA">
+                                <rect key="frame" x="16" y="70.5" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Wf-1N-CVG">
+                                <rect key="frame" x="16" y="120.5" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJh-MK-jgR">
+                                <rect key="frame" x="140" y="170" width="40" height="30"/>
+                                <state key="normal" title="Editar"/>
+                                <connections>
+                                    <action selector="editarTarea:" destination="3N5-jS-eE6" eventType="touchUpInside" id="q0O-n9-vlT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtv-lH-mnw">
+                                <rect key="frame" x="130" y="210" width="61" height="30"/>
+                                <state key="normal" title="Cancelar"/>
+                                <connections>
+                                    <action selector="cancelarEdicion:" destination="3N5-jS-eE6" eventType="touchUpInside" id="PEF-VJ-n8G"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xtv-lH-mnw" firstAttribute="centerX" secondItem="lMN-2O-ZGT" secondAttribute="centerX" id="05a-ch-CaL"/>
+                            <constraint firstItem="4Cq-q6-vyX" firstAttribute="centerX" secondItem="lMN-2O-ZGT" secondAttribute="centerX" id="266-ng-6Ej"/>
+                            <constraint firstItem="FJh-MK-jgR" firstAttribute="top" secondItem="5Wf-1N-CVG" secondAttribute="bottom" constant="20" id="4jL-A3-B44"/>
+                            <constraint firstItem="5Wf-1N-CVG" firstAttribute="top" secondItem="NIc-Uj-woA" secondAttribute="bottom" constant="20" id="8Lf-FP-E6s"/>
+                            <constraint firstItem="NIc-Uj-woA" firstAttribute="leading" secondItem="lMN-2O-ZGT" secondAttribute="leadingMargin" id="ApX-Be-sjm"/>
+                            <constraint firstItem="FJh-MK-jgR" firstAttribute="centerX" secondItem="lMN-2O-ZGT" secondAttribute="centerX" id="Bgt-UP-dnz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Wf-1N-CVG" secondAttribute="trailing" id="JAf-3G-o6I"/>
+                            <constraint firstItem="5Wf-1N-CVG" firstAttribute="leading" secondItem="lMN-2O-ZGT" secondAttribute="leadingMargin" id="Mns-ir-wp3"/>
+                            <constraint firstItem="4Cq-q6-vyX" firstAttribute="top" secondItem="N9n-hI-29a" secondAttribute="bottom" constant="10" id="Won-fo-cO6"/>
+                            <constraint firstItem="xtv-lH-mnw" firstAttribute="top" secondItem="FJh-MK-jgR" secondAttribute="bottom" constant="10" id="YFy-4K-4uL"/>
+                            <constraint firstItem="NIc-Uj-woA" firstAttribute="top" secondItem="4Cq-q6-vyX" secondAttribute="bottom" constant="20" id="ppO-db-RU0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NIc-Uj-woA" secondAttribute="trailing" id="zXg-Kb-Wz2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descripcionTarea" destination="5Wf-1N-CVG" id="al7-PH-iWA"/>
+                        <outlet property="titulotTarea" destination="NIc-Uj-woA" id="ELZ-Ty-4A8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vUq-kj-k57" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="799" y="-303"/>
+        </scene>
+        <!--Nueva Tarea-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Examen_ListaTareas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Título" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="epH-TH-SpG">
+                                <rect key="frame" x="16" y="30" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descripción" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bzk-4i-Pf3">
+                                <rect key="frame" x="16" y="90" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvu-LM-qe9">
+                                <rect key="frame" x="138" y="140" width="45" height="30"/>
+                                <state key="normal" title="Añadir"/>
+                                <connections>
+                                    <action selector="addTarea:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="YQT-vY-LwG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tvu-LM-qe9" firstAttribute="top" secondItem="Bzk-4i-Pf3" secondAttribute="bottom" constant="20" id="Bqf-Wt-atf"/>
+                            <constraint firstItem="Bzk-4i-Pf3" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="FYq-Bw-FUa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="epH-TH-SpG" secondAttribute="trailing" id="Oxg-R9-zDw"/>
+                            <constraint firstItem="epH-TH-SpG" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="WrH-KU-PJU"/>
+                            <constraint firstItem="epH-TH-SpG" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="10" id="WzQ-pg-WWv"/>
+                            <constraint firstItem="Bzk-4i-Pf3" firstAttribute="top" secondItem="epH-TH-SpG" secondAttribute="bottom" constant="30" id="X2N-Oa-UYD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bzk-4i-Pf3" secondAttribute="trailing" id="cQx-aa-Xyo"/>
+                            <constraint firstItem="Tvu-LM-qe9" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="te2-8S-lcf"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Nueva Tarea" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="descripcionTextField" destination="Bzk-4i-Pf3" id="3fC-Rr-Ay9"/>
+                        <outlet property="tituloTextField" destination="epH-TH-SpG" id="sUa-cl-fEP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="340.80000000000001"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+</document>
