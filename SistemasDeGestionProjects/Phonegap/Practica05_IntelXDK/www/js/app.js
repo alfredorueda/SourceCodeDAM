@@ -144,9 +144,9 @@ function onAppReady() {
     $('#buttonAcceleracio').click(function(){
         
         function onSuccess6(acceleration) {
-            $('#divAcceleracio').html('Aceleración X: ' + acceleration.x + '\n' +
-                  'Aceleración Y: ' + acceleration.y + '\n' +
-                  'Aceleración Z: ' + acceleration.z + '\n');
+            $('#divAcceleracio').html('Aceleración X: ' + acceleration.x + '<br/>' +
+                  'Aceleración Y: ' + acceleration.y + '<br/>' +
+                  'Aceleración Z: ' + acceleration.z + '<br/>');
         };
 
         function onError6() {
@@ -161,9 +161,9 @@ function onAppReady() {
         window.addEventListener("deviceorientation", controlOrientation);
         
         function controlOrientation(event){
-            $('#divRotacio').html('X/Z: ' + event.gamma + '\n' +
-                  'Y/Z: ' + event.beta + '\n' +
-                  'Y/X: ' + event.alpha + '\n');
+            $('#divRotacio').html('Rotacións: <br/> X/Z: ' + event.gamma + '<br/>' +
+                  'Y/Z: ' + event.beta + '<br/>' +
+                  'Y/X: ' + event.alpha + '<br/>');
         }
         
         
@@ -174,7 +174,7 @@ function onAppReady() {
     intel.xdk.device.setRotateOrientation('portrait');
 
     $('#playGame').click(function(){
-        $('#pelota').show();
+        $('#playGame').hide();
         $('#pelota').css("left", 100);
         $('#pelota').css("top", 100);
         window.addEventListener("deviceorientation", controlOrientation7);
@@ -184,8 +184,8 @@ function onAppReady() {
           $('#pelota').css("top", parseInt(event.beta)+90);
           
           if ((parseInt(event.gamma) > 20 && parseInt(event.beta) > 20) && (parseInt(event.gamma) < 70 && parseInt(event.beta) < 70)){
-              $('#pelota').hide();
               window.removeEventListener("deviceorientation", controlOrientation7);
+              $('#pelota').hide();
               alert("Game Over!");
           }
           
