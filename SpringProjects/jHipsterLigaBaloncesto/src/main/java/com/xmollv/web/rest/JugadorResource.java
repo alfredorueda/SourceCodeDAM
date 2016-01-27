@@ -24,7 +24,6 @@ import java.util.Optional;
 /**
  * REST controller for managing Jugador.
  */
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class JugadorResource {
