@@ -47,7 +47,7 @@ public class SquaredView extends View {
         int bottom = getHeight() - 3;
         int right = getWidth() - 3;
         canvas.drawRect(left, top, right, bottom, paint);
-        canvas.drawLine(left, top, right, bottom, paint);
-        canvas.drawLine(left, bottom, right, top, paint);
+        //canvas.drawLine(left, top, right, bottom, paint);
+        //canvas.drawLine(left, bottom, right, top, paint);
     }
 }
