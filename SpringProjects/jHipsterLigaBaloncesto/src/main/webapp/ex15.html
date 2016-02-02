@@ -2,32 +2,43 @@
 <html>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
-<body ng-app="">
+<body ng-app="myApp" ng-controller="jugadoresController">
 <form name="formulario">
     <p>
         Nombre del jugador:
-        <input name="jugadorName" ng-model="jugadorName" required>
-        <span ng-show="formulario.jugadorName.$invalid" style="color:red;">Es necesario introucir un nombre.</span>
+        <input ng-model="jugador.nombre">
     </p>
 
     <p>
         Canastas del jugador:
-        <input name="jugadorCanastas" ng-model="jugadorCanastas" required>
-        <span ng-show="formulario.jugadorCanastas.$invalid" style="color:red;">Es necesario introducir el total de canastas.</span>
+        <input ng-model="jugador.canastas">
     </p>
 
     <p>
         Rebotes del jugador:
-        <input name="jugadorRebotes" ng-model="jugadorRebotes">
+        <input ng-model="jugador.rebotes">
     </p>
 
     <p>
         Posición del jugador:
-        <input name="jugadorPosicion" ng-model="jugadorPosicion" required>
-        <span ng-show="formulario.jugadorPosicion.$invalid" style="color:red;">Es necesario introucir la posición en la que juega.</span>
+        <input ng-model="jugador.posicion">
     </p>
+
+    <button ng-click="save(jugador)">Save</button>
 
 </form>
 
 </body>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('jugadoresController', function($scope, $http) {
+
+        //Mirar los links a GitHub, está hecho mostrando lo que hay que cambiar.
+        $scope.save = function(jugador){
+            console.log(jugador)
+            $http.post('http://localhost:8080/api/jugadors', {data: $scope.jugador});
+        };
+    });
+</script>
 </html>
