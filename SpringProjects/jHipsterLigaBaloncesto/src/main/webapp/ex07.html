@@ -25,7 +25,7 @@
     var app = angular.module('myApp', []);
     app.controller('jugadoresController', function($scope, $http) {
 
-        //Error de seguridad al intentar acceder a Spring desde otro servidor
+        //Error de seguridad al intentar acceder a Spring
         $http.get("http://localhost:8080/api/jugadors").then(function (response) {
             $scope.jsonJugadores = response.data;
             console.log(response.data)
