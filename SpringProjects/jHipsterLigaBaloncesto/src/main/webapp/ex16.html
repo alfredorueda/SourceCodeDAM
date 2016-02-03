@@ -14,11 +14,12 @@
 <div ng-app="jHipsterLigaBaloncestoApp" ng-controller="creacionCtrl">
     <div>
         <form name="formEquipo" ng-submit="save()">
-            Nombre de equipo: <input type="text" name="nombre" ng-model="equipo.nombre"/>
+            Nombre de equipo: <input type="text" name="nombre" ng-model="equipo.nombre" required/>
+            <span ng-show="formEquipo.nombre.$touched && formEquipo.nombre.$invalid">El nombre es requerido</span><br/>
+            Localidad: <input type="text" name="localidad" ng-model="equipo.localidad" required/>
+            <span ng-show="formEquipo.localidad.$touched && formEquipo.localidad.$invalid">La localidad es requerido</span><br/>
 
-            Localidad: <input type="text" name="localidad" ng-model="equipo.localidad"/>
-
-            <button type="submit" ng-disabled="isSaving">
+            <button type="submit" ng-disabled="formEquipo.$invalid || isSaving">
                 <span>Save</span>
             </button>
         </form>
