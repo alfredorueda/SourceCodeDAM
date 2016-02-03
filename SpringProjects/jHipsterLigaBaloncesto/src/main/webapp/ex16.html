@@ -13,16 +13,12 @@
 </style>
 <div ng-app="jHipsterLigaBaloncestoApp" ng-controller="creacionCtrl">
     <div>
-        <form name="formJugador" ng-submit="save()">
-            Nombre: <input type="text" name="nombre" ng-model="jugador.nombre" required/>
-            <span ng-show="formJugador.nombre.$touched && formJugador.nombre.$invalid">El nombre es requerido</span><br/>
-            Posicion: <input type="text" name="posicion" ng-model="jugador.posicion" required/>
-            <span ng-show="formJugador.posicion.$touched && formJugador.posicion.$invalid">La posicion es requerida</span><br/>
-            Asistencias Totales: <input type="number" name="asistenciasTotales" ng-model="jugador.asistenciasTotales" required/>
-            <span ng-show="formJugador.asistenciasTotales.$touched && formJugador.asistenciasTotales.$invalid">Requerido</span><br/>
-            Canastas Totales: <input type="number" name="canastasTotales" ng-model="jugador.canastasTotales" required/>
-            <span ng-show="formJugador.canastasTotales.$touched && formJugador.canastasTotales.$invalid">Requerido</span><br/>
-            <button type="submit" ng-disabled="formJugador.$invalid || isSaving">
+        <form name="formEquipo" ng-submit="save()">
+            Nombre de equipo: <input type="text" name="nombre" ng-model="equipo.nombre"/>
+
+            Localidad: <input type="text" name="localidad" ng-model="equipo.localidad"/>
+
+            <button type="submit" ng-disabled="isSaving">
                 <span>Save</span>
             </button>
         </form>
@@ -134,19 +130,19 @@
 <script src="scripts/components/auth/provider/auth.session.service.js"></script>
 <script src="scripts/app/account/sessions/sessions.js"></script>
 <script src="scripts/app/account/sessions/sessions.controller.js"></script>
-<script src="scripts/app/entities/jugador/jugador.js"></script>
-<script src="scripts/app/entities/jugador/jugador.controller.js"></script>
-<script src="scripts/app/entities/jugador/jugador-dialog.controller.js"></script>
-<script src="scripts/app/entities/jugador/jugador-delete-dialog.controller.js"></script>
-<script src="scripts/app/entities/jugador/jugador-detail.controller.js"></script>
-<script src="scripts/components/entities/jugador/jugador.service.js"></script>
+<script src="scripts/app/entities/equipo/equipo.js"></script>
+<script src="scripts/app/entities/equipo/equipo.controller.js"></script>
+<script src="scripts/app/entities/equipo/equipo-dialog.controller.js"></script>
+<script src="scripts/app/entities/equipo/equipo-delete-dialog.controller.js"></script>
+<script src="scripts/app/entities/equipo/equipo-detail.controller.js"></script>
+<script src="scripts/components/entities/equipo/equipo.service.js"></script>
 <script>
     var app = angular.module('jHipsterLigaBaloncestoApp');
-    app.controller('creacionCtrl', function($scope, Jugador) {
-        $scope.jugador;
+    app.controller('creacionCtrl', function($scope, Equipo) {
+        $scope.equipo;
         $scope.save = function () {
             $scope.isSaving = true;
-            Jugador.save($scope.jugador, onSaveSuccess, onSaveError);
+            Equipo.save($scope.equipo, onSaveSuccess, onSaveError);
         };
         var onSaveSuccess = function (result) {
             $scope.isSaving = false;
@@ -155,8 +151,8 @@
             $scope.isSaving = false;
         };
     });
-    app.factory("Jugador",function($resource){
-        return $resource('api/jugadors/:id', {}, {
+    app.factory("Equipo",function($resource){
+        return $resource('api/equipos/:id', {}, {
         });
     });
 </script>
