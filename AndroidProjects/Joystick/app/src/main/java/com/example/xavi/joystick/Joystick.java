@@ -16,9 +16,10 @@ import android.view.View;
 
 public class Joystick extends View implements GestureDetector.OnGestureListener {
 
-    private Paint paint;
+    private Paint paint, paint2;
     private static final int ESPAI = 5;
     private GestureDetector gd;
+    private int RADI;
 
     public Joystick(Context context) { this(context, null, 0); }
     public Joystick(Context context, AttributeSet attrs) { this(context, attrs, 0); }
@@ -27,10 +28,14 @@ public class Joystick extends View implements GestureDetector.OnGestureListener 
         //Afegeix el detector de gestos
         gd = new GestureDetector(context, this);
         paint = new Paint();
+        paint2 = new Paint();
         paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(5.0f);
-        //paint.setColor(Color.argb(100,0,0,0));
+
+        paint2.setColor(Color.RED);
+        paint2.setStyle(Paint.Style.STROKE);
+        paint2.setStrokeWidth(5.0f);
     }
 
     @Override
@@ -39,6 +44,10 @@ public class Joystick extends View implements GestureDetector.OnGestureListener 
         int w = MeasureSpec.getSize(widthMeasureSpec);
         int h = MeasureSpec.getSize(heightMeasureSpec);
         w = h = (w < h ) ? w : h;
+        if (w < 50 || h < 50) { //fa que el mínim siguin 50p
+            w = 50;
+            h = 50;
+        }
         setMeasuredDimension(w, h);
     }
 
@@ -49,7 +58,7 @@ public class Joystick extends View implements GestureDetector.OnGestureListener 
         //L'espai es per a que el cercle es vegi be, si no es veia tallat
         int r = cw - ESPAI;
         canvas.drawCircle(cw, cw, r, paint);
-        //canvas.drawCircle(cw, cw, (float)r, paint);
+        canvas.drawCircle(cw, cw, RADI, paint2);
     }
 
     @Override
@@ -82,7 +91,8 @@ public class Joystick extends View implements GestureDetector.OnGestureListener 
         Log.d("XMOLLV", ""+r);
         Log.d("XMOLLV", "" + a);
 
-        //this.invalidate();
+        this.invalidate();
+        RADI = (int)r;
         //Si el listener existeix, se li pasa l'informació
         if (listener != null){
             listener.joystickMove(this,r,a);
