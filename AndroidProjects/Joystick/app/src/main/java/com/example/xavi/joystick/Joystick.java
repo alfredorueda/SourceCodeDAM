@@ -58,7 +58,7 @@ public class Joystick extends View implements GestureDetector.OnGestureListener 
         //L'espai es per a que el cercle es vegi be, si no es veia tallat
         int r = cw - ESPAI;
         canvas.drawCircle(cw, cw, r, paint);
-        canvas.drawCircle(cw, cw, RADI, paint2);
+        canvas.drawCircle(cw, cw, RADI, paint2); //Segón cercle que es va moguent
     }
 
     @Override
@@ -92,6 +92,7 @@ public class Joystick extends View implements GestureDetector.OnGestureListener 
         Log.d("XMOLLV", "" + a);
 
         this.invalidate();
+        //Guarda el radi per poder dibuixar el segon cercle
         RADI = (int)r;
         //Si el listener existeix, se li pasa l'informació
         if (listener != null){
