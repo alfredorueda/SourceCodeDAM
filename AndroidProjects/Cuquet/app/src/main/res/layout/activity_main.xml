@@ -24,10 +24,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="0"
         android:id="@+id/tvScore"
-        android:layout_alignBaseline="@+id/btnNewGame"
         android:layout_alignBottom="@+id/btnNewGame"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView" />
 
     <cat.flx.cuquet.CuquetView
         android:layout_width="match_parent"
@@ -39,6 +38,36 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/btnNewGame"
         android:layout_alignParentBottom="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Actual: "
+        android:id="@+id/textView"
+        android:layout_alignBottom="@+id/tvScore"
+        android:layout_toRightOf="@+id/btnNewGame"
+        android:layout_toEndOf="@+id/btnNewGame" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Máxima: "
+        android:id="@+id/textView2"
+        android:layout_above="@+id/cuquetView"
+        android:layout_toLeftOf="@+id/maxPuntuacioLabel"
+        android:layout_toStartOf="@+id/maxPuntuacioLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0"
+        android:id="@+id/maxPuntuacioLabel"
+        android:layout_above="@+id/cuquetView"
+        android:layout_alignRight="@+id/cuquetView"
+        android:layout_alignEnd="@+id/cuquetView" />
 
 
 </RelativeLayout>

@@ -169,8 +169,8 @@ public class CuquetView extends View {
     }
 
     private int counter = 0;
-    //public void update(float accelX, float accelY) {
-    public void update(double accelX, double accelY) {
+    public void update(float accelX, float accelY) {
+    //public void update(double accelX, double accelY) {
         if (!playing) return;
         if (++counter == slowdown) {
             counter = 0;
