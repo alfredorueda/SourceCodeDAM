@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapKit2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DkT-Zh-nbu">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="add" id="9PF-Pv-Lln">
+                                        <connections>
+                                            <action selector="add:" destination="BYZ-38-t0r" id="vHo-mn-qDM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Rkg-Jb-tpY"/>
+                                    <barButtonItem systemItem="trash" id="XJI-qS-5tw">
+                                        <connections>
+                                            <action selector="remove:" destination="BYZ-38-t0r" id="di9-jn-x19"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="eXz-Y1-i3z"/>
+                                    <barButtonItem systemItem="refresh" id="3AD-2z-9LK">
+                                        <connections>
+                                            <action selector="refresh:" destination="BYZ-38-t0r" id="BUD-7A-VvK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-C6-poM">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="V99-ZD-c0P"/>
+                                </connections>
+                            </mapView>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTQ-g2-Vxf">
+                                <rect key="frame" x="0.0" y="44" width="600" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ch0-02-eW3">
+                                        <rect key="frame" x="346" y="11" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitud:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCM-ix-VuK">
+                                        <rect key="frame" x="8" y="11" width="58" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="PCM-ix-VuK" firstAttribute="leading" secondItem="gTQ-g2-Vxf" secondAttribute="leading" constant="8" id="VjT-jf-IoF"/>
+                                    <constraint firstAttribute="height" constant="44" id="fYk-Bf-Mvu"/>
+                                    <constraint firstItem="ch0-02-eW3" firstAttribute="centerY" secondItem="gTQ-g2-Vxf" secondAttribute="centerY" id="h6c-Rq-XvU"/>
+                                    <constraint firstAttribute="trailing" secondItem="ch0-02-eW3" secondAttribute="trailing" constant="186" id="k04-lO-mi1"/>
+                                    <constraint firstItem="PCM-ix-VuK" firstAttribute="centerY" secondItem="gTQ-g2-Vxf" secondAttribute="centerY" id="r4I-UZ-koP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DkT-Zh-nbu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="9u7-ri-y2k"/>
+                            <constraint firstItem="cHx-C6-poM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Ny7-8a-eQE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cHx-C6-poM" secondAttribute="bottom" id="Ofo-Pt-yNA"/>
+                            <constraint firstItem="gTQ-g2-Vxf" firstAttribute="top" secondItem="DkT-Zh-nbu" secondAttribute="bottom" id="S8S-7N-ibF"/>
+                            <constraint firstItem="DkT-Zh-nbu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Xi0-Gn-2Aj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DkT-Zh-nbu" secondAttribute="trailing" constant="-20" id="k2D-vl-ZBW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cHx-C6-poM" secondAttribute="trailing" constant="-20" id="pAq-MO-uFb"/>
+                            <constraint firstItem="cHx-C6-poM" firstAttribute="top" secondItem="DkT-Zh-nbu" secondAttribute="bottom" id="rSq-1q-0G9"/>
+                            <constraint firstItem="gTQ-g2-Vxf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="rmR-EG-zzt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gTQ-g2-Vxf" secondAttribute="trailing" constant="-20" id="zYh-Ed-obH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="latitud" destination="PCM-ix-VuK" id="uqB-By-V21"/>
+                        <outlet property="longitud" destination="ch0-02-eW3" id="XHN-MP-0Ru"/>
+                        <outlet property="mapa" destination="cHx-C6-poM" id="QBU-mm-8Ka"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
