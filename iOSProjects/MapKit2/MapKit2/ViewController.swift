@@ -9,62 +9,47 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CustomDelegate {
 
     @IBOutlet weak var latitud: UILabel!
     @IBOutlet weak var longitud: UILabel!
     @IBOutlet weak var mapa: MKMapView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var titulo = UITextField()
     var subtitulo = UITextField()
+    var localizacion: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: "abrirVentana:")
+        longPress.minimumPressDuration = 1
+        mapa.addGestureRecognizer(longPress)
+    }
+    
+    func abrirVentana(gestureRecognizer: UILongPressGestureRecognizer){
+        let touchPoint = gestureRecognizer.locationInView(self.mapa)
+        localizacion = mapa.convertPoint(touchPoint, toCoordinateFromView: self.mapa)
+        performSegueWithIdentifier("popover", sender: nil)
     }
     
     @IBAction func refresh(sender: UIBarButtonItem) {
-        //let initialLocation = CLLocation(latitude: 40, longitude: -3)
-        //let coordinateRegion = MKCoordinateRegionMakeWithDistance(initialLocation.coordinate, 1500000, 1500000)
-        //mapa.setRegion(coordinateRegion, animated: true)
-        
         latitud.text = "Latidud: \(mapa.centerCoordinate.latitude)"
         longitud.text = "Longitud: \(mapa.centerCoordinate.longitude)"
     }
     
-    @IBAction func add(sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Nueva anotación", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
-            textField.placeholder = "Introduce título:"
-            self.titulo = textField
-            })
-        alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
-            textField.placeholder = "Introduce subtítulo:"
-            self.subtitulo = textField
-            })
-        alert.addAction(UIAlertAction(title:"Aceptar", style: UIAlertActionStyle.Default, handler: crearAnotacion))
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    func crearAnotacion(alert: UIAlertAction!) {
-        //let c = CLLocationCoordinate2D(latitude: mapa.centerCoordinate.latitude, longitude: mapa.centerCoordinate.longitude)
-        //let anotation = MiAnotacion(c:c, t:titulo.text!, st:subtitulo.text!)
-        //let anotation = MiAnotacion()
-                
+    func createAnotationFromSecondVC(annotation: MKPointAnnotation){
+        if let _ = localizacion {
+            annotation.coordinate = CLLocationCoordinate2D(latitude: localizacion!.latitude, longitude: localizacion!.longitude)
+        } else {
+            annotation.coordinate = CLLocationCoordinate2D(latitude: mapa.centerCoordinate.latitude, longitude: mapa.centerCoordinate.longitude)
+        }
         
-        let anotation = MKPointAnnotation()
-        anotation.coordinate = CLLocationCoordinate2D(latitude: mapa.centerCoordinate.latitude, longitude: mapa.centerCoordinate.longitude)
-        anotation.title = titulo.text
-        anotation.subtitle = subtitulo.text
-        mapa.addAnnotation(anotation)
+        mapa.addAnnotation(annotation)
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation anotacion: MKAnnotation) -> MKAnnotationView?{
-        /*let pinView: MKPinAnnotationView = MKPinAnnotationView(annotation: anotacion, reuseIdentifier: "Custom")
-        pinView.image = UIImage(named: "pin")
-        pinView.canShowCallout = true
-        return pinView*/
-        
-       
         var nuevaAnotacion = mapView.dequeueReusableAnnotationViewWithIdentifier("test")
         nuevaAnotacion = MKAnnotationView(annotation: anotacion, reuseIdentifier: "test")
         nuevaAnotacion!.image = UIImage(named:"pin")
@@ -98,5 +83,23 @@ class ViewController: UIViewController, MKMapViewDelegate {
     @IBAction func remove(sender: UIBarButtonItem) {
         mapa.removeAnnotations(mapa.annotations)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "popover" {
+            let secondViewController = segue.destinationViewController as! MiViewController
+            secondViewController.delegate = self
+        }
+    }
+    
+    @IBAction func cambiarMapa(sender: UISegmentedControl) {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            mapa.mapType = MKMapType.Standard
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+            mapa.mapType = MKMapType.Hybrid
+        } else if segmentedControl.selectedSegmentIndex == 2 {
+            mapa.mapType = MKMapType.Satellite
+        }
+    }
+    
 }
 

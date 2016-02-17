@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4766564F1C74FC6B0088E209 /* MiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4766564E1C74FC6B0088E209 /* MiViewController.swift */; };
 		476A28CD1C73831D00C48553 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A28CC1C73831D00C48553 /* AppDelegate.swift */; };
 		476A28CF1C73831D00C48553 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A28CE1C73831D00C48553 /* ViewController.swift */; };
 		476A28D21C73831D00C48553 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476A28D01C73831D00C48553 /* Main.storyboard */; };
 		476A28D71C73831D00C48553 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476A28D51C73831D00C48553 /* LaunchScreen.storyboard */; };
-		476A28E01C738B6A00C48553 /* MiAnotacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A28DF1C738B6A00C48553 /* MiAnotacion.swift */; };
 		476A28E21C7397D000C48553 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476A28E11C7397D000C48553 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4766564E1C74FC6B0088E209 /* MiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiViewController.swift; sourceTree = "<group>"; };
 		476A28C91C73831D00C48553 /* MapKit2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapKit2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		476A28CC1C73831D00C48553 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		476A28CE1C73831D00C48553 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		476A28D11C73831D00C48553 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		476A28D61C73831D00C48553 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		476A28D81C73831D00C48553 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		476A28DF1C738B6A00C48553 /* MiAnotacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiAnotacion.swift; sourceTree = "<group>"; };
 		476A28E11C7397D000C48553 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +58,7 @@
 			children = (
 				476A28CC1C73831D00C48553 /* AppDelegate.swift */,
 				476A28CE1C73831D00C48553 /* ViewController.swift */,
-				476A28DF1C738B6A00C48553 /* MiAnotacion.swift */,
+				4766564E1C74FC6B0088E209 /* MiViewController.swift */,
 				476A28D01C73831D00C48553 /* Main.storyboard */,
 				476A28D51C73831D00C48553 /* LaunchScreen.storyboard */,
 				476A28E11C7397D000C48553 /* Assets.xcassets */,
@@ -140,7 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				476A28CF1C73831D00C48553 /* ViewController.swift in Sources */,
-				476A28E01C738B6A00C48553 /* MiAnotacion.swift in Sources */,
+				4766564F1C74FC6B0088E209 /* MiViewController.swift in Sources */,
 				476A28CD1C73831D00C48553 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

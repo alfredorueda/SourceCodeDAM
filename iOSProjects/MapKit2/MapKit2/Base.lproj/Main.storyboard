@@ -23,7 +23,9 @@
                                 <items>
                                     <barButtonItem systemItem="add" id="9PF-Pv-Lln">
                                         <connections>
-                                            <action selector="add:" destination="BYZ-38-t0r" id="vHo-mn-qDM"/>
+                                            <segue destination="7dq-AY-kji" kind="popoverPresentation" identifier="popover" popoverAnchorBarButtonItem="9PF-Pv-Lln" id="1XG-45-Iqe">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Rkg-Jb-tpY"/>
@@ -53,13 +55,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ch0-02-eW3">
                                         <rect key="frame" x="346" y="11" width="68" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitud:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCM-ix-VuK">
                                         <rect key="frame" x="8" y="11" width="58" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -72,6 +74,17 @@
                                     <constraint firstItem="PCM-ix-VuK" firstAttribute="centerY" secondItem="gTQ-g2-Vxf" secondAttribute="centerY" id="r4I-UZ-koP"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lc2-gP-Vsn">
+                                <rect key="frame" x="376" y="552" width="206" height="29"/>
+                                <segments>
+                                    <segment title="Estándar"/>
+                                    <segment title="Híbrido"/>
+                                    <segment title="Satélite"/>
+                                </segments>
+                                <connections>
+                                    <action selector="cambiarMapa:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZBW-AG-100"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -79,7 +92,9 @@
                             <constraint firstItem="cHx-C6-poM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Ny7-8a-eQE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cHx-C6-poM" secondAttribute="bottom" id="Ofo-Pt-yNA"/>
                             <constraint firstItem="gTQ-g2-Vxf" firstAttribute="top" secondItem="DkT-Zh-nbu" secondAttribute="bottom" id="S8S-7N-ibF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lc2-gP-Vsn" secondAttribute="bottom" constant="20" id="SJP-Aw-8ag"/>
                             <constraint firstItem="DkT-Zh-nbu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Xi0-Gn-2Aj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lc2-gP-Vsn" secondAttribute="trailing" constant="-2" id="bhD-fl-KZi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DkT-Zh-nbu" secondAttribute="trailing" constant="-20" id="k2D-vl-ZBW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cHx-C6-poM" secondAttribute="trailing" constant="-20" id="pAq-MO-uFb"/>
                             <constraint firstItem="cHx-C6-poM" firstAttribute="top" secondItem="DkT-Zh-nbu" secondAttribute="bottom" id="rSq-1q-0G9"/>
@@ -91,10 +106,60 @@
                         <outlet property="latitud" destination="PCM-ix-VuK" id="uqB-By-V21"/>
                         <outlet property="longitud" destination="ch0-02-eW3" id="XHN-MP-0Ru"/>
                         <outlet property="mapa" destination="cHx-C6-poM" id="QBU-mm-8Ka"/>
+                        <outlet property="segmentedControl" destination="lc2-gP-Vsn" id="dFz-qq-2QP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="375" y="334"/>
+        </scene>
+        <!--Mi View Controller-->
+        <scene sceneID="kgz-M7-vMz">
+            <objects>
+                <viewController id="7dq-AY-kji" customClass="MiViewController" customModule="MapKit2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4YH-Me-xgZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="CAm-2b-Ydi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ttv-D9-L5W">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Título" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mw6-By-9pP">
+                                <rect key="frame" x="112" y="103" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subtítulo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DX7-Xj-toO">
+                                <rect key="frame" x="112" y="146" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ope-1q-P8E">
+                                <rect key="frame" x="0.0" y="202" width="320" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zd-ck-vEa">
+                                <rect key="frame" x="98" y="426" width="125" height="30"/>
+                                <state key="normal" title="Crear la anotación"/>
+                                <connections>
+                                    <action selector="crearAnotacion:" destination="7dq-AY-kji" eventType="touchUpInside" id="zmA-8E-nNp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="500"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="500"/>
+                    <connections>
+                        <outlet property="pickerView" destination="ope-1q-P8E" id="fYf-Jd-deB"/>
+                        <outlet property="subtituloTextField" destination="DX7-Xj-toO" id="Je0-zj-b9J"/>
+                        <outlet property="tituloTextField" destination="Mw6-By-9pP" id="Fsc-Fv-BNZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zro-Tm-qLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="912" y="334"/>
         </scene>
     </scenes>
 </document>
