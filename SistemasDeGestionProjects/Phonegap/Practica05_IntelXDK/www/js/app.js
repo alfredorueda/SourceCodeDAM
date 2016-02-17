@@ -197,6 +197,73 @@ function onAppReady() {
     
     
     
+    //EXAMEN
+    //Exercici 1
+    var numBeeps = 1;
+    $('#playSoundExam').click(function(){
+        navigator.notification.beep(numBeeps);
+        numBeeps = numBeeps + 1;
+    });
+    
+    //Exercici 2
+    var idImages = 0;
+    $('#mostraImatgeExamen').click(function(){
+        idImages = idImages + 1;
+        navigator.camera.getPicture(onSuccessExamen, onFailExamen, { 
+        quality : 75, 
+        destinationType : Camera.DestinationType.DATA_URL, 
+        sourceType : Camera.PictureSourceType.PHOTOLIBRARY, 
+        allowEdit : true,
+        encodingType: Camera.EncodingType.JPEG,
+        targetWidth: 100,
+        targetHeight: 100 
+        }); 
+    });
+
+    function onSuccessExamen(imageData) {
+        $('#imagenesExam').append('<img id="foto' + idImages + '"/>');
+        $('#foto'+idImages).attr("src", "data:image/jpeg;base64," + imageData);
+        $('#foto'+idImages).attr("width", "70px");
+        $('#foto'+idImages).attr("height", "70px");
+    }
+
+    function onFailExamen(message) {
+        alert('Failed because: ' + message);
+    }
+    
+    //Exercici 3
+    
+    intel.xdk.device.setRotateOrientation('portrait');
+
+    $('#rotarImatgesExamen').click(function(){
+        
+        window.addEventListener("deviceorientation", controlOrientationExamen);
+
+        function controlOrientationExamen(event){
+            $('#imagenesExam>img').each(function(){
+                $(this).css({
+                    '-ms-transform': 'rotate(' + event.gamma + 'deg)', /* IE 9 */
+                    '-webkit-transform': 'rotate(' + event.gamma  + 'deg)', /* Chrome, Safari, Opera */
+                    'transform': 'rotate(' + event.gamma  + 'deg)'
+                });
+            });
+        }
+    });
+    
+    //Exercici 4
+    
+    $('#editarImagenes').click(function(){
+        $('#imagenesExam>img').each(function(){
+            $(this).click(function(){
+               $(this).remove();
+            });
+        });
+    });
+        
+    
+    
+    
+    
     
 }
 document.addEventListener("app.Ready", onAppReady, false) ;
