@@ -79,6 +79,14 @@ implements CuquetView.CuquetViewListener, SensorEventListener {
     public void onResume() {
         super.onResume();
         sm.registerListener(this, sensor, SensorManager.SENSOR_DELAY_UI);
+        try {
+            SharedPreferences settings = getSharedPreferences("PreferenciesXavi2", 0);
+            maxPuntuacio = settings.getInt("maxPuntuacio", 0);
+            maxPuntuacioLabel.setText(""+maxPuntuacio);
+            System.out.println(maxPuntuacio);
+        } catch (Exception e){
+            System.out.println(e.toString());
+        }
     }
     @Override
     public void onPause() {
