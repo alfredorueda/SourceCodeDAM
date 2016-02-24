@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery-1.9.1.js" type="text/javascript"></script>
+        <link href="jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css"/>
+        <script src="jquery.mobile-1.4.5.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <section id="firstpage" data-role="page"  >
+            <header data-role="header" data-position="fixed">
+                <h1>Capçalera pàgina 1</h1>
+            </header>
+            
+            <div data-role="main" class="ui-content">
+                <p>Primera pàgina</p>
+                <a href="#segonaPagina" data-role="button">Anar a la segona pàgina</a>
+            </div>
+            
+            <footer data-role="footer">Peu de pàgina</footer>
+        </section>
+        
+        
+        <div id="segonaPagina" data-role="page">
+            
+            <header data-role="header" data-position="fixed">
+                <h1>Capçalera pàgina 2</h1>
+            </header>
+            
+            <div data-role="main" class="ui-content">
+                <p>Soc la segona pàgina</p>
+                <a href="#firstpage" data-role="button">Anar a la primera pàgina</a>
+            </div>
+            
+            <footer data-role="footer">Peu de pàgina</footer>
+        </div>
+        
+        
+    </body>
+</html>
