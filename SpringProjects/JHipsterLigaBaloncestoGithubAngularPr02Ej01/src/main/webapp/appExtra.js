@@ -61,5 +61,22 @@ angular.module('ligaBaloncestoApp')
                     }
                 }
             })
+            .state('ejP02E01', {
+                url: '/ejP02E01',
+                data: {
+                    pageTitle: 'P02E01'
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'ejP02E01-extra.html',
+                        controller: 'jugadorCtrl'
+                    }
+                },
+                resolve: {
+                    entity: ['$stateParams', 'Jugador', function($stateParams, Jugador) {
+                        return Jugador.bestPlayersByBaskets(20);
+                    }]
+                }
+            })
 
     });
