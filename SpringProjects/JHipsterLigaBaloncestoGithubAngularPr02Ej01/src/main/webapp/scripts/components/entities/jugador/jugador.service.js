@@ -25,6 +25,7 @@ angular.module('ligaBaloncestoApp')
                     data.fechaNacimiento = DateUtils.convertLocaleDateToServer(data.fechaNacimiento);
                     return angular.toJson(data);
                 }
-            }
+            },
+            'bestPlayersByBaskets': { method: 'GET', isArray: true, url: 'api/ct_gt/:baskets' }
         });
     });

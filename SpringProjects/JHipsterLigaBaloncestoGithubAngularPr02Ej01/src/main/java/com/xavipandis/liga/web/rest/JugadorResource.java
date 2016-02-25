@@ -34,6 +34,17 @@ public class JugadorResource {
     @Inject
     private JugadorRepository jugadorRepository;
 
+    //XAVI --> Method to get players with more than X canastasTotales
+    @RequestMapping(value = "/ct_gt/{canastasTotales}", method = RequestMethod.GET)
+    @Timed
+    public ResponseEntity<List<Jugador>> findAllByCanastasTotalesGreaterThanOrderByCanastasTotalesDesc(@PathVariable int canastasTotales) {
+        List<Jugador> response = jugadorRepository.findAllByCanastasTotalesGreaterThanOrderByCanastasTotalesDesc(canastasTotales);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+
+
+
     /**
      * POST  /jugadors -> Create a new jugador.
      */
