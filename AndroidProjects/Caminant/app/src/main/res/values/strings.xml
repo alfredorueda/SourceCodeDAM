@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Caminant</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="waiting">Waiting GPS&#8230;</string>
+    <string name="savingOn">Saving: ON</string>
+    <string name="savingOff">Saving: OFF</string>
+    <string name="notification_title">Saving route</string>
+    <string name="notification_text">Saving route...</string>
+</resources>
