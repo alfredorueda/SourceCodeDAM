@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Cronometro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktM-kf-Ydl">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem title="Cronómetro" id="4zA-rk-4nQ">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="uSk-CW-qGb">
+                                            <connections>
+                                                <action selector="stopTimer:" destination="BYZ-38-t0r" id="eRj-JH-1O9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBO-ku-YqB">
+                                <rect key="frame" x="20" y="236" width="560" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eE-iu-zKo">
+                                        <rect key="frame" x="196.5" y="4.5" width="61" height="119.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDa-Zq-Rgl">
+                                        <rect key="frame" x="267.5" y="4.5" width="25" height="119.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="VWx-YW-CDJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qne-TJ-Pgn">
+                                        <rect key="frame" x="302.5" y="5" width="61" height="119.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="xDa-Zq-Rgl" firstAttribute="centerX" secondItem="hBO-ku-YqB" secondAttribute="centerX" id="3SL-bi-exK"/>
+                                    <constraint firstItem="3eE-iu-zKo" firstAttribute="centerY" secondItem="hBO-ku-YqB" secondAttribute="centerY" id="4cK-Ax-i96"/>
+                                    <constraint firstItem="xDa-Zq-Rgl" firstAttribute="leading" secondItem="3eE-iu-zKo" secondAttribute="trailing" constant="10" id="I4o-nF-Ldf"/>
+                                    <constraint firstItem="qne-TJ-Pgn" firstAttribute="centerY" secondItem="hBO-ku-YqB" secondAttribute="centerY" id="fUc-P2-oQe"/>
+                                    <constraint firstItem="xDa-Zq-Rgl" firstAttribute="centerY" secondItem="hBO-ku-YqB" secondAttribute="centerY" id="i2E-ai-fgv"/>
+                                    <constraint firstAttribute="height" constant="128" id="lbS-a5-1pz"/>
+                                    <constraint firstItem="qne-TJ-Pgn" firstAttribute="leading" secondItem="xDa-Zq-Rgl" secondAttribute="trailing" constant="10" id="t99-Be-PXC"/>
+                                </constraints>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GC-zW-2Ry">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem id="sgB-Va-Axi">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="pause" id="8Kf-zt-Nnp">
+                                            <connections>
+                                                <action selector="pauseTimer:" destination="BYZ-38-t0r" id="ezT-3T-L7m"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="K3V-fW-ELW">
+                                            <connections>
+                                                <action selector="playTimer:" destination="BYZ-38-t0r" id="hqh-F6-ipM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="5GC-zW-2Ry" secondAttribute="trailing" constant="-20" id="1b3-Wb-vTs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5GC-zW-2Ry" secondAttribute="bottom" id="BPL-4y-R2Z"/>
+                            <constraint firstItem="hBO-ku-YqB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Oud-cf-dHq"/>
+                            <constraint firstItem="ktM-kf-Ydl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="T1d-zu-SaM"/>
+                            <constraint firstItem="ktM-kf-Ydl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="WvW-2v-Ov1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hBO-ku-YqB" secondAttribute="trailing" id="bJ3-ON-07l"/>
+                            <constraint firstItem="hBO-ku-YqB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dX6-hl-2zp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ktM-kf-Ydl" secondAttribute="trailing" constant="-20" id="lKX-FX-aSO"/>
+                            <constraint firstItem="5GC-zW-2Ry" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="uMG-SJ-KnS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="minutesTime" destination="3eE-iu-zKo" id="nah-19-aMz"/>
+                        <outlet property="time" destination="qne-TJ-Pgn" id="OfE-wu-3ff"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="348"/>
+        </scene>
+    </scenes>
+</document>
