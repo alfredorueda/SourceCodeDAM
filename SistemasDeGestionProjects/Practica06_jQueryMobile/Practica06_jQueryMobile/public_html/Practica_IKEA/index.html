@@ -16,34 +16,64 @@ and open the template in the editor.
     <body>
         <section id="firstpage" data-role="page"  >
             <header data-role="header" data-position="fixed">
-                <h1>IKEA</h1>
+                <h1>Help aIKEA</h1>
             </header>
             
             <div data-role="main" class="ui-content">
-                <p>Primera pàgina</p>
-                <div data-role="controlgroup" data-type="horizontal">
-                    <a class="ui-btn ui-icon-arrow-r ui-btn-icon-bottom" href="#segonaPagina" data-role="button" data-transition="flip">Anar a la segona pàgina</a>
-                    <button>Button test grouped</button>
+                <div data-role="controlgroup" data-type="vertical">
+                    <a href="#paginaPerComprar" data-role="button">Comprar</a>
+                    <a href="#segonaPagina" data-role="button">Comprado</a>
+                    <a href="#segonaPagina" data-role="button">Nivel</a>
+                    <a href="#segonaPagina" data-role="button">Cuenta atrás</a>
                 </div>
             </div>
-            
-            <footer data-role="footer">Peu de pàgina</footer>
         </section>
         
         
-        <div id="segonaPagina" data-role="page">
-            
+        <div id="paginaPerComprar" data-role="page">
             <header data-role="header" data-position="fixed">
                 <a data-rel="back"> Back </a>
-                <h1>Capçalera pàgina 2</h1>
+                <h1>Help aIKEA</h1>
+                <a href="#addProductOrLocation" class="ui-btn-right"> Add </a>
+                
+                <div id="addProductOrLocation" data-role="panel" data-display="overlay" data-position="right">
+                    <br/>
+                    <ul data-role="listview">
+                        <li><a href="#kk" data-role="button">ADD Ubicación</a></li>
+                        <li><a href="#kk" data-role="button">ADD producto</a></li>
+                    </ul>
+                    <br/>
+                </div>
+
+                
+                
+                
             </header>
             
-            <div data-role="main" class="ui-content">
-                <p>Soc la segona pàgina</p>
-                <a href="#firstpage" data-role="button">Anar a la primera pàgina</a>
-            </div>
-            
-            <footer data-role="footer">Peu de pàgina</footer>
+            <div data-role="tabs" id="tabs">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#comprar" data-ajax="false">Comprar</a></li>
+                        <li><a href="#comprado" data-ajax="false">Comprado</a></li>
+                    </ul>
+                </div>
+                <div id="comprar" class="ui-body-d ui-content">
+                   <p>Llista de coses per comprar</p>
+                   
+                   <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Introduce tu búsqueda...">
+                    <li data-role="list-divider">Ubicaciones</li>
+                    <li><a href="#"><img src="img/Mesita.png" class="ui-li-icon">Mesita dormitorio</a></li>
+                    <li><a href="#"><img src="img/Mesita.png" class="ui-li-icon">Armario bajo mesa</a></li>
+                    <li data-role="list-divider">Productos</li>
+                    <li><a href="#"><img src="img/Mesita.png" class="ui-li-icon">Colador</a></li>
+                    <li><a href="#"><img src="img/Mesita.png" class="ui-li-icon">Lámpara</a></li>
+                  </ul>
+                </div>
+                <div id="comprado" class="ui-content">
+                   <p>Llista de coses comprades</p>
+                </div>
+
+            </div> 
         </div>
         
         
