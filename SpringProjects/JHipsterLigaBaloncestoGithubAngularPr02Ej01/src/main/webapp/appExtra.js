@@ -68,15 +68,14 @@ angular.module('ligaBaloncestoApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'ejP02E01-extra.html',
-                        controller: 'jugadorCtrl'
+                        templateUrl: 'ejP02E01.html',
+                        controller: 'jugadorCtrlByBaskets'
                     }
                 },
                 resolve: {
                     entity: ['$stateParams', 'Jugador', function($stateParams, Jugador) {
-                        return Jugador.bestPlayersByBaskets(20);
+                        return Jugador.bestPlayersByBaskets({baskets:20});
                     }]
                 }
             })
-
     });

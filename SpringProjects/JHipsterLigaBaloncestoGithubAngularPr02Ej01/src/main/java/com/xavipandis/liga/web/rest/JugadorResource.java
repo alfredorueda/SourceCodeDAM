@@ -45,6 +45,14 @@ public class JugadorResource {
 
 
 
+
+
+
+
+
+
+
+
     /**
      * POST  /jugadors -> Create a new jugador.
      */

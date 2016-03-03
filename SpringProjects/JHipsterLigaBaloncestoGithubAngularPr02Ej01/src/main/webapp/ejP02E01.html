@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <title>P02E01</title>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>-->
 </head>
 <body>
     <style>
@@ -12,7 +12,7 @@
             padding: 5px;
         }
     </style>
-    <div ng-app="myApp" ng-controller="jugadorCtrl">
+    <div ng-app="ligaBaloncestoApp" ng-controller="jugadorCtrlByBaskets">
         <table>
             <tr>
                 <td ng-click="filtrarPor('+nombre')">Nombre</td>
@@ -39,16 +39,5 @@
             </tr>
         </table>
     </div>
-    <script>
-        var app = angular.module('myApp', []);
-        app.controller('jugadorCtrl', function($scope, $http) {
-            $http.get("api/jugadors/ct_gt/20").then(function (response) {
-                $scope.jugadores = response.data;
-            });
-            $scope.filtrarPor = function(filtro){
-                $scope.filtracion = filtro;
-            };
-        });
-    </script>
 </body>
 </html>
