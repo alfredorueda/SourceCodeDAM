@@ -18,64 +18,78 @@ and open the template in the editor.
             <header data-role="header" data-position="fixed">
                 <h1>Help aIKEA</h1>
             </header>
-            
+
             <div data-role="main" class="ui-content">
                 <div data-role="controlgroup" data-type="vertical">
-                    <a href="#paginaPerComprar" data-role="button">Comprar</a>
-                    <a href="#segonaPagina" data-role="button">Comprado</a>
-                    <a href="#segonaPagina" data-role="button">Nivel</a>
-                    <a href="#segonaPagina" data-role="button">Cuenta atrás</a>
+                    <a href="#paginaPerComprar" data-role="button">Necesito</a>
+                    <a href="#paginaPerComprar" data-role="button">Wishlist</a>
+                    <a href="#paginaPerComprar" data-role="button">Nivel</a>
+                    <a href="#paginaPerComprar" data-role="button">Cuenta atrás</a>
                 </div>
             </div>
         </section>
-        
-        
+
+
         <div id="paginaPerComprar" data-role="page">
             <header data-role="header" data-position="fixed">
                 <a data-rel="back"> Back </a>
                 <h1>Help aIKEA</h1>
                 <a href="#addProductOrLocation" class="ui-btn-right"> Add </a>
-                
-                <div id="addProductOrLocation" data-role="panel" data-display="overlay" data-position="right">
-                    <br/>
-                    <ul data-role="listview">
-                        <li><a href="#kk" data-role="button">ADD Ubicación</a></li>
-                        <li><a href="#kk" data-role="button">ADD producto</a></li>
-                    </ul>
-                    <br/>
+
+                <div id="addProductOrLocation" data-role="panel" data-display="overlay" data-position="right" class="ui-panel-inner">
+
+                    <div class="ui-block-a">
+                        <label for="grid-select-1" class="ui-hidden-accessible">Selecciona una zona</label>
+                        <select id="grid-select-1" name="grid-select-1" data-shadow="false">
+                            <option>Selecciona una zona</option>
+                            <option value="comedor">Comedor</option>
+                            <option value="dormitorio">Dormitorio</option>
+                        </select>
+                    </div>
+
                 </div>
 
-                
-                
-                
             </header>
-            
+
             <div data-role="tabs" id="tabs">
                 <div data-role="navbar">
                     <ul>
-                        <li><a href="#comprar" data-ajax="false">Comprar</a></li>
-                        <li><a href="#comprado" data-ajax="false">Comprado</a></li>
+                        <li><a href="#comprar" data-ajax="false">Necesito</a></li>
+                        <li><a href="#wishlist" data-ajax="false">Wishlist</a></li>
                     </ul>
                 </div>
+
                 <div id="comprar" class="ui-body-d ui-content">
                    <p>Llista de coses per comprar</p>
-                   
+
                    <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Introduce tu búsqueda...">
-                    <li data-role="list-divider">Ubicaciones</li>
-                    <li><a href="#"><img src="img/Mesita.png" class="ui-li-icon">Mesita dormitorio</a></li>
-                    <li><a href="#"><img src="img/Mesita.png" class="ui-li-icon">Armario bajo mesa</a></li>
-                    <li data-role="list-divider">Productos</li>
-                    <li><a href="#"><img src="img/Mesita.png" class="ui-li-icon">Colador</a></li>
-                    <li><a href="#"><img src="img/Mesita.png" class="ui-li-icon">Lámpara</a></li>
+                    <li data-role="list-divider">Comedor</li>
+                    <li><a href="#"><img src="img/Mesita.png">Sofa grande</a></li>
+                    <li><a href="#"><img src="img/Mesita.png">Mesa comedor</a></li>
+
+                    <li data-role="list-divider">Dormitorio</li>
+                    <li><a href="#"><img src="img/Mesita.png">Monstruo bajo la cama</a></li>
+                    <li><a href="#"><img src="img/Mesita.png">Escudo</a></li>
                   </ul>
                 </div>
-                <div id="comprado" class="ui-content">
+
+
+                <div id="wishlist" class="ui-content">
                    <p>Llista de coses comprades</p>
                 </div>
 
-            </div> 
+
+                <div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a"><a href="#nivel" class="ui-btn" data-role="button">Nivel</a></div>
+                        <div class="ui-block-b"><a href="#countdown" class="ui-btn" data-role="button">Countdown</a></div>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
-        
-        
+
+
     </body>
 </html>
