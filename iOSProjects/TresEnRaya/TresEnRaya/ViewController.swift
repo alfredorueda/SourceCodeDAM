@@ -69,6 +69,11 @@ class ViewController: UIViewController {
             labelWinner.text = "Ganador: \(player)"
             containerWinner.hidden = false
             print("Ha ganado \(player)!")
+        } else {
+            if !estado.contains("") {
+                labelWinner.text = "EMPATE"
+                containerWinner.hidden = false
+            }
         }
     }
 }
