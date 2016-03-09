@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         containerWinner.hidden = true
+        containerWinner.alpha = 0
     }
     
     
@@ -43,7 +44,12 @@ class ViewController: UIViewController {
     @IBAction func reloadGame(sender: UIButton) {
         player = "Circulo"
         estado = ["","","","","","","","",""]
-        containerWinner.hidden = true
+        
+        UIView.animateWithDuration(1, animations: {
+            self.containerWinner.alpha = 0
+        }, completion: { bool in
+            self.containerWinner.hidden = true
+        })
         
         for button in containerWinner.superview!.subviews {
             if ((button as? UIButton) != nil) {
@@ -66,13 +72,19 @@ class ViewController: UIViewController {
         ((estado[0] != "" ) && (estado[0] == estado[4]) && estado[4] == estado[8]) ||
         ((estado[2] != "" ) && (estado[2] == estado[4]) && estado[4] == estado[6])
         ) {
-            labelWinner.text = "Ganador: \(player)"
-            containerWinner.hidden = false
-            print("Ha ganado \(player)!")
+            UIView.animateWithDuration(1, animations: {
+                self.labelWinner.text = "Ganador: \(self.player)"
+                self.containerWinner.hidden = false
+                self.containerWinner.alpha = 1
+            })
         } else {
             if !estado.contains("") {
-                labelWinner.text = "EMPATE"
-                containerWinner.hidden = false
+                
+                UIView.animateWithDuration(1, animations: {
+                    self.labelWinner.text = "EMPATE"
+                    self.containerWinner.hidden = false
+                    self.containerWinner.alpha = 1
+                })
             }
         }
     }
