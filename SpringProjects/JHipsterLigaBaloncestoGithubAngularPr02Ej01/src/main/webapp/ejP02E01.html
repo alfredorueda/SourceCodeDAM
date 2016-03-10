@@ -13,6 +13,7 @@
         }
     </style>
     <div ng-app="ligaBaloncestoApp">
+        <p>Máximo de canastas: <input type="text" ng-model="canastasTotales" ng-change="change()"></p>
         <table>
             <tr>
                 <td ng-click="filtrarPor('+nombre')">Nombre</td>

@@ -74,7 +74,7 @@ angular.module('ligaBaloncestoApp')
                 },
                 resolve: {
                     entity: ['$stateParams', 'Jugador', function($stateParams, Jugador) {
-                        return Jugador.bestPlayersByBaskets({baskets:20});
+                        return Jugador.bestPlayersByBaskets({baskets:0});
                     }]
                 }
             })
