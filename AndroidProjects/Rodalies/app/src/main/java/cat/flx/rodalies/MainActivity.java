@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -16,14 +17,18 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
     private Spinner spinOrig;
     private Spinner spinDest;
     protected Parada[] parades;
+    private WebView webView;
+    private String dataActual;
 
     protected class Parada {
         int id;
@@ -42,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         spinOrig = (Spinner) findViewById(R.id.spin_orig);
         spinDest = (Spinner) findViewById(R.id.spin_dest);
+        webView = (WebView) findViewById(R.id.webView);
+        dataActual = new SimpleDateFormat("yyyyMMdd").format(new Date());
+        System.out.println(dataActual);
         Button btnReload = (Button) findViewById(R.id.btn_reload);
         btnReload.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
@@ -52,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Parada paradaOrigen = (Parada) spinOrig.getSelectedItem();
+                Parada paradaDesti = (Parada) spinDest.getSelectedItem();
+
+                new DownloadTimetable().execute("http://android.flx.cat/rodalies/consulta.php?nucleo=50&oid=" + paradaOrigen.id + "&did=" + paradaDesti.id + "&df=" + dataActual + "");
                 // Carregar el trajecte amb la url:
                 // http://android.flx.cat/rodalies/consulta.php?nucleo=50&oid=79404&did=77107&df=20160307
                 // On:
@@ -67,6 +79,40 @@ public class MainActivity extends AppCompatActivity {
                 //          http://android.flx.cat/rodalies/cityList.php
             }
         });
+    }
+
+    public class DownloadTimetable extends AsyncTask<String, Void, Boolean> {
+        private String result = "";
+        private ProgressDialog dialog;
+
+        @Override
+        protected void onPreExecute() {
+            dialog = ProgressDialog.show(MainActivity.this, "Descarregant l'horari...", "");
+        }
+
+        @Override
+        protected Boolean doInBackground(String... urlAmbParametres) {
+            try {
+                URL url = new URL(urlAmbParametres[0]);
+                BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+                String str = "";
+                while ((str = in.readLine()) != null) {
+                    result += str;
+                }
+                in.close();
+                return true;
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+            return false;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            dialog.dismiss();
+            webView.loadDataWithBaseURL("",result,"text/html","UTF-8","");
+        }
     }
 
     public class UpdateListTask extends AsyncTask<Void, Void, Boolean> {
