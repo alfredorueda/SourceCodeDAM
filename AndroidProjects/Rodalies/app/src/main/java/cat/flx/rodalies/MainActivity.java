@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected Parada[] parades;
     private WebView webView;
     private String dataActual;
+    private Button btnSearch;
 
     protected class Parada {
         int id;
@@ -51,12 +52,16 @@ public class MainActivity extends AppCompatActivity {
         dataActual = new SimpleDateFormat("yyyyMMdd").format(new Date());
         System.out.println(dataActual);
         Button btnReload = (Button) findViewById(R.id.btn_reload);
+        btnSearch = (Button) findViewById(R.id.btn_search);
+        btnSearch.setEnabled(false);
         btnReload.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
+            @Override
+            public void onClick(View v) {
                 new UpdateListTask().execute();
+                btnSearch.setEnabled(true);
             }
         });
-        Button btnSearch = (Button) findViewById(R.id.btn_search);
+
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
