@@ -46,7 +46,7 @@ and open the template in the editor.
                     </select>
 
                     <a href="#kk" class="ui-btn" data-role="button">Añadir una foto</a>
-                    <img src="img/Mesita.png" width="100" height="100">
+                    <img src="img/Sofa.jpg" width="80" height="80">
                     <textarea placeholder="Descripción del producto..."></textarea>
                     <a href="#kk" class="ui-btn" data-role="button">Añádelo!</a>
                     
@@ -75,7 +75,7 @@ and open the template in the editor.
 
                    <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Introduce tu búsqueda...">
                     <li data-role="list-divider">Comedor</li>
-                    <li><a href="#detailsSofaGrande"><img src="img/Mesita.png">Sofa grande</a></li>
+                    <li><a href="#detailsSofaGrande"><img src="img/Sofa.jpg">Sofa grande</a></li>
                     <li><a href="#"><img src="img/Mesita.png">Mesa comedor</a></li>
 
                     <li data-role="list-divider">Dormitorio</li>
@@ -86,7 +86,11 @@ and open the template in the editor.
 
 
                 <div id="wishlist" class="ui-content">
-                   <p>Llista de coses per comprar de nou?</p>
+                   <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Introduce tu búsqueda...">
+                    <li data-role="list-divider">Dormitorio</li>
+                    <li><a href="#"><img src="img/Mesita.png">Monstruo bajo la cama</a></li>
+                    <li><a href="#"><img src="img/Mesita.png">Escudo</a></li>
+                  </ul>
                 </div>
 
 
@@ -97,6 +101,125 @@ and open the template in the editor.
                     </div>
                 </div>
                 
+            </div>
+        </div>
+        
+        
+<!--
+****
+****
+****
+****
+****
+****
+-->
+        
+        <div id="detailsSofaGrande" data-role="page">
+            <header data-role="header" data-position="fixed">
+                <a data-rel="back"> Back </a>
+                <h1>Sofá Grande</h1>
+            </header>
+            
+            
+            <div id="detallsSofa" class="ui-body-d ui-content">
+                <div>
+                    <img src="img/Sofa.jpg" width="80" height="80">
+                    <img src="img/Sofa.jpg" width="80" height="80">
+                    <img src="img/Sofa.jpg" width="80" height="80">
+                    <img src="img/Sofa.jpg" width="80" height="80">
+                </div>
+                <a href="" class="ui-btn">ADD PICTURE</a>
+                <a href=""> COMEDOR </a>
+                <a href="" class="ui-btn">sofá de piel</a><br/>
+                <a href="" class="ui-btn">Anchura 20</a>
+                <a href="" class="ui-btn">Altura 30</a>
+                <a href="" class="ui-btn">Profundidad 10</a>
+            </div>
+            
+            <div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><a href="#nivel" class="ui-btn" data-role="button">Nivel</a></div>
+                    <div class="ui-block-b"><a href="#countdown" class="ui-btn" data-role="button">Countdown</a></div>
+                </div>
+            </div>
+        </div>
+
+<!--
+****
+****
+****
+****
+****
+****
+-->
+
+        <div id="nivel" data-role="page">
+            <header data-role="header" data-position="fixed">
+                <a data-rel="back"> Back </a>
+                <h1>Nivel</h1>
+            </header>
+            
+            
+            <div id="nivelContent" class="ui-body-d ui-content">
+                
+                <button id="playGame">Activa el nivel</button>
+                <div id="terrenoJuego" style="width:200px; height: 200px; background-color: gray; position: relative;">
+                    <div id="pelota" style="width: 20px; height: 20px; background-color: white; border-radius: 10px; position: absolute; left: 0px; top: 0px;"></div>
+                </div>
+                
+                <script>
+                intel.xdk.device.setRotateOrientation('portrait');
+
+                $('#playGame').click(function(){
+                    $('#playGame').hide();
+                    $('#pelota').css("left", 100);
+                    $('#pelota').css("top", 100);
+                    window.addEventListener("deviceorientation", controlOrientation7);
+
+                    function controlOrientation7(event){
+                      $('#pelota').css("left", parseInt(event.gamma)+90);
+                      $('#pelota').css("top", parseInt(event.beta)+90);
+                    }
+                });
+                </script>
+            </div>
+            
+            <div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><a href="#nivel" class="ui-btn" data-role="button">Nivel</a></div>
+                    <div class="ui-block-b"><a href="#countdown" class="ui-btn" data-role="button">Countdown</a></div>
+                </div>
+            </div>
+        </div>
+
+<!--
+****
+****
+****
+****
+****
+****
+-->
+
+        <div id="countdown" data-role="page">
+            <header data-role="header" data-position="fixed">
+                <a data-rel="back"> Back </a>
+                <h1>Cuenta atrás</h1>
+            </header>
+            
+            
+            <div id="countdownContent" class="ui-body-d ui-content">
+                <span> Introduce el número para la cuenta atrás: </span>
+                <input id="inputCountdown" placeholder="Introduce un número...">
+                <button class="ui-btn">¡Empieza la cuenta atrás!</button>
+                <div style="text-align: center"><p style="font-size: 90px;">0</p></div>
+            </div>
+            
+            <div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><a href="#nivel" class="ui-btn" data-role="button">Nivel</a></div>
+                    <div class="ui-block-b"><a href="#countdown" class="ui-btn" data-role="button">Countdown</a></div>
+                </div>
             </div>
         </div>
 
