@@ -3,14 +3,14 @@
  */
 'use strict'
 angular.module('ligaBaloncestoApp')
-    .controller('jugadorCtrlByBaskets', function($scope, $http, entity, Jugador) {
+    .controller('jugadorCtrlByBaskets', function($scope, $http, entity, Jugador, Equipo) {
+
+        $scope.equipos = Equipo.query()
+        $scope.selectedTeam = null;
 
         entity.$promise.then(function(data){
             $scope.jugadores = data;
             console.log(data)
-            /*$scope.bestPlayersByBaskets = function () {
-                Jugador.bestPlayersByBaskets($scope.canastasTotales);
-            };*/
         });
 
 
@@ -18,5 +18,9 @@ angular.module('ligaBaloncestoApp')
             Jugador.bestPlayersByBaskets({baskets: $scope.canastasTotales}, function(result) {
                 $scope.jugadores = result;
             });
+        };
+
+        $scope.teamSelected = function() {
+            console.log($scope.selectedTeam);
         };
     });
