@@ -3,7 +3,7 @@
     <entity name="Contacto" syncable="YES">
         <attribute name="apellidos" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="telefono" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="telefono" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Contacto" positionX="-54" positionY="-9" width="128" height="90"/>

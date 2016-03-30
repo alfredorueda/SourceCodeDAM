@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddContactViewController: UIViewController {
 
@@ -14,8 +15,14 @@ class AddContactViewController: UIViewController {
     @IBOutlet weak var apellidosTextField: UITextField!
     @IBOutlet weak var telefonoTextField: UITextField!
     
+    var appDel: AppDelegate!
+    var context: NSManagedObjectContext!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        appDel = UIApplication.sharedApplication().delegate as! AppDelegate
+        context = appDel.managedObjectContext
     }
     
     @IBAction func cancelAddingContact(sender: UIBarButtonItem) {
@@ -24,6 +31,18 @@ class AddContactViewController: UIViewController {
     
     
     @IBAction func addContact(sender: UIBarButtonItem) {
+        let nuevoUsuario = NSEntityDescription.insertNewObjectForEntityForName("Contacto", inManagedObjectContext: context)
+        nuevoUsuario.setValue("\(nombreTextField.text!)", forKey: "nombre")
+        nuevoUsuario.setValue("\(apellidosTextField.text!)", forKey: "apellidos")
+        nuevoUsuario.setValue("\(telefonoTextField.text!)", forKey: "telefono")
+        
+        //Insertamos el objeto en la base de datos
+        do {
+            try context.save()
+        } catch let error {
+            print(error)
+        }
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
 
