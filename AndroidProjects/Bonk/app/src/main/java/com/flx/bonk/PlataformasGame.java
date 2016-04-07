@@ -73,9 +73,11 @@ public class PlataformasGame extends Game {
 		coins[5] = new Coin(250, 124);
 		
 		// enemies
-		enemies = new Enemy[2];
+		enemies = new Enemy[4];
 		enemies[0] = new Enemy(28 * 16, 15 * 16, 28 * 16, 40 * 16, true);
 		enemies[1] = new Enemy(6 * 16, 8 * 16, 6 * 16, 18 * 16, true);
+		enemies[2] = new Enemy(4 * 16, 13 * 16, 4 * 16, 12 * 16, true);
+		enemies[3] = new Enemy(17 * 16, 11 * 16, 17 * 16, 22 * 16, true);
 
 		// load scene
 		scene = new Scene();
