@@ -24,7 +24,7 @@ public class PlataformasGame extends Game {
 
 	private int t, l, w, h;
 	private float sc;
-	private int score;
+	private int score, cantMonedas;
 	private Scene scene;
 	private BitmapSet bitmapSet;
 	private Audio audio;
@@ -97,6 +97,7 @@ public class PlataformasGame extends Game {
 
 	public void newGame() {
 		score = 0;
+		cantMonedas = 0;
 		clearTime();
 		audio.startMusic();
 		resumeGame();
@@ -176,6 +177,7 @@ public class PlataformasGame extends Game {
 			if (bonk.getBounds().intersect(coin.getBounds())) {
 				coin.y = 500;
 				score += 10;
+				cantMonedas += 1;
 				audio.coin();
 			}
 		}
@@ -276,6 +278,9 @@ public class PlataformasGame extends Game {
 		// SCORES
 		String msg = "Score: " + score;
 		canvas.drawText(msg, 2, 20, paintScore);
+
+		String monedas = "Monedas: " + cantMonedas;
+		canvas.drawText(monedas, 300, 20, paintScore);
 		
 		// if paused, draw a pause symbol on screen
 		if (paused) {
