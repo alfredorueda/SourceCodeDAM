@@ -280,7 +280,7 @@ public class PlataformasGame extends Game {
 		canvas.drawText(msg, 2, 20, paintScore);
 
 		String monedas = "Monedas: " + cantMonedas;
-		canvas.drawText(monedas, 300, 20, paintScore);
+		canvas.drawText(monedas, 280, 20, paintScore);
 		
 		// if paused, draw a pause symbol on screen
 		if (paused) {
