@@ -7,7 +7,9 @@ public class Enemy {
 	int min, max;
 	boolean right;
 	int sp;
-	private int[] sprites = { 16, 17, 16, 17, 16, 17, 20, 18, 19, 18, 19, 18, 19, 20 };
+	protected int[] sprites = { 16, 17, 16, 17, 16, 17, 20, 18, 19, 18, 19, 18, 19, 20 };
+
+	public Enemy(){}
 
 	public Enemy(int x, int y, int min, int max, boolean right) {
 		this.x = x;
@@ -25,7 +27,7 @@ public class Enemy {
 	public void update(long delta) {
 		if (right) {
 			x++;
-			right = (x != max); 
+			right = (x != max);
 		}
 		else {
 			x--;

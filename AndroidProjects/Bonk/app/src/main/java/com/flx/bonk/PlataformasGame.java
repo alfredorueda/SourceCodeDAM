@@ -31,6 +31,7 @@ public class PlataformasGame extends Game {
 	private Bonk bonk;
 	private Coin[] coins;
 	private Enemy[] enemies;
+	private NewEnemyXavi[] enemiesXavi;
 
 	public PlataformasGame(Activity activity) {
 		super(activity);
@@ -78,6 +79,10 @@ public class PlataformasGame extends Game {
 		enemies[1] = new Enemy(6 * 16, 8 * 16, 6 * 16, 18 * 16, true);
 		enemies[2] = new Enemy(4 * 16, 13 * 16, 4 * 16, 12 * 16, true);
 		enemies[3] = new Enemy(17 * 16, 11 * 16, 17 * 16, 22 * 16, true);
+
+		//New Enemies
+		enemiesXavi = new NewEnemyXavi[1];
+		enemiesXavi[0] = new NewEnemyXavi(15 * 16, 13 * 16, 13 * 16, 15 * 16, true);
 
 		// load scene
 		scene = new Scene();
@@ -143,6 +148,11 @@ public class PlataformasGame extends Game {
 			Enemy enemy = enemies[i];
 			enemy.update(delta);
 		}
+
+		for (int i = 0; i < enemiesXavi.length; i++) {
+			NewEnemyXavi enemy = enemiesXavi[i];
+			enemy.update(delta);
+		}
 		
 		// BONK
 		bonk.update(delta, action);
@@ -185,6 +195,16 @@ public class PlataformasGame extends Game {
 		// TOUCHING ENEMIES
 		for (int i = 0; i < enemies.length; i++) {
 			Enemy enemy = enemies[i];
+			if (bonk.getBounds().intersect(enemy.getBounds())) {
+				if (bonk.st != 9) {
+					bonk.setState(9);
+					audio.die();
+				}
+			}
+		}
+
+		for (int i = 0; i < enemiesXavi.length; i++) {
+			Enemy enemy = enemiesXavi[i];
 			if (bonk.getBounds().intersect(enemy.getBounds())) {
 				if (bonk.st != 9) {
 					bonk.setState(9);
@@ -266,6 +286,17 @@ public class PlataformasGame extends Game {
 		// ENEMIES
 		for (int i = 0; i < enemies.length; i++) {
 			Enemy e = enemies[i];
+			Bitmap ebmp = bitmapSet.getBitmap(e.nextSprite());
+			canvas.drawBitmap(ebmp, e.x - sceneOffset, e.y - 22, paint);
+			if (DEBUG_COLLISION) {
+				Rect r = e.getBounds();
+				r.offset(-sceneOffset, 0);
+				canvas.drawRect(r, paint);
+			}
+		}
+
+		for (int i = 0; i < enemiesXavi.length; i++) {
+			Enemy e = enemiesXavi[i];
 			Bitmap ebmp = bitmapSet.getBitmap(e.nextSprite());
 			canvas.drawBitmap(ebmp, e.x - sceneOffset, e.y - 22, paint);
 			if (DEBUG_COLLISION) {
