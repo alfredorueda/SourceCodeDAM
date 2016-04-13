@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery-1.9.1.js" type="text/javascript"></script>
+        <link href="jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css"/>
+        <script src="jquery.mobile-1.4.5.js" type="text/javascript"></script>
+        <script src="script.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <section id="firstpage" data-role="page"  >
+            <header data-role="header" data-position="fixed">
+                <h1>Help aIKEA</h1>
+            </header>
+
+            <!-- <div data-role="main" class="ui-content">
+                <input type="text" name="username" id="username" value="" placeholder="Enter the username..."/>
+                <input type="text" name="password" id="password" value="" placeholder="Enter the password..."/>
+                <div data-role="controlgroup" data-type="vertical">
+                    <a href="#paginaPrincipal" data-role="button">Pagina principal</a>
+                </div>
+            </div> -->
+            <form method="post">
+                <label for="nomForm">Nom</label>
+                <input type="text" name="nom" id="nomForm" placeholder="Nombre"/>
+
+                <label for="passwordForm">Password</label>
+                <input type="text" name="password" id="passwordForm" placeholder="Password"/>
+
+                <input type="button" id="loginForm" value="Login">
+            </form>
+
+
+        </section>
+
+
+        <!-- <section id="paginaPrincipal" data-role="page"  >
+            <header data-role="header" data-position="fixed">
+                <h1>Help aIKEA</h1>
+            </header>
+
+            <div data-role="main" class="ui-content">
+                <div data-role="controlgroup" data-type="vertical">
+                    <a href="#paginaPerComprar" data-role="button">Necesito</a>
+                    <a href="#paginaPerComprar" data-role="button">Wishlist</a>
+                    <a href="#paginaPerComprar" data-role="button">Nivel</a>
+                    <a href="#paginaPerComprar" data-role="button">Cuenta atrás</a>
+                </div>
+            </div>
+        </section> -->
+
+
+        <div id="paginaPerComprar" data-role="page">
+            <header data-role="header" data-position="fixed">
+                <a data-rel="back"> Back </a>
+                <h1>Help aIKEA</h1>
+                <a href="#addProductOrLocation" class="ui-btn-right"> Add </a>
+            </header>
+
+            <div id="addProductOrLocation" data-role="panel" data-display="overlay" data-position="right" class="ui-panel-inner">
+
+                    <select id="grid-select-1" name="grid-select-1" data-shadow="false">
+                        <option>Selecciona una zona</option>
+                        <option value="comedor">Comedor</option>
+                        <option value="dormitorio">Dormitorio</option>
+                    </select>
+
+                    <a href="#kk" class="ui-btn" data-role="button">Añadir una foto</a>
+                    <img src="img/Sofa.jpg" width="80" height="80">
+                    <textarea placeholder="Descripción del producto..."></textarea>
+                    <a href="#kk" class="ui-btn" data-role="button">Añádelo!</a>
+
+                    <label for="slider-1">Anchura:</label>
+                    <input type="range" name="slider-1" id="slider-1" value="50" min="0" max="100" />
+
+                    <label for="slider-2">Altura:</label>
+                    <input type="range" name="slider-1" id="slider-2" value="50" min="0" max="100" />
+
+                    <label for="slider-3">Profundidad:</label>
+                    <input type="range" name="slider-1" id="slider-3" value="50" min="0" max="100" />
+
+                    <a href="#kk" class="ui-btn" data-role="button">Cancela!</a>
+            </div>
+
+            <div data-role="tabs" id="tabs">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#comprar" data-ajax="false" id="comprarNavBar">Necesito</a></li>
+                        <li><a href="#wishlist" data-ajax="false">Wishlist</a></li>
+                    </ul>
+                </div>
+
+                <div id="comprar" class="ui-body-d ui-content">
+                   <!-- <p>Llista de coses per comprar</p>  -->
+                    <ul id="items" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Introduce tu búsqueda...">
+                        <!--<li data-role="list-divider">Comedor</li>
+                        <li><a href="#detailsSofaGrande"><img src="img/Sofa.jpg">Sofa grande</a></li>
+                        <li><a href="#"><img src="img/Mesita.png">Mesa comedor</a></li>
+
+                        <li data-role="list-divider">Dormitorio</li>
+                        <li><a href="#"><img src="img/Mesita.png">Monstruo bajo la cama</a></li>
+                        <li><a href="#"><img src="img/Mesita.png">Escudo</a></li> -->
+                    </ul>
+                </div>
+
+
+                <div id="wishlist" class="ui-content">
+                   <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Introduce tu búsqueda...">
+                    <li data-role="list-divider">Dormitorio</li>
+                    <li><a href="#"><img src="img/Mesita.png">Monstruo bajo la cama</a></li>
+                    <li><a href="#"><img src="img/Mesita.png">Escudo</a></li>
+                  </ul>
+                </div>
+
+
+                <div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a"><a href="#nivel" class="ui-btn" data-role="button">Nivel</a></div>
+                        <div class="ui-block-b"><a href="#countdown" class="ui-btn" data-role="button">Countdown</a></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+<!--
+****
+****
+****
+****
+****
+****
+-->
+
+        <div id="detailsSofaGrande" data-role="page">
+            <header data-role="header" data-position="fixed">
+                <a data-rel="back"> Back </a>
+                <h1>Sofá Grande</h1>
+            </header>
+
+
+            <div id="detallsSofa" class="ui-body-d ui-content">
+                <div>
+                    <img src="img/Sofa.jpg" width="80" height="80">
+                    <img src="img/Sofa.jpg" width="80" height="80">
+                    <img src="img/Sofa.jpg" width="80" height="80">
+                    <img src="img/Sofa.jpg" width="80" height="80">
+                </div>
+                <a href="" class="ui-btn">ADD PICTURE</a>
+                <a href=""> COMEDOR </a>
+                <a href="" class="ui-btn">sofá de piel</a><br/>
+                <a href="" class="ui-btn">Anchura 20</a>
+                <a href="" class="ui-btn">Altura 30</a>
+                <a href="" class="ui-btn">Profundidad 10</a>
+            </div>
+
+            <div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><a href="#nivel" class="ui-btn" data-role="button">Nivel</a></div>
+                    <div class="ui-block-b"><a href="#countdown" class="ui-btn" data-role="button">Countdown</a></div>
+                </div>
+            </div>
+        </div>
+
+<!--
+****
+****
+****
+****
+****
+****
+-->
+
+        <div id="nivel" data-role="page">
+            <header data-role="header" data-position="fixed">
+                <a data-rel="back"> Back </a>
+                <h1>Nivel</h1>
+            </header>
+
+
+            <div id="nivelContent" class="ui-body-d ui-content">
+
+                <button id="playGame">Activa el nivel</button>
+                <div id="terrenoJuego" style="width:200px; height: 200px; background-color: gray; position: relative;">
+                    <div id="pelota" style="width: 20px; height: 20px; background-color: white; border-radius: 10px; position: absolute; left: 0px; top: 0px;"></div>
+                </div>
+
+<!--                <script>
+                intel.xdk.device.setRotateOrientation('portrait');
+
+                $('#playGame').click(function(){
+                    $('#playGame').hide();
+                    $('#pelota').css("left", 100);
+                    $('#pelota').css("top", 100);
+                    window.addEventListener("deviceorientation", controlOrientation7);
+
+                    function controlOrientation7(event){
+                      $('#pelota').css("left", parseInt(event.gamma)+90);
+                      $('#pelota').css("top", parseInt(event.beta)+90);
+                    }
+                });
+                </script>-->
+            </div>
+
+            <div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><a href="#nivel" class="ui-btn" data-role="button">Nivel</a></div>
+                    <div class="ui-block-b"><a href="#countdown" class="ui-btn" data-role="button">Countdown</a></div>
+                </div>
+            </div>
+        </div>
+
+<!--
+****
+****
+****
+****
+****
+****
+-->
+
+        <div id="countdown" data-role="page">
+            <header data-role="header" data-position="fixed">
+                <a data-rel="back"> Back </a>
+                <h1>Cuenta atrás</h1>
+            </header>
+
+
+            <div id="countdownContent" class="ui-body-d ui-content">
+                <span> Introduce el número para la cuenta atrás: </span>
+                <input id="inputCountdown" placeholder="Introduce un número...">
+                <button class="ui-btn">¡Empieza la cuenta atrás!</button>
+                <div style="text-align: center"><p style="font-size: 90px;">0</p></div>
+            </div>
+
+            <div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><a href="#nivel" class="ui-btn" data-role="button">Nivel</a></div>
+                    <div class="ui-block-b"><a href="#countdown" class="ui-btn" data-role="button">Countdown</a></div>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>
