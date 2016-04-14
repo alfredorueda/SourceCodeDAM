@@ -80,7 +80,7 @@ class PlayerGatlingTest extends Simulation {
             .exec(http("Create new player")
             .post("/api/players")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "name":"SAMPLE_TEXT", "baskets":"0", "asistencias":"0", "rebotes":"0", "posicionCampo":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "name":"SAMPLE_TEXT", "baskets":"0"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_player_url")))
             .pause(10)

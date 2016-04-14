@@ -1,10 +1,11 @@
 {
     "basketballApp": {
-        "player" : {
+        "player": {
             "home": {
                 "title": "Players",
                 "createLabel": "Create a new Player",
-                "createOrEditLabel": "Create or edit a Player"
+                "createOrEditLabel": "Create or edit a Player",
+                "search": "Search for Player"
             },
             "created": "A new Player is created with identifier {{ param }}",
             "updated": "A Player is updated with identifier {{ param }}",
@@ -16,10 +17,7 @@
                 "title": "Player"
             },
             "name": "Name",
-            "baskets": "Baskets",
-            "asistencias": "Asistencias",
-            "rebotes": "Rebotes",
-            "posicionCampo": "PosicionCampo"
+            "baskets": "Baskets"
         }
     }
 }

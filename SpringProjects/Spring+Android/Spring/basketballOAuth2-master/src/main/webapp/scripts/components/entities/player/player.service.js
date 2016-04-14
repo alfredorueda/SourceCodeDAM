@@ -3,7 +3,7 @@
 angular.module('basketballApp')
     .factory('Player', function ($resource, DateUtils) {
         return $resource('api/players/:id', {}, {
-            'query': { method: 'GET', isArray: true},
+            'query': {method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
                 transformResponse: function (data) {
@@ -11,6 +11,6 @@ angular.module('basketballApp')
                     return data;
                 }
             },
-            'update': { method:'PUT' }
+            'update': {method: 'PUT'}
         });
     });

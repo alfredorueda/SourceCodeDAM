@@ -1,38 +1,42 @@
 'use strict';
 
-describe('Player Detail Controller', function() {
-    var $scope, $rootScope;
-    var MockEntity, MockPlayer;
-    var createController;
+describe('Controller Tests', function () {
 
-    beforeEach(inject(function($injector) {
-        $rootScope = $injector.get('$rootScope');
-        $scope = $rootScope.$new();
-        MockEntity = jasmine.createSpy('MockEntity');
-        MockPlayer = jasmine.createSpy('MockPlayer');
-        
+    describe('Player Detail Controller', function () {
+        var $scope, $rootScope;
+        var MockEntity, MockPlayer;
+        var createController;
 
-        var locals = {
-            '$scope': $scope,
-            '$rootScope': $rootScope,
-            'entity': MockEntity ,
-            'Player': MockPlayer
-        };
-        createController = function() {
-            $injector.get('$controller')("PlayerDetailController", locals);
-        };
-    }));
+        beforeEach(inject(function ($injector) {
+            $rootScope = $injector.get('$rootScope');
+            $scope = $rootScope.$new();
+            MockEntity = jasmine.createSpy('MockEntity');
+            MockPlayer = jasmine.createSpy('MockPlayer');
 
 
-    describe('Root Scope Listening', function() {
-        it('Unregisters root scope listener upon scope destruction', function() {
-            var eventType = 'basketballApp:playerUpdate';
+            var locals = {
+                '$scope': $scope,
+                '$rootScope': $rootScope,
+                'entity': MockEntity,
+                'Player': MockPlayer
+            };
+            createController = function () {
+                $injector.get('$controller')("PlayerDetailController", locals);
+            };
+        }));
 
-            createController();
-            expect($rootScope.$$listenerCount[eventType]).toEqual(1);
 
-            $scope.$destroy();
-            expect($rootScope.$$listenerCount[eventType]).toBeUndefined();
+        describe('Root Scope Listening', function () {
+            it('Unregisters root scope listener upon scope destruction', function () {
+                var eventType = 'basketballApp:playerUpdate';
+
+                createController();
+                expect($rootScope.$$listenerCount[eventType]).toEqual(1);
+
+                $scope.$destroy();
+                expect($rootScope.$$listenerCount[eventType]).toBeUndefined();
+            });
         });
     });
+
 });

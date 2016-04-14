@@ -2,7 +2,8 @@ package com.mycompany.myapp.domain;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -24,17 +25,6 @@ public class Player implements Serializable {
     @Min(value = 0)
     @Column(name = "baskets")
     private Integer baskets;
-
-    @Min(value = 0)
-    @Column(name = "asistencias")
-    private Integer asistencias;
-
-    @Min(value = 0)
-    @Column(name = "rebotes")
-    private Integer rebotes;
-
-    @Column(name = "posicion_campo")
-    private String posicionCampo;
 
     public Long getId() {
         return id;
@@ -60,30 +50,6 @@ public class Player implements Serializable {
         this.baskets = baskets;
     }
 
-    public Integer getAsistencias() {
-        return asistencias;
-    }
-
-    public void setAsistencias(Integer asistencias) {
-        this.asistencias = asistencias;
-    }
-
-    public Integer getRebotes() {
-        return rebotes;
-    }
-
-    public void setRebotes(Integer rebotes) {
-        this.rebotes = rebotes;
-    }
-
-    public String getPosicionCampo() {
-        return posicionCampo;
-    }
-
-    public void setPosicionCampo(String posicionCampo) {
-        this.posicionCampo = posicionCampo;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -93,6 +59,9 @@ public class Player implements Serializable {
             return false;
         }
         Player player = (Player) o;
+        if (player.id == null || id == null) {
+            return false;
+        }
         return Objects.equals(id, player.id);
     }
 
@@ -107,9 +76,6 @@ public class Player implements Serializable {
             "id=" + id +
             ", name='" + name + "'" +
             ", baskets='" + baskets + "'" +
-            ", asistencias='" + asistencias + "'" +
-            ", rebotes='" + rebotes + "'" +
-            ", posicionCampo='" + posicionCampo + "'" +
             '}';
     }
 }

@@ -17,29 +17,6 @@
                 "min"
             ],
             "fieldValidateRulesMin": "0"
-        },
-        {
-            "fieldId": 3,
-            "fieldName": "asistencias",
-            "fieldType": "Integer",
-            "fieldValidateRules": [
-                "min"
-            ],
-            "fieldValidateRulesMin": "0"
-        },
-        {
-            "fieldId": 4,
-            "fieldName": "rebotes",
-            "fieldType": "Integer",
-            "fieldValidateRules": [
-                "min"
-            ],
-            "fieldValidateRulesMin": "0"
-        },
-        {
-            "fieldId": 5,
-            "fieldName": "posicionCampo",
-            "fieldType": "String"
         }
     ],
     "changelogDate": "20160228132359",

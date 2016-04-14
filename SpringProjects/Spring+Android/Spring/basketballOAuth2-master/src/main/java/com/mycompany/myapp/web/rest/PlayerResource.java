@@ -6,7 +6,6 @@ import com.mycompany.myapp.repository.PlayerRepository;
 import com.mycompany.myapp.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -41,7 +40,7 @@ public class PlayerResource {
     public ResponseEntity<Player> createPlayer(@Valid @RequestBody Player player) throws URISyntaxException {
         log.debug("REST request to save Player : {}", player);
         if (player.getId() != null) {
-            return ResponseEntity.badRequest().header("Failure", "A new player cannot already have an ID").body(null);
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("player", "idexists", "A new player cannot already have an ID")).body(null);
         }
         Player result = playerRepository.save(player);
         return ResponseEntity.created(new URI("/api/players/" + result.getId()))
@@ -88,9 +87,10 @@ public class PlayerResource {
     @Timed
     public ResponseEntity<Player> getPlayer(@PathVariable Long id) {
         log.debug("REST request to get Player : {}", id);
-        return Optional.ofNullable(playerRepository.findOne(id))
-            .map(player -> new ResponseEntity<>(
-                player,
+        Player player = playerRepository.findOne(id);
+        return Optional.ofNullable(player)
+            .map(result -> new ResponseEntity<>(
+                result,
                 HttpStatus.OK))
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
