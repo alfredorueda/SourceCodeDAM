@@ -42,8 +42,8 @@ angular.module('basketballApp')
                         $translatePartialLoader.addPart('player');
                         return $translate.refresh();
                     }],
-                    entity: ['$stateParams', 'Player', function ($stateParams, Player) {
-                        return Player.get({id: $stateParams.id});
+                    entity: ['$stateParams', 'Player', function($stateParams, Player) {
+                        return Player.get({id : $stateParams.id});
                     }]
                 }
             })
@@ -53,8 +53,8 @@ angular.module('basketballApp')
                 data: {
                     authorities: ['ROLE_USER'],
                 },
-                onEnter: ['$stateParams', '$state', '$uibModal', function ($stateParams, $state, $uibModal) {
-                    $uibModal.open({
+                onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
+                    $modal.open({
                         templateUrl: 'scripts/app/entities/player/player-dialog.html',
                         controller: 'PlayerDialogController',
                         size: 'lg',
@@ -63,13 +63,16 @@ angular.module('basketballApp')
                                 return {
                                     name: null,
                                     baskets: null,
+                                    asistencias: null,
+                                    rebotes: null,
+                                    posicionCampo: null,
                                     id: null
                                 };
                             }
                         }
-                    }).result.then(function (result) {
-                        $state.go('player', null, {reload: true});
-                    }, function () {
+                    }).result.then(function(result) {
+                        $state.go('player', null, { reload: true });
+                    }, function() {
                         $state.go('player');
                     })
                 }]
@@ -80,19 +83,19 @@ angular.module('basketballApp')
                 data: {
                     authorities: ['ROLE_USER'],
                 },
-                onEnter: ['$stateParams', '$state', '$uibModal', function ($stateParams, $state, $uibModal) {
-                    $uibModal.open({
+                onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
+                    $modal.open({
                         templateUrl: 'scripts/app/entities/player/player-dialog.html',
                         controller: 'PlayerDialogController',
                         size: 'lg',
                         resolve: {
-                            entity: ['Player', function (Player) {
-                                return Player.get({id: $stateParams.id});
+                            entity: ['Player', function(Player) {
+                                return Player.get({id : $stateParams.id});
                             }]
                         }
-                    }).result.then(function (result) {
-                        $state.go('player', null, {reload: true});
-                    }, function () {
+                    }).result.then(function(result) {
+                        $state.go('player', null, { reload: true });
+                    }, function() {
                         $state.go('^');
                     })
                 }]
@@ -103,19 +106,19 @@ angular.module('basketballApp')
                 data: {
                     authorities: ['ROLE_USER'],
                 },
-                onEnter: ['$stateParams', '$state', '$uibModal', function ($stateParams, $state, $uibModal) {
-                    $uibModal.open({
+                onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
+                    $modal.open({
                         templateUrl: 'scripts/app/entities/player/player-delete-dialog.html',
                         controller: 'PlayerDeleteController',
                         size: 'md',
                         resolve: {
-                            entity: ['Player', function (Player) {
-                                return Player.get({id: $stateParams.id});
+                            entity: ['Player', function(Player) {
+                                return Player.get({id : $stateParams.id});
                             }]
                         }
-                    }).result.then(function (result) {
-                        $state.go('player', null, {reload: true});
-                    }, function () {
+                    }).result.then(function(result) {
+                        $state.go('player', null, { reload: true });
+                    }, function() {
                         $state.go('^');
                     })
                 }]
