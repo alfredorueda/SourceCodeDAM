@@ -1,4 +1,4 @@
-//Login
+//Exercici 1
 $(document).on("click", "#loginForm", function () {
     var nom=$("#nomForm").val();
     var password=$('#passwordForm').val();
@@ -19,8 +19,8 @@ $(document).on("click", "#loginForm", function () {
     });
 });
 
-
-$(document).on("click", "#comprarNavBar", function () {
+//Exercici 2
+$(document).on("pageinit", "#paginaPerComprar", function () {
     console.log("Click");
     $.ajax({
         url: "http://localhost/Practica_IKEA_Con_Ajax/respostaPHP.php",
@@ -33,7 +33,28 @@ $(document).on("click", "#comprarNavBar", function () {
             $('#items').listview('refresh');
         }
     });
-
-
-
 });
+
+//Exercici 3
+$(document).on("click", "#sofaId", function () {
+    console.log("EPA");
+
+    var sofaGrandeId = $('#sofaId>a').text();
+    if (sofaGrandeId == "Sofa grande") {
+        sofaGrandeId = 1;
+    } else {
+        sofaGrandeId = 0;
+    }
+    $.ajax({
+        url: "http://localhost/Practica_IKEA_Con_Ajax/detallsSofa.php",
+        dataType: "jsonp",
+        jsonp: "callback",
+        data: {"id":sofaGrandeId},
+        success: function (respJSON) {
+            console.log(respJSON);
+            $('#detallsSofa').html(respJSON.codi);
+        }
+    });
+});
+
+//Exercici 4
