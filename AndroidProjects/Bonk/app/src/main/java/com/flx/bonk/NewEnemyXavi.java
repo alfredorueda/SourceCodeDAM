@@ -1,9 +1,13 @@
 package com.flx.bonk;
 
+import android.graphics.Rect;
+
 /**
  * Created by Xavi on 11/04/16.
  */
 public class NewEnemyXavi extends Enemy {
+
+    protected int[] sprites = { 38 };
 
     public NewEnemyXavi(int x, int y, int min, int max, boolean right) {
         this.x = x;
@@ -24,5 +28,11 @@ public class NewEnemyXavi extends Enemy {
             y--;
             right = (y == min);
         }
+    }
+
+    @Override
+    public int nextSprite() {
+        sp = (sp + 1) % sprites.length;
+        return sprites[sp];
     }
 }

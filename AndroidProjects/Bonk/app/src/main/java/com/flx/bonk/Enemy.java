@@ -7,7 +7,7 @@ public class Enemy {
 	int min, max;
 	boolean right;
 	int sp;
-	protected int[] sprites = { 16, 17, 16, 17, 16, 17, 20, 18, 19, 18, 19, 18, 19, 20 };
+	private int[] sprites = { 16, 17, 16, 17, 16, 17, 20, 18, 19, 18, 19, 18, 19, 20 };
 
 	public Enemy(){}
 

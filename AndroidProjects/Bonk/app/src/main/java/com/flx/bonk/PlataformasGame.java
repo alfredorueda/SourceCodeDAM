@@ -82,7 +82,7 @@ public class PlataformasGame extends Game {
 
 		//New Enemies
 		enemiesXavi = new NewEnemyXavi[1];
-		enemiesXavi[0] = new NewEnemyXavi(15 * 16, 13 * 16, 12 * 16, 15 * 16, true);
+		enemiesXavi[0] = new NewEnemyXavi(16 * 16, 14 * 16, 12 * 16, 15 * 16, true);
 
 		// load scene
 		scene = new Scene();
