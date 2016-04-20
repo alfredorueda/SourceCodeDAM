@@ -37,8 +37,6 @@ $(document).on("pageinit", "#paginaPerComprar", function () {
 
 //Exercici 3
 $(document).on("click", "#sofaId", function () {
-    console.log("EPA");
-
     var sofaGrandeId = $('#sofaId>a').text();
     if (sofaGrandeId == "Sofa grande") {
         sofaGrandeId = 1;
@@ -52,9 +50,32 @@ $(document).on("click", "#sofaId", function () {
         data: {"id":sofaGrandeId},
         success: function (respJSON) {
             console.log(respJSON);
-            $('#detallsSofa').html(respJSON.codi);
+            $('#detallsSofa').append("<div>"+respJSON.image+respJSON.image+respJSON.image+respJSON.image+"</div>");
+            $('#detallsSofa').append(respJSON.btnAddPicture);
+            $('#detallsSofa').append(respJSON.labelComedor);
+            $('#detallsSofa').append(respJSON.descripcion);
+            $('#detallsSofa').append(respJSON.anchura);
+            $('#detallsSofa').append(respJSON.altura);
+            $('#detallsSofa').append(respJSON.profundidad);
         }
     });
 });
 
 //Exercici 4
+$(document).on("click", "#addElementToTheList", function () {
+    var ubicacion = $('#grid-select-1').val();
+    var descripcion = $('#descripcionProducto').val();
+    var anchura = $('#slider-1').val();
+    var altura = $('#slider-2').val();
+    var profundidad = $('#slider-3').val();
+
+    console.log(ubicacion);
+    console.log(descripcion);
+    console.log(anchura);
+    console.log(altura);
+    console.log(profundidad);
+
+    $('#items').append("<li data-role='list-divider>"+ ubicacion +"</li><li><a href='#detailsSofaGrande'><img src='img/Sofa.jpg'>" + descripcion + "</a></li>");
+    $('#items').listview('refresh');
+
+});
