@@ -50,6 +50,7 @@ $(document).on("click", "#sofaId", function () {
         data: {"id":sofaGrandeId},
         success: function (respJSON) {
             console.log(respJSON);
+            $('#detallsSofa').html("");
             $('#detallsSofa').append("<div>"+respJSON.image+respJSON.image+respJSON.image+respJSON.image+"</div>");
             $('#detallsSofa').append(respJSON.btnAddPicture);
             $('#detallsSofa').append(respJSON.labelComedor);
