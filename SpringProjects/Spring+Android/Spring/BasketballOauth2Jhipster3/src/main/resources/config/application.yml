@@ -56,7 +56,7 @@ jhipster:
                 clientid: BasketballOauth2Jhipster3app
                 secret: mySecretOAuthSecret
                 # Token is valid 30 minutes
-                tokenValidityInSeconds: 1800
+                tokenValidityInSeconds: 18000
     swagger:
         title: BasketballOauth2Jhipster3 API
         description: BasketballOauth2Jhipster3 API documentation
