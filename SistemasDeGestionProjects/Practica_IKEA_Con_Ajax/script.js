@@ -76,7 +76,7 @@ $(document).on("click", "#addElementToTheList", function () {
     console.log(altura);
     console.log(profundidad);
 
-    $('#items').append("<li data-role='list-divider>"+ ubicacion +"</li><li><a href='#detailsSofaGrande'><img src='img/Sofa.jpg'>" + descripcion + "</a></li>");
+    $('#items').append("<li><a href='#detailsSofaGrande'><img src='img/Sofa.jpg'>" + descripcion + "</a></li>");
     $('#items').listview('refresh');
 
 });
