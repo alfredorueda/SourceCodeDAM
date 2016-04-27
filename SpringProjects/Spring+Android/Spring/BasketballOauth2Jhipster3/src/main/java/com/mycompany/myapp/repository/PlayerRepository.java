@@ -10,5 +10,6 @@ import java.util.List;
  * Spring Data JPA repository for the Player entity.
  */
 public interface PlayerRepository extends JpaRepository<Player,Long> {
-
+    //List<Player> findByNombreContaining(String nombre);
+    //List<Player> findAllByCanastasTotalesGreaterThanOrderByCanastasTotalesDesc(Integer canastasTotales);
 }
