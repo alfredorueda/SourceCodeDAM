@@ -27,10 +27,30 @@ import java.util.Optional;
 public class PlayerResource {
 
     private final Logger log = LoggerFactory.getLogger(PlayerResource.class);
-        
+
     @Inject
     private PlayerRepository playerRepository;
-    
+
+
+    @RequestMapping(value = "/players/nombre/{name}", method = RequestMethod.GET)
+    @Timed
+    public ResponseEntity<List<Player>> findByNameContaining(@PathVariable String name) {
+        List<Player> response = playerRepository.findByNameContaining(name);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+
+    @RequestMapping(value = "/players/canastas/{canastasTotales}", method = RequestMethod.GET)
+    @Timed
+    public ResponseEntity<List<Player>> findAllByBasketsGreaterThanEqualOrderByBasketsDesc(@PathVariable int canastasTotales) {
+        List<Player> response = playerRepository.findAllByBasketsGreaterThanEqualOrderByBasketsDesc(canastasTotales);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+
+
+
+
     /**
      * POST  /players : Create a new player.
      *
