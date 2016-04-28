@@ -27,32 +27,10 @@ import java.util.Optional;
 public class PlayerResource {
 
     private final Logger log = LoggerFactory.getLogger(PlayerResource.class);
-
+        
     @Inject
     private PlayerRepository playerRepository;
-
-
-    /*
-    //XAVI --> Method to get players with more than X canastasTotales
-    @RequestMapping(value = "/players/{canastasTotales}", method = RequestMethod.GET)
-    @Timed
-    public ResponseEntity<List<Player>> findAllByCanastasTotalesGreaterThanOrderByCanastasTotalesDesc(@PathVariable int canastasTotales) {
-        List<Player> response = playerRepository.findAllByCanastasTotalesGreaterThanOrderByCanastasTotalesDesc(canastasTotales);
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
-
-    */
-
-
-
-
-
-
-
-
-
-
-
+    
     /**
      * POST  /players : Create a new player.
      *

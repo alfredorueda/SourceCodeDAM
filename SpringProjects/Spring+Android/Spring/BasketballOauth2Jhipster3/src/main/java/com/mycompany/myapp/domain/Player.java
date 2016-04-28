@@ -4,6 +4,7 @@ package com.mycompany.myapp.domain;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Objects;
 
 import com.mycompany.myapp.domain.enumeration.PosicionesJugadores;
@@ -41,6 +42,9 @@ public class Player implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "posicion_campo", nullable = false)
     private PosicionesJugadores posicionCampo;
+
+    @Column(name = "fecha_nacimiento")
+    private LocalDate fechaNacimiento;
 
     public Long getId() {
         return id;
@@ -90,6 +94,14 @@ public class Player implements Serializable {
         this.posicionCampo = posicionCampo;
     }
 
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -119,6 +131,7 @@ public class Player implements Serializable {
             ", rebotes='" + rebotes + "'" +
             ", asistencias='" + asistencias + "'" +
             ", posicionCampo='" + posicionCampo + "'" +
+            ", fechaNacimiento='" + fechaNacimiento + "'" +
             '}';
     }
 }

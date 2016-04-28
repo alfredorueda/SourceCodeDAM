@@ -20,7 +20,8 @@
             "baskets": "Baskets",
             "rebotes": "Rebotes",
             "asistencias": "Asistencias",
-            "posicionCampo": "PosicionCampo"
+            "posicionCampo": "PosicionCampo",
+            "fechaNacimiento": "FechaNacimiento"
         }
     }
 }
