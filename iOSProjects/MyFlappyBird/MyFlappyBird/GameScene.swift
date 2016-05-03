@@ -50,9 +50,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //Label de gravedad
         self.gravityLabelText.fontName = "Helvetica"
         self.gravityLabelText.fontSize = 30
-        self.gravityLabelText.text = "Gravity"
+        self.gravityLabelText.text = "¡Mantén la nave volando!"
         self.gravityLabelText.fontColor = UIColor.whiteColor()
-        self.gravityLabelText.position = CGPoint(x: CGRectGetMidX(self.frame)+100, y: self.frame.height - 120)
+        self.gravityLabelText.position = CGPoint(x: CGRectGetMidX(self.frame), y: self.frame.height - 120)
         self.gravityLabelText.zPosition = 20
         self.addChild(self.gravityLabelText)
         
