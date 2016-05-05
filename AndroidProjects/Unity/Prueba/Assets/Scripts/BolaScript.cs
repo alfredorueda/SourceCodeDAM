@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BolaScript : MonoBehaviour {
 
@@ -16,5 +17,15 @@ public class BolaScript : MonoBehaviour {
 
 		Vector3 fuerza = velocidad * new Vector3 (x, 0.0f, z);
 		rigidbody.AddForce (fuerza);
+	}
+
+	private int premios = 0;
+	public Text recogidos;
+	void OnTriggerEnter(Collider objeto) {
+		if (objeto.gameObject.CompareTag ("Premio")) {
+			objeto.gameObject.SetActive (false);
+			premios++;
+			recogidos.text = "Premios: " + premios;
+		}
 	}
 }
