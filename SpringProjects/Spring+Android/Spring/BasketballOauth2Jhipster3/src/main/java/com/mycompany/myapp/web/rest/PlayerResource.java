@@ -6,6 +6,7 @@ import com.mycompany.myapp.repository.PlayerRepository;
 import com.mycompany.myapp.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,6 +17,7 @@ import javax.inject.Inject;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,7 +50,13 @@ public class PlayerResource {
     }
 
 
-
+    @RequestMapping(value = "/players/canastas/between/{fechaInicio}/and/{fechaFinal}}", method = RequestMethod.GET)
+    @Timed
+    public ResponseEntity<List<Player>> findAllByFechaNacimientoBetween(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fechaInicio,
+                                                                                           @PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fechaFinal) {
+        List<Player> response = playerRepository.findAllByFechaNacimientoBetween(fechaInicio, fechaFinal);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 
 
     /**
