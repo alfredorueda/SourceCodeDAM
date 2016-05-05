@@ -50,7 +50,7 @@ public class PlayerResource {
     }
 
 
-    @RequestMapping(value = "/players/canastas/between/{fechaInicio}/and/{fechaFinal}}", method = RequestMethod.GET)
+    @RequestMapping(value = "/players/canastas/between/{fechaInicio}/and/{fechaFinal}", method = RequestMethod.GET)
     @Timed
     public ResponseEntity<List<Player>> findAllByFechaNacimientoBetween(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fechaInicio,
                                                                                            @PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fechaFinal) {
